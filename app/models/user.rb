@@ -6,7 +6,7 @@
 #  username        :string           not null
 #  fname           :string           not null
 #  lname           :string           not null
-#  birthday        :integer          not null
+#  birthday        :string           not null
 #  gender          :string           not null
 #  location        :integer          not null
 #  session_token   :string           not null
