@@ -340,3 +340,33 @@ Migrating to ModifyUsersTableBirthdayColumn (20200406191241)
   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:58
   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-04-06 15:44:42 -0400
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edward/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 6410ms (Views: 6402.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-06 16:48:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 1100ms (Views: 1081.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-06 16:51:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 610ms (Views: 600.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-06 16:53:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 126ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
