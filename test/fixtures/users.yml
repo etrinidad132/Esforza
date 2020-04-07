@@ -4,15 +4,15 @@
 #
 #  id              :bigint           not null, primary key
 #  username        :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
-#  gender          :string           not null
-#  location        :integer          not null
+#  fname           :string
+#  lname           :string
+#  gender          :string
+#  location        :integer
 #  session_token   :string           not null
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  birthday        :string           not null
+#  birthday        :string
 #
 
 # This model initially had no columns defined. If you add columns to the

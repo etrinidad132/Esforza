@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store"
 import Root from "./components/root"
-import * as APIUtil from "./util/session_api_util"
+import * as SessionUtil from "./util/session_api_util"
+import * as UserUtil from "./util/user_util"
 ///////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////
@@ -21,14 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    
+
     ///////////////////////////////////////////////////
     window.getState = store.getState()
     window.dispatch = store.dispatch
     window.store = store;
-    window.login = APIUtil.login;
-    window.signup = APIUtil.signup;
-    window.logout = APIUtil.logout;
+    window.login = SessionUtil.login;
+    window.signup = SessionUtil.signup;
+    window.logout = SessionUtil.logout;
+    window.updateUser = UserUtil.updateUser
     ///////////////////////////////////////////////////
 
     const root = document.getElementById("root")

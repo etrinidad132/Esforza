@@ -2,6 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import SessionForm from "./session_form"
 import { signup } from "../../actions/session_actions"
+import { updateUser } from "../../actions/user_actions"
+
+//////    MAP UPDATEUSER TO PROPS THEN MAKE CREATE USERS REDIRECT TO DIFFERNT PAGE TO UPDATE USER PROFILE
+
+
 
 const mapStateToProps = (state, ownProps) => { //state.errors.session.errors = array
     // debugger
@@ -13,7 +18,8 @@ const mapStateToProps = (state, ownProps) => { //state.errors.session.errors = a
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return ({
-        processForm: (user) => dispatch(signup(user))
+        processForm: (user) => dispatch(signup(user)),
+        updateUser: (user) => dispatch(updateUser(user))
     })
 }
 
