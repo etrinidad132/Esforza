@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { receiveErrors } from "../../actions/session_actions";
 
-const Greeting = (props) => { // currentUser, logout, receiveErrors()
+const NavBar = (props) => { // currentUser, logout, receiveErrors()
 
     if (props.currentUser instanceof Array) {
         // debugger
@@ -32,4 +32,4 @@ const Greeting = (props) => { // currentUser, logout, receiveErrors()
 
 }
 
-export default Greeting;
+export default NavBar;
