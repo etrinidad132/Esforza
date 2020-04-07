@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# $.ajax({
+#     method: 'GET',
+#     url: '/api/user/5'
+# })
+
+
+
+
 User.destroy_all
 
 def random_yankees_date

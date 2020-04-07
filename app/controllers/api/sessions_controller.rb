@@ -1,4 +1,4 @@
-class Api::SessionController < ApplicationController
+class Api::SessionsController < ApplicationController
     ## For testing purposes only
     skip_before_action :verify_authenticity_token
     ##
