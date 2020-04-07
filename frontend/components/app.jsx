@@ -4,7 +4,7 @@ import NavBarContainer from "./navbar/navbar_container"
 import LoginFormContainer from "./session/login_form_container"
 import SignupFormContainer from "./session/signup_form_container"
 // import AuthRoute from "../util/route_util";
-// import { AuthRoute } from "../util/route_util";
+import { AuthRoute } from "../util/route_util";
 
 const App = () => {
     return (
@@ -13,10 +13,10 @@ const App = () => {
                 <h1>Esforza!!</h1>
             </header>
             <NavBarContainer />
-            <Route exact path="/login" component={LoginFormContainer} />
-            <Route exact path="/signup" component={SignupFormContainer} />
-            {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
-            {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+            {/* <Route exact path="/login" component={LoginFormContainer} /> */}
+            {/* <Route exact path="/signup" component={SignupFormContainer} /> */}
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
         </div>
     );
