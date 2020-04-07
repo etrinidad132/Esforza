@@ -1,14 +1,17 @@
 import React from "react";
 
+
 class SignupModal extends React.Component {
     constructor(props) {
         super(props) // updateUser, user
-        this.state = {
+        this.emptyFormState = {
             fname: "",
             lname: "",
             birthday: "",
             gender: ""
-        }
+        };
+
+        this.state = this.emptyFormState;
 
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,15 +25,17 @@ class SignupModal extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        const user = Object.assign({}, this.props.user, this.state);
         console.log(user)
-        // this.props.updateUser(user) will be called
+        this.props.updateUser(user)// will be called
+        this.props.closeModal()
         this.clearForm()
         // this.props.processForm(user);
     }
 
-    clearForm(){
+    clearForm() {
         this.setState({
             fname: "",
             lname: "",
@@ -40,7 +45,13 @@ class SignupModal extends React.Component {
     }
 
     render() {
+        // debugger
+        if (!this.props.modal) {
+            return null
+        }
+
         return (
+            // <div className="modal-background" onClick={this.props.closeModal}>
             <div className="modal-container">
 
                 <h2>Create your profile</h2>
@@ -87,14 +98,14 @@ class SignupModal extends React.Component {
                             <option value="F">Female</option>
                             <option value="Other">Other</option>
                         </select>
-                    </label><br/>
+                    </label><br />
 
                     <button className="modal-button">Continue</button>
 
                 </form>
             </div>
+            // </div>
         )
     }
 }
-
 export default SignupModal;

@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store"
 import Root from "./components/root"
+
+///////////////////////////////////////////////////////////////////
 import * as SessionUtil from "./util/session_api_util"
 import * as UserUtil from "./util/user_util"
-///////////////////////////////////////////////////////////////////
-
+import { openModal, closeModal } from "./actions/modal_actions"
 ///////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = SessionUtil.signup;
     window.logout = SessionUtil.logout;
     window.updateUser = UserUtil.updateUser
+    window.openModal = (modalType) => store.dispatch(openModal(modalType))
+    window.closeModal = () => store.dispatch(closeModal())
     ///////////////////////////////////////////////////
 
     const root = document.getElementById("root")

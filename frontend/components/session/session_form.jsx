@@ -23,6 +23,10 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+
+        if (this.props.formType === "signup") {
+            this.props.openModal("sign up")
+        }
     }
 
 
