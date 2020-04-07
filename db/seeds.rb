@@ -70,6 +70,16 @@ user5 = User.create(
     gender: random_gender, 
     location: Faker::Address.zip_code.to_i )
 
+    # {
+    # username: "Matantan", 
+    # password: "password", 
+    # fname: "Aaron", 
+    # lname: "Torres", 
+    # birthday: "1990-09-28", 
+    # gender: "M", 
+    # location: 10014
+    # }
+
 
 
 # user1 = User.create(username: Faker::TvShows::RickAndMorty.character, password: 'password')
