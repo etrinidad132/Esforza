@@ -69,6 +69,7 @@ class SessionForm extends React.Component {
                     <h3 className="form-type">{formText}</h3>
                     <form>
                         <a className="google" onClick={this.googleLogin}>{formText} using Demo</a>
+                        <h3>Or {formText} With a Username</h3>
                         {/* <label>Username */}
                         <input type="text"
                             value={this.state.username}

@@ -52,59 +52,60 @@ class SignupModal extends React.Component {
 
         return (
             // <div className="modal-background" onClick={this.props.closeModal}>
-            <div className="modal-container">
+            <div className="modal-background" >
+                <div className="modal-container">
 
-                <h2>Create your profile</h2>
-                <h3>This will give you a place to store workouts and help your friends find you.</h3>
 
-                <form className="modal-form" onSubmit={this.handleSubmit}>
-                    <label className="modal-label">First Name
-                        <input
-                            className="modal-input"
-                            type="text"
-                            value={this.state.fname}
-                            onChange={this.update("fname")}
-                        />
-                    </label>
+                    <form className="modal-form" onSubmit={this.handleSubmit}>
+                        <h2>Create your profile</h2>
+                        <h3>This will give you a place to store workouts and help your friends find you.</h3>
+                        <label className="modal-label">First Name<br />
+                            <input
+                                className="modal-input"
+                                type="text"
+                                value={this.state.fname}
+                                onChange={this.update("fname")}
+                            />
+                        </label>
 
-                    <label className="modal-label">Last Name
-                        <input
-                            className="modal-input"
-                            type="text"
-                            value={this.state.lname}
-                            onChange={this.update("lname")}
-                        />
-                    </label><br />
+                        <label className="modal-label">Last Name<br />
+                            <input
+                                className="modal-input"
+                                type="text"
+                                value={this.state.lname}
+                                onChange={this.update("lname")}
+                            />
+                        </label><br />
 
-                    <label className="modal-label">Birthday
-                        {/* <input className="modal-input" type="text" />   */}
-                        <input
-                            className="modal-input"
-                            type="date"
-                            value={this.state.birthday}
-                            onChange={this.update("birthday")}
+                        <label className="modal-label">Birthday<br />
+                            {/* <input className="modal-input" type="text" />   */}
+                            <input
+                                className="modal-input"
+                                type="date"
+                                value={this.state.birthday}
+                                onChange={this.update("birthday")}
 
-                        />
-                    </label>
+                            />
+                        </label>
 
-                    <label className="modal-label">Gender
-                        {/* <input className="modal-input" type="text" /> */}
-                        <select
-                            value={this.state.gender}
-                            onChange={this.update("gender")}
-                        >
-                            <option value=""> </option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </label><br />
+                        <label className="modal-label">Gender<br />
+                            {/* <input className="modal-input" type="text" /> */}
+                            <select
+                                value={this.state.gender}
+                                onChange={this.update("gender")}
+                            >
+                                <option value=""> </option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label><br />
 
-                    <button className="modal-button">Continue</button>
+                        <button className="modal-button">Continue</button>
 
-                </form>
+                    </form>
+                </div>
             </div>
-            // </div>
         )
     }
 }

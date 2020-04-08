@@ -30,7 +30,7 @@ $strava-orange: #f24c03;
         // justify-content: left;
         padding-right: 30px;
 
-        a {
+        a, button {
             // background-color: $test-color;
             display: inline-block;
             box-sizing: border-box;
@@ -43,6 +43,12 @@ $strava-orange: #f24c03;
             margin: 0 5px;
             border: 0.5px solid $border-color;
             border-radius: 4px;
+        }
+
+        h3 {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
         }
 
         a:hover {
