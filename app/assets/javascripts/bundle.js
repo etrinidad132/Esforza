@@ -611,7 +611,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "googleLogin",
     value: function googleLogin() {
-      debugger;
+      // debugger
       this.props.loginDemo();
     }
   }, {
@@ -750,7 +750,6 @@ var SignupModal = /*#__PURE__*/function (_React$Component) {
       // debugger
       e.preventDefault();
       var user = Object.assign({}, this.props.user, this.state);
-      console.log(user);
       this.props.updateUser(user); // will be called
 
       this.props.closeModal();

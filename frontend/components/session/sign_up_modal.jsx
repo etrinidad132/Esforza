@@ -28,7 +28,6 @@ class SignupModal extends React.Component {
         // debugger
         e.preventDefault();
         const user = Object.assign({}, this.props.user, this.state);
-        console.log(user)
         this.props.updateUser(user)// will be called
         this.props.closeModal()
         this.clearForm()

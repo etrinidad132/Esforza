@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
     }
 
     googleLogin() {
-        debugger
+        // debugger
         this.props.loginDemo()
     }
 
