@@ -7311,3 +7311,1213 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 7.2ms)
 
 
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoutes (20200408193833)
+  [1m[35m (67.1ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoutes (20200408193833)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (143.8ms)[0m  [1m[35mCREATE TABLE "routes" ("id" bigserial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "description" text, "distance" float NOT NULL, "time" integer NOT NULL, "elevation" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:3
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200408193833"]]
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (7.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edward/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[36mRoute Load (14.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (17.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (6.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 58]]
+  ↳ db/seeds.rb:16
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 59]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 60]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 61]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 62]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vhWuJt6fmRs7PHDdPdUsZg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (17.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "vhWuJt6fmRs7PHDdPdUsZg"], ["password_digest", "$2a$12$6RIlMdCknRz7azjfw24anuCz3XWf67hejcgUJwwaLRDm3iRlzh8ay"], ["created_at", "2020-04-08 21:06:37.660508"], ["updated_at", "2020-04-08 21:06:37.660508"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Seagull"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LNtAd2_I56u3AxLw-Od3gQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Seagull"], ["fname", "Abraham"], ["lname", "Gleason"], ["gender", "F"], ["location", 49047], ["session_token", "LNtAd2_I56u3AxLw-Od3gQ"], ["password_digest", "$2a$12$f9OHWldxP4coLJGyP6OaTuckeiSSOfHjaJsaJsm5X898vA1Yt8/ry"], ["created_at", "2020-04-08 21:06:38.367975"], ["updated_at", "2020-04-08 21:06:38.367975"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "KennyS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tvAPdJVxRSGuJZC2J8Ok3g"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "KennyS"], ["fname", "Christy"], ["lname", "Kautzer"], ["gender", "Other"], ["location", 27023], ["session_token", "tvAPdJVxRSGuJZC2J8Ok3g"], ["password_digest", "$2a$12$IOAd01rHThRj4NqRyVyp3OaEVtKhGzmeXDhcjroVTFnVJS9RLI7sO"], ["created_at", "2020-04-08 21:06:38.691125"], ["updated_at", "2020-04-08 21:06:38.691125"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "f0rest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kpdAlSOQdOgj4kALal1lDw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "f0rest"], ["fname", "Claudio"], ["lname", "Bernhard"], ["gender", "M"], ["location", 79270], ["session_token", "kpdAlSOQdOgj4kALal1lDw"], ["password_digest", "$2a$12$H3Vy3tXi2KP.StThI1U1vua8GemQkDlkQ/6m97lyr6LzAcqbhkity"], ["created_at", "2020-04-08 21:06:39.056699"], ["updated_at", "2020-04-08 21:06:39.056699"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "RamboRay"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "McEHVo0hTP5PZmfoXF8M_g"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "RamboRay"], ["fname", "Carlo"], ["lname", "Kuphal"], ["gender", "M"], ["location", 55704], ["session_token", "McEHVo0hTP5PZmfoXF8M_g"], ["password_digest", "$2a$12$nAXFY5kVI3sgC6kxPxgHfeDncMzBpSy81Ilub5CjgSJnBUfzMaBiC"], ["created_at", "2020-04-08 21:06:39.372528"], ["updated_at", "2020-04-08 21:06:39.372528"], ["birthday", "2009-11-4"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Crimsix"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "t1aF2bWrK0sLW4ZuiA8U6A"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Crimsix"], ["fname", "Nickolas"], ["lname", "Sporer"], ["gender", "M"], ["location", 21995], ["session_token", "t1aF2bWrK0sLW4ZuiA8U6A"], ["password_digest", "$2a$12$A.OccrdFl03VTZMj5iw7U.qqkgjn8/fR7OhkXuqLHBvRFTSRZYYVK"], ["created_at", "2020-04-08 21:06:39.699274"], ["updated_at", "2020-04-08 21:06:39.699274"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:97
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ db/seeds.rb:97
+  [1m[36mRoute Create (25.7ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 64], ["name", "Peach's Castle"], ["description", "She's dead... Wrapped in plastic."], ["distance", 95.71539277271164], ["time", 5462], ["elevation", 163], ["created_at", "2020-04-08 21:06:39.747311"], ["updated_at", "2020-04-08 21:06:39.747311"]]
+  ↳ db/seeds.rb:97
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:97
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:105
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ db/seeds.rb:105
+  [1m[36mRoute Create (2.2ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 63], ["name", "Mushroom Kingdom"], ["description", "Wow, Bob, wow."], ["distance", 241.4587375755243], ["time", 6463], ["elevation", 240], ["created_at", "2020-04-08 21:06:39.779682"], ["updated_at", "2020-04-08 21:06:39.779682"]]
+  ↳ db/seeds.rb:105
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:113
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ db/seeds.rb:113
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 67], ["name", "Balloon Fight"], ["description", "Wow, Bob, wow."], ["distance", 296.1285694675715], ["time", 4340], ["elevation", 158], ["created_at", "2020-04-08 21:06:39.786786"], ["updated_at", "2020-04-08 21:06:39.786786"]]
+  ↳ db/seeds.rb:113
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:113
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:121
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ db/seeds.rb:121
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 64], ["name", "Yoshi's Story"], ["description", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["distance", 297.6028104613049], ["time", 9528], ["elevation", 174], ["created_at", "2020-04-08 21:06:39.792218"], ["updated_at", "2020-04-08 21:06:39.792218"]]
+  ↳ db/seeds.rb:121
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:121
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ db/seeds.rb:129
+  [1m[36mRoute Create (1.3ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 66], ["name", "Summit"], ["description", "I don't wanna talk. I wanna shoot."], ["distance", 227.08694757907054], ["time", 5358], ["elevation", 38], ["created_at", "2020-04-08 21:06:39.798661"], ["updated_at", "2020-04-08 21:06:39.798661"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:137
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ db/seeds.rb:137
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 65], ["name", "Wily Castle"], ["description", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["distance", 103.63930990434193], ["time", 1964], ["elevation", 198], ["created_at", "2020-04-08 21:06:39.804689"], ["updated_at", "2020-04-08 21:06:39.804689"]]
+  ↳ db/seeds.rb:137
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:137
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (7.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 63]]
+  ↳ db/seeds.rb:16
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 64]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 65]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 66]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 67]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 68]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.5ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.5ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:17
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.5ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.7ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.7ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (2.2ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PrFVPIOFgWEAQEqsww7iOA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "PrFVPIOFgWEAQEqsww7iOA"], ["password_digest", "$2a$12$XVHu/jzPksxnI66OLkU3GedDU3.UKZZ8nDx27LaroXrHPghvlJeS2"], ["created_at", "2020-04-08 21:12:20.983859"], ["updated_at", "2020-04-08 21:12:20.983859"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "RamboRay"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x7G6eDrAihbwdwPbuVE_Sw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "RamboRay"], ["fname", "Harland"], ["lname", "Herman"], ["gender", "F"], ["location", 59328], ["session_token", "x7G6eDrAihbwdwPbuVE_Sw"], ["password_digest", "$2a$12$8Hg4qP4Z9NdpuSBHrTNP2.y8KvHIh2lH76fOX8E3DrbAbeDSDjnnG"], ["created_at", "2020-04-08 21:12:21.678346"], ["updated_at", "2020-04-08 21:12:21.678346"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Boxer"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4RQj2NLsPTqLUhv-07YeUg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Boxer"], ["fname", "Shaun"], ["lname", "McLaughlin"], ["gender", "F"], ["location", 58263], ["session_token", "4RQj2NLsPTqLUhv-07YeUg"], ["password_digest", "$2a$12$C18Nw3ozW04NI9/UkcSrCuGG3tSPwWsdPzq0Ao/r0aAFj34gKyE5K"], ["created_at", "2020-04-08 21:12:22.312100"], ["updated_at", "2020-04-08 21:12:22.312100"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "KennyS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wa0lG9AH02C8MQFPjqXAXA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "KennyS"], ["fname", "Sanjuana"], ["lname", "Murphy"], ["gender", "M"], ["location", 41773], ["session_token", "wa0lG9AH02C8MQFPjqXAXA"], ["password_digest", "$2a$12$g9b6ppb9cjPcXhROwNADL.KWggk/4dcq1x.5gF6kGOYIgohP3kLUG"], ["created_at", "2020-04-08 21:12:22.785715"], ["updated_at", "2020-04-08 21:12:22.785715"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Dendi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ezhKPj1WkFZPRPZ6_-_BUA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Dendi"], ["fname", "Bryce"], ["lname", "Prosacco"], ["gender", "Other"], ["location", 6968], ["session_token", "ezhKPj1WkFZPRPZ6_-_BUA"], ["password_digest", "$2a$12$cI2O54jdWOgdvYczPrzYLeEmZbDCzoMlmIwQunj9XQWuaK2AV5znO"], ["created_at", "2020-04-08 21:12:23.820778"], ["updated_at", "2020-04-08 21:12:23.820778"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ACE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "in-N3aMAhTALsJLLbUIyOg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "ACE"], ["fname", "Beula"], ["lname", "Doyle"], ["gender", "M"], ["location", 59172], ["session_token", "in-N3aMAhTALsJLLbUIyOg"], ["password_digest", "$2a$12$dk247UGSOlPnb/KHvFgQtOxMqEl1AZ6HOmAWHvz.foxqEtkefNG4K"], ["created_at", "2020-04-08 21:12:24.470951"], ["updated_at", "2020-04-08 21:12:24.470951"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:97
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ db/seeds.rb:97
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 72], ["name", "Jungle Hijinxs"], ["description", "I feel like all my kids grew up, and then they married each other. It's every parents' dream."], ["distance", 50.44353855027382], ["time", 4616], ["elevation", 91], ["created_at", "2020-04-08 21:12:24.636692"], ["updated_at", "2020-04-08 21:12:24.636692"]]
+  ↳ db/seeds.rb:97
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:97
+  [1m[35m (10.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:105
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ db/seeds.rb:105
+  [1m[36mRoute Create (18.9ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 72], ["name", "Kalos Pokémon League"], ["description", "No, I'm not going to tell them about the downsizing. If a patient has cancer, you don't tell them."], ["distance", 115.35110242758338], ["time", 3182], ["elevation", 139], ["created_at", "2020-04-08 21:12:24.668041"], ["updated_at", "2020-04-08 21:12:24.668041"]]
+  ↳ db/seeds.rb:105
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:113
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ db/seeds.rb:113
+  [1m[36mRoute Create (15.1ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 70], ["name", "Pac-Maze"], ["description", "WHERE ARE THE TURTLES?!"], ["distance", 264.9244425953353], ["time", 4675], ["elevation", 179], ["created_at", "2020-04-08 21:12:24.706346"], ["updated_at", "2020-04-08 21:12:24.706346"]]
+  ↳ db/seeds.rb:113
+  [1m[35m (17.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:113
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:121
+  [1m[36mUser Load (57.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ db/seeds.rb:121
+  [1m[36mRoute Create (1.2ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 73], ["name", "Port Town Aero Dive"], ["description", "You wanna hear a lie? ... I...think you're great. You're my best friend."], ["distance", 65.66089955712559], ["time", 1566], ["elevation", 36], ["created_at", "2020-04-08 21:12:24.803178"], ["updated_at", "2020-04-08 21:12:24.803178"]]
+  ↳ db/seeds.rb:121
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:121
+  [1m[35m (69.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ db/seeds.rb:129
+  [1m[36mRoute Create (67.4ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 71], ["name", "Bridge of Eldin"], ["description", "I love inside jokes. Love to be a part of one someday."], ["distance", 264.8546978944342], ["time", 3080], ["elevation", 241], ["created_at", "2020-04-08 21:12:24.902690"], ["updated_at", "2020-04-08 21:12:24.902690"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (149.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:137
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ db/seeds.rb:137
+  [1m[36mRoute Create (4.2ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 71], ["name", "Orbital Gate Assault"], ["description", "I am downloading some NP# music."], ["distance", 156.32013738982832], ["time", 2041], ["elevation", 102], ["created_at", "2020-04-08 21:12:25.126579"], ["updated_at", "2020-04-08 21:12:25.126579"]]
+  ↳ db/seeds.rb:137
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:137
+  [1m[36mRoute Load (2.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToRoutes (20200408211448)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (66.0ms)[0m  [1m[35mALTER TABLE "routes" ADD "activity_type" character varying NOT NULL[0m
+  ↳ db/migrate/20200408211448_add_columns_to_routes.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (138.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "esforza_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (199.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "esforza_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (317.2ms)[0m  [1m[35mCREATE DATABASE "esforza_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (166.7ms)[0m  [1m[35mCREATE DATABASE "esforza_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (35.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200406160803)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (38.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "fname" character varying NOT NULL, "lname" character varying NOT NULL, "birthday" integer NOT NULL, "gender" character varying NOT NULL, "location" integer NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200406160803_create_users.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20200406160803_create_users.rb:14
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20200406160803_create_users.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406160803"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ModifyUsersTableBirthdayColumn (20200406191241)
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (25.1ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "birthday"[0m
+  ↳ db/migrate/20200406191241_modify_users_table_birthday_column.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "users" ADD "birthday" character varying NOT NULL[0m
+  ↳ db/migrate/20200406191241_modify_users_table_birthday_column.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406191241"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ChangeNullValuesInColumns (20200407153230)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "fname" DROP NOT NULL[0m
+  ↳ db/migrate/20200407153230_change_null_values_in_columns.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "lname" DROP NOT NULL[0m
+  ↳ db/migrate/20200407153230_change_null_values_in_columns.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "birthday" DROP NOT NULL[0m
+  ↳ db/migrate/20200407153230_change_null_values_in_columns.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "location" DROP NOT NULL[0m
+  ↳ db/migrate/20200407153230_change_null_values_in_columns.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "gender" DROP NOT NULL[0m
+  ↳ db/migrate/20200407153230_change_null_values_in_columns.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200407153230"]]
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRoutes (20200408193833)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoutes (20200408193833)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoutes (20200408193833)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (54.3ms)[0m  [1m[35mCREATE TABLE "routes" ("id" bigserial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "description" text, "distance" float NOT NULL, "time" integer NOT NULL, "elevation" integer NOT NULL, "activity_type" character varying NOT NULL, "route_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:14
+  [1m[35m (4.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoutes (20200408193833)
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (95.1ms)[0m  [1m[35mCREATE TABLE "routes" ("id" bigserial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "description" text, "distance" float NOT NULL, "time" integer NOT NULL, "elevation" integer NOT NULL, "activity_type" character varying NOT NULL, "route_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:3
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:14
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_routes_on_user_id_and_name" ON "routes"  ("user_id", "name")[0m
+  ↳ db/migrate/20200408193833_create_routes.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200408193833"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (9.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-08 21:27:41.919106"], ["updated_at", "2020-04-08 21:27:41.919106"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3850452704438147535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edward/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (15.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HgtYjzJaAwPR-Hi6uaNpoA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (65.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "HgtYjzJaAwPR-Hi6uaNpoA"], ["password_digest", "$2a$12$QqqqZwEI57PSPQ/HcQ24IOWg80al8/B/.Q.THeCVcd.P2HFA/ziwK"], ["created_at", "2020-04-08 21:43:39.783991"], ["updated_at", "2020-04-08 21:43:39.783991"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pasha"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pqHuTOiohtjx8IVmW3Y_YA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "pasha"], ["fname", "Winfred"], ["lname", "Stamm"], ["gender", "Other"], ["location", 37997], ["session_token", "pqHuTOiohtjx8IVmW3Y_YA"], ["password_digest", "$2a$12$d6j6MnjRiYwsNSuDrLnccemwnRWrzSQ0FTcO5ADx2Vc1VAmh77swW"], ["created_at", "2020-04-08 21:43:40.681238"], ["updated_at", "2020-04-08 21:43:40.681238"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "shroud"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8M_rFdS3ogwVEdKoPZhuGw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "shroud"], ["fname", "Johnie"], ["lname", "Nienow"], ["gender", "F"], ["location", 4101], ["session_token", "8M_rFdS3ogwVEdKoPZhuGw"], ["password_digest", "$2a$12$9UXaBRCYzYnZgsw7v0QniOAxEbBVYcIFVJHLFTU5x098OTT1S1S6K"], ["created_at", "2020-04-08 21:43:41.104679"], ["updated_at", "2020-04-08 21:43:41.104679"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Seagull"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Jtq7nZ5jC-GihRHNQr6xpQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Seagull"], ["fname", "Lula"], ["lname", "Schroeder"], ["gender", "F"], ["location", 93540], ["session_token", "Jtq7nZ5jC-GihRHNQr6xpQ"], ["password_digest", "$2a$12$xLqzReOYq8EmGM55/qwaGuuAvgFwp7jwhb9wqXAP1gy4y67reejZe"], ["created_at", "2020-04-08 21:43:41.418252"], ["updated_at", "2020-04-08 21:43:41.418252"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "shroud"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2hQRxLfgjYSyrTdtDuLTYw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (8.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AQA5hBUQUqNysXTwgmtR3w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "AQA5hBUQUqNysXTwgmtR3w"], ["password_digest", "$2a$12$hUlE/B9JmO7M5oABWpLO4.HAXHQPGjohbncHZ0keBQ2VEvU.2SIdG"], ["created_at", "2020-04-08 21:44:52.392979"], ["updated_at", "2020-04-08 21:44:52.392979"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pasha"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (4.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Hy1_3lOXHRHlGI4KVPRwqg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (5.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "pasha"], ["fname", "Elicia"], ["lname", "Rath"], ["gender", "M"], ["location", 59803], ["session_token", "Hy1_3lOXHRHlGI4KVPRwqg"], ["password_digest", "$2a$12$xAbYgxw4wmNVQa33nTYySecCKRan5PnWyyIygzwVK4FNbfbwdDvSy"], ["created_at", "2020-04-08 21:44:53.158306"], ["updated_at", "2020-04-08 21:44:53.158306"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Faker"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "_rTVVH9REdCwedpi8GkBOQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Faker"], ["fname", "Tabetha"], ["lname", "Mayer"], ["gender", "F"], ["location", 8594], ["session_token", "_rTVVH9REdCwedpi8GkBOQ"], ["password_digest", "$2a$12$A6LnNbvjk01bV9Sjt9.tR.d7skkIXCk9nUfRI/fh44LJQ5dI7ne3C"], ["created_at", "2020-04-08 21:44:53.561664"], ["updated_at", "2020-04-08 21:44:53.561664"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Grubby"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "EjHQ6Lg9w6R8ooFgCH4PHQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Grubby"], ["fname", "Colby"], ["lname", "Marquardt"], ["gender", "F"], ["location", 43360], ["session_token", "EjHQ6Lg9w6R8ooFgCH4PHQ"], ["password_digest", "$2a$12$s.Md/jkyg.dcJ/IeWISCG.O0HC.ohTyHr/w2i8Be10BYj6K6x8Feu"], ["created_at", "2020-04-08 21:44:53.993568"], ["updated_at", "2020-04-08 21:44:53.993568"], ["birthday", "1999-10-27"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Silvername"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OcGv6CVeYJOHgY5bObvIZw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Silvername"], ["fname", "Duncan"], ["lname", "Herman"], ["gender", "M"], ["location", 28873], ["session_token", "OcGv6CVeYJOHgY5bObvIZw"], ["password_digest", "$2a$12$FUE9SaP08hfQjg1nzkBmSOL3HjpbT2P014DRcddPWHvQRtyQSyE4K"], ["created_at", "2020-04-08 21:44:54.334836"], ["updated_at", "2020-04-08 21:44:54.334836"], ["birthday", "2009-11-4"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Flash"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "N7mpwKdX4kTESUXW9cBryw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Flash"], ["fname", "Tonda"], ["lname", "Beer"], ["gender", "F"], ["location", 59237], ["session_token", "N7mpwKdX4kTESUXW9cBryw"], ["password_digest", "$2a$12$qs/1BpO0SEaoqRvOvxBlwuoT1uEZ7JWtXdVpjSQ5eoNYCDdlGKdKS"], ["created_at", "2020-04-08 21:44:54.681343"], ["updated_at", "2020-04-08 21:44:54.681343"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:109
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:109
+  [1m[36mRoute Create (67.9ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 5], ["name", "Corneria"], ["description", "Welcome back, Jerky Jerk-Face."], ["distance", 68.127652996118], ["time", 529], ["elevation", 261], ["activity_type", "run"], ["route_type", "cyclocross"], ["created_at", "2020-04-08 21:44:54.748469"], ["updated_at", "2020-04-08 21:44:54.748469"]]
+  ↳ db/seeds.rb:109
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:109
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mRoute Create (2.4ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 6], ["name", "Dream Land"], ["description", "I would not miss it for the world. But if something else came up I would definitely not go."], ["distance", 47.82624166676562], ["time", 9796], ["elevation", 103], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:44:54.822413"], ["updated_at", "2020-04-08 21:44:54.822413"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:131
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:131
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 7], ["name", "Mushroom Kingdom II"], ["description", "I would not miss it for the world. But if something else came up I would definitely not go."], ["distance", 15.599561402767488], ["time", 5882], ["elevation", 16], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:44:54.830682"], ["updated_at", "2020-04-08 21:44:54.830682"]]
+  ↳ db/seeds.rb:131
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:131
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:142
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:142
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 5], ["name", "Super Mario Maker"], ["description", "If I had a gun with two bullets and I was in a room with Hitler, Bin Laden, and Toby, I would shoot Toby twice."], ["distance", 62.4652987319942], ["time", 6625], ["elevation", 295], ["activity_type", "ride"], ["route_type", "trail"], ["created_at", "2020-04-08 21:44:54.836401"], ["updated_at", "2020-04-08 21:44:54.836401"]]
+  ↳ db/seeds.rb:142
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:142
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:153
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:153
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 8], ["name", "Port Town Aero Dive"], ["description", "There is no such thing as an appropriate joke, that's why it's a joke."], ["distance", 193.82404217286555], ["time", 2070], ["elevation", 290], ["activity_type", "run"], ["route_type", "road"], ["created_at", "2020-04-08 21:44:54.842852"], ["updated_at", "2020-04-08 21:44:54.842852"]]
+  ↳ db/seeds.rb:153
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:153
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:164
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:164
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 7], ["name", "Final Destination"], ["description", "I am dead inside."], ["distance", 268.09821907626167], ["time", 9259], ["elevation", 125], ["activity_type", "ride"], ["route_type", "cyclocross"], ["created_at", "2020-04-08 21:44:54.848675"], ["updated_at", "2020-04-08 21:44:54.848675"]]
+  ↳ db/seeds.rb:164
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:164
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRoute Load (1.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mRoute Load (21.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (168.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "esforza_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (121.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "esforza_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (519.9ms)[0m  [1m[35mCREATE DATABASE "esforza_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (398.0ms)[0m  [1m[35mCREATE DATABASE "esforza_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (10.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (36.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "routes" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (50.9ms)[0m  [1m[35mCREATE TABLE "routes" ("id" bigserial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "description" text, "distance" float NOT NULL, "time" integer NOT NULL, "elevation" integer NOT NULL, "activity_type" character varying NOT NULL, "route_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_routes_on_user_id_and_name" ON "routes"  ("user_id", "name")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "fname" character varying, "lname" character varying, "gender" character varying, "location" integer, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "birthday" character varying)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200408193833)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (11.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200406160803),
+(20200407153230),
+(20200406191241);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (39.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-08 21:50:48.310698"], ["updated_at", "2020-04-08 21:50:48.310698"]]
+  ↳ db/schema.rb:13
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "routes" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (93.2ms)[0m  [1m[35mCREATE TABLE "routes" ("id" bigserial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "description" text, "distance" float NOT NULL, "time" integer NOT NULL, "elevation" integer NOT NULL, "activity_type" character varying NOT NULL, "route_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_routes_on_user_id_and_name" ON "routes"  ("user_id", "name")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (30.4ms)[0m  [1m[35mCREATE  INDEX  "index_routes_on_user_id" ON "routes"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (46.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "fname" character varying, "lname" character varying, "gender" character varying, "location" integer, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "birthday" character varying)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200408193833)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200406160803),
+(20200407153230),
+(20200406191241);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-08 21:50:48.764886"], ["updated_at", "2020-04-08 21:50:48.764886"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-08 21:50:48.777659"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (1.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "y9144yZOx42KOSlZmo1IMw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "y9144yZOx42KOSlZmo1IMw"], ["password_digest", "$2a$12$rOM9..URIixuK2ZDZ1/V/eKmnKaPUz25AP/4l2o3gEHx3Onytxd4m"], ["created_at", "2020-04-08 21:50:49.209710"], ["updated_at", "2020-04-08 21:50:49.209710"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Froggen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5bcvqdWJw1b9cM94KIMaEg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Froggen"], ["fname", "Kelsey"], ["lname", "Gerhold"], ["gender", "F"], ["location", 35535], ["session_token", "5bcvqdWJw1b9cM94KIMaEg"], ["password_digest", "$2a$12$IpT.p4R5.NEp7b9alMz7M.83N/qqLFvnBNfLUyG8PCg8EuheVITG6"], ["created_at", "2020-04-08 21:50:49.971533"], ["updated_at", "2020-04-08 21:50:49.971533"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Grubby"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VfNG3QZ6ZWzdQPy-pE2jFA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Grubby"], ["fname", "Shayne"], ["lname", "King"], ["gender", "F"], ["location", 1209], ["session_token", "VfNG3QZ6ZWzdQPy-pE2jFA"], ["password_digest", "$2a$12$qVr7SjEMhppneglVpkc4y.WxvAjw6bT5wptKwZW9vW5WLjDojkNhS"], ["created_at", "2020-04-08 21:50:50.337669"], ["updated_at", "2020-04-08 21:50:50.337669"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Grubby"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OdvvEHa-t89d3E8n5EyOnQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BchfY2prJycnEw9RHXhtdA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "BchfY2prJycnEw9RHXhtdA"], ["password_digest", "$2a$12$LctJz5KIcFIdWY5N7g6MNu2kbChcJgu5vEW7yGsOzx2.2WjPFyHc6"], ["created_at", "2020-04-08 21:51:22.149939"], ["updated_at", "2020-04-08 21:51:22.149939"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "shroud"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BW2Edh8sg6cPgbWmyMcc4w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "shroud"], ["fname", "Dane"], ["lname", "Buckridge"], ["gender", "M"], ["location", 76576], ["session_token", "BW2Edh8sg6cPgbWmyMcc4w"], ["password_digest", "$2a$12$igMO3pIbwZQA6ooHMS0v1ubpQa1L/cycyC62ERpFtvW95msUunr0e"], ["created_at", "2020-04-08 21:51:22.563105"], ["updated_at", "2020-04-08 21:51:22.563105"], ["birthday", "1999-10-27"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Flash"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZCJT2RLusMAGBJNlb1g1CQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Flash"], ["fname", "Ryan"], ["lname", "White"], ["gender", "M"], ["location", 98010], ["session_token", "ZCJT2RLusMAGBJNlb1g1CQ"], ["password_digest", "$2a$12$aJvcHrQtey5XPMvr1As2uOGUYsEdN75pH5Gpz8lZXbl2ZOWan.GpG"], ["created_at", "2020-04-08 21:51:22.865048"], ["updated_at", "2020-04-08 21:51:22.865048"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Froggen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OsJbfHuJYUBKvi12zZKXRg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Froggen"], ["fname", "Herman"], ["lname", "Little"], ["gender", "M"], ["location", 23643], ["session_token", "OsJbfHuJYUBKvi12zZKXRg"], ["password_digest", "$2a$12$vsSKnFitx17VRGdBM8yCZOfZYWP848VK6Z3inaykagZccC8f7x/u6"], ["created_at", "2020-04-08 21:51:23.148491"], ["updated_at", "2020-04-08 21:51:23.148491"], ["birthday", "2000-10-26"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Crimsix"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x3YKWm5jbJ6rSbwC6rBIw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Crimsix"], ["fname", "Reggie"], ["lname", "Crooks"], ["gender", "M"], ["location", 31619], ["session_token", "6x3YKWm5jbJ6rSbwC6rBIw"], ["password_digest", "$2a$12$O/0vTR8kG5TZPPFX.mwHj.qOA/r6DGiq7CPHYvkOcPyTtg0q3x/v6"], ["created_at", "2020-04-08 21:51:23.500276"], ["updated_at", "2020-04-08 21:51:23.500276"], ["birthday", "1999-10-27"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Boxer"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6dvujsznR1Xw_z4wkxUuvQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Boxer"], ["fname", "Maria"], ["lname", "Bednar"], ["gender", "M"], ["location", 71242], ["session_token", "6dvujsznR1Xw_z4wkxUuvQ"], ["password_digest", "$2a$12$AEvpMO1aUy1SMEOTkQpFCOl/0BNsNGXnTJ0HoHJkuGT.FFhQpGPbW"], ["created_at", "2020-04-08 21:51:23.833709"], ["updated_at", "2020-04-08 21:51:23.833709"], ["birthday", "1999-10-27"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:109
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:109
+  [1m[36mRoute Create (1.2ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 6], ["name", "Gaur Plain"], ["description", "Well, just tell him to call me as asap as possible."], ["distance", 266.5660373626227], ["time", 9098], ["elevation", 81], ["activity_type", "run"], ["route_type", "trail"], ["created_at", "2020-04-08 21:51:23.898857"], ["updated_at", "2020-04-08 21:51:23.898857"]]
+  ↳ db/seeds.rb:109
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:109
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 6], ["name", "Figure-8 Circuit"], ["description", "You don't know me, you've just seen my penis."], ["distance", 250.99767464572935], ["time", 7466], ["elevation", 232], ["activity_type", "ride"], ["route_type", "trail"], ["created_at", "2020-04-08 21:51:23.917370"], ["updated_at", "2020-04-08 21:51:23.917370"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:131
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:131
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 8], ["name", "Port Town Aero Dive"], ["description", "And I knew exactly what to do. But in a much more real sense, I had no idea what to do."], ["distance", 113.72854919105521], ["time", 2833], ["elevation", 17], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:51:23.924685"], ["updated_at", "2020-04-08 21:51:23.924685"]]
+  ↳ db/seeds.rb:131
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:131
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:142
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:142
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 6], ["name", "WarioWare, Inc."], ["description", "I am dead inside."], ["distance", 56.34494577742754], ["time", 2832], ["elevation", 230], ["activity_type", "run"], ["route_type", "trail"], ["created_at", "2020-04-08 21:51:23.933332"], ["updated_at", "2020-04-08 21:51:23.933332"]]
+  ↳ db/seeds.rb:142
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:142
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:153
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:153
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 8], ["name", "Arena Ferox"], ["description", "I am dead inside."], ["distance", 210.41595909134378], ["time", 8956], ["elevation", 267], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:51:23.938525"], ["updated_at", "2020-04-08 21:51:23.938525"]]
+  ↳ db/seeds.rb:153
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:153
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:164
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:164
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 8], ["name", "Lylat Cruise"], ["description", "Well, happy birthday, Jesus. Sorry your party's so lame."], ["distance", 17.45], ["time", 2797], ["elevation", 225], ["activity_type", "ride"], ["route_type", "trail"], ["created_at", "2020-04-08 21:51:23.944059"], ["updated_at", "2020-04-08 21:51:23.944059"]]
+  ↳ db/seeds.rb:164
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:164
+  [1m[36mRoute Load (1.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:16
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:16
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.8ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.6ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.9ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.5ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoute Destroy (0.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1cP88YxFv3LiN3SsV_kR8Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "demo"], ["fname", "Edward"], ["lname", "Trinidad"], ["gender", "M"], ["location", 10032], ["session_token", "1cP88YxFv3LiN3SsV_kR8Q"], ["password_digest", "$2a$12$NhA6nHmvlNPWkGcDFvA/H.QYB3yFsWpLTifeJ3pzDO3KB8p.WtmzK"], ["created_at", "2020-04-08 21:53:42.561871"], ["updated_at", "2020-04-08 21:53:42.561871"], ["birthday", "1996-10-26"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Miracle"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Du6fm06rHQAE-elrqliIRw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Miracle"], ["fname", "Casandra"], ["lname", "Fadel"], ["gender", "F"], ["location", 47131], ["session_token", "Du6fm06rHQAE-elrqliIRw"], ["password_digest", "$2a$12$103YQ/ojkpTZaeNX80NU4OL.dlnkeSoODjYwGUtwK3t1ZwncD2azq"], ["created_at", "2020-04-08 21:53:43.303465"], ["updated_at", "2020-04-08 21:53:43.303465"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Dendi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zkUv3wL2X8WOQey62BJ8-Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Dendi"], ["fname", "Karl"], ["lname", "Harvey"], ["gender", "Other"], ["location", 28523], ["session_token", "zkUv3wL2X8WOQey62BJ8-Q"], ["password_digest", "$2a$12$fEbKAi5fSE69.c092u2s2OytRuoP4lWSbDQ4OAra/4RQOiLf8xvXK"], ["created_at", "2020-04-08 21:53:43.596998"], ["updated_at", "2020-04-08 21:53:43.596998"], ["birthday", "2009-11-4"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Surefour"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-arzmKXr_91hvZP0SxJ_yg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Surefour"], ["fname", "Vito"], ["lname", "Spencer"], ["gender", "F"], ["location", 79133], ["session_token", "-arzmKXr_91hvZP0SxJ_yg"], ["password_digest", "$2a$12$9szTpEW4A9h5G0wY6qVfVudKH0miZqK5cyLIbW7OqLVKqtIgIdTmC"], ["created_at", "2020-04-08 21:53:43.925178"], ["updated_at", "2020-04-08 21:53:43.925178"], ["birthday", "1999-10-27"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ACE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5HnGhodbWFAQWpgmGnt-Bw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "ACE"], ["fname", "Evelia"], ["lname", "Brown"], ["gender", "Other"], ["location", 24986], ["session_token", "5HnGhodbWFAQWpgmGnt-Bw"], ["password_digest", "$2a$12$nU2Ap49KEnM9yPNbvlERp..sXNK84hMB6QBmCIkTEMave1XpKntju"], ["created_at", "2020-04-08 21:53:44.219812"], ["updated_at", "2020-04-08 21:53:44.219812"], ["birthday", "1998-10-21"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cArn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0nX734etezEIYkMkSyq1PQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "fname", "lname", "gender", "location", "session_token", "password_digest", "created_at", "updated_at", "birthday") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "cArn"], ["fname", "Roxanna"], ["lname", "Little"], ["gender", "M"], ["location", 20740], ["session_token", "0nX734etezEIYkMkSyq1PQ"], ["password_digest", "$2a$12$rWdvF7t6pGgPtOH2ZRJ07.zx.gJ4DOosKPI1ps6E7cA0yhefXSski"], ["created_at", "2020-04-08 21:53:44.540723"], ["updated_at", "2020-04-08 21:53:44.540723"], ["birthday", "2009-11-4"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:109
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:109
+  [1m[36mRoute Create (0.6ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 13], ["name", "Flat Zone 2"], ["description", "Welcome back, Jerky Jerk-Face."], ["distance", 92.66], ["time", 3927], ["elevation", 29], ["activity_type", "run"], ["route_type", "MTB"], ["created_at", "2020-04-08 21:53:44.596256"], ["updated_at", "2020-04-08 21:53:44.596256"]]
+  ↳ db/seeds.rb:109
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:109
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 12], ["name", "Woolly World"], ["description", "I am running away from my responsibilities. And it feels good."], ["distance", 153.43], ["time", 3200], ["elevation", 275], ["activity_type", "ride"], ["route_type", "trail"], ["created_at", "2020-04-08 21:53:44.606194"], ["updated_at", "2020-04-08 21:53:44.606194"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:131
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:131
+  [1m[36mRoute Create (0.6ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 10], ["name", "Spear Pillar"], ["description", "Make friends first, make sales second, make love third. In no particular order."], ["distance", 147.66], ["time", 9103], ["elevation", 27], ["activity_type", "run"], ["route_type", "trail"], ["created_at", "2020-04-08 21:53:44.615870"], ["updated_at", "2020-04-08 21:53:44.615870"]]
+  ↳ db/seeds.rb:131
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:131
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:142
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:142
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 10], ["name", "Arena Ferox"], ["description", "Make friends first, make sales second, make love third. In no particular order."], ["distance", 148.46], ["time", 37], ["elevation", 250], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:53:44.630807"], ["updated_at", "2020-04-08 21:53:44.630807"]]
+  ↳ db/seeds.rb:142
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:142
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:153
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:153
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 11], ["name", "Wuhu Island"], ["description", "Make friends first, make sales second, make love third. In no particular order."], ["distance", 214.21], ["time", 277], ["elevation", 202], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:53:44.637058"], ["updated_at", "2020-04-08 21:53:44.637058"]]
+  ↳ db/seeds.rb:153
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:153
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:164
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:164
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 11], ["name", "Luigi's Mansion"], ["description", "You may look around and see two groups here: white collar, blue collar. But I don't see it that way, and you know why not? Because I am collar-blind."], ["distance", 117.5], ["time", 8144], ["elevation", 35], ["activity_type", "run"], ["route_type", "cyclocross"], ["created_at", "2020-04-08 21:53:44.642154"], ["updated_at", "2020-04-08 21:53:44.642154"]]
+  ↳ db/seeds.rb:164
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:164
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:177
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:177
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 11], ["name", "Kongo Jungle"], ["description", "I don't come up with this stuff, I just forward it along. You wouldn't arrest the guy who was just passing drugs from one guy to another."], ["distance", 265.55], ["time", 2166], ["elevation", 164], ["activity_type", "ride"], ["route_type", "road"], ["created_at", "2020-04-08 21:53:44.647716"], ["updated_at", "2020-04-08 21:53:44.647716"]]
+  ↳ db/seeds.rb:177
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:177
+  [1m[36mRoute Load (1.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 10]]
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
