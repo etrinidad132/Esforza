@@ -30,54 +30,54 @@ user1 = User.create(
     password: "password", 
     fname: "Edward", 
     lname: "Trinidad", 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+    birthday: "1996-10-26", 
+    gender: "M", 
+    location: 10032 )
 
-user2 = User.create(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user2 = User.create(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user3 = User.create(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user3 = User.create(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user4 = User.create(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user4 = User.create(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user5 = User.create(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user5 = User.create(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user6 = User.create(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user6 = User.create(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
     # {
     # username: "Matantan", 
