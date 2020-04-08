@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# $.ajax({
+#     method: 'GET',
+#     url: '/api/user/5'
+# })
+
+
+
+
 User.destroy_all
 
 def random_yankees_date
@@ -18,10 +26,10 @@ def random_gender
 end
 
 user1 = User.create(
-    username: Faker::Esport.player, 
+    username: "demo", 
     password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
+    fname: "Edward", 
+    lname: "Trinidad", 
     birthday: random_yankees_date, 
     gender: random_gender, 
     location: Faker::Address.zip_code.to_i )
@@ -62,10 +70,21 @@ user5 = User.create(
     gender: random_gender, 
     location: Faker::Address.zip_code.to_i )
 
+user6 = User.create(
+    username: Faker::Esport.player, 
+    password: "password", 
+    fname: Faker::Name.first_name, 
+    lname: Faker::Name.last_name, 
+    birthday: random_yankees_date, 
+    gender: random_gender, 
+    location: Faker::Address.zip_code.to_i )
 
-
-# user1 = User.create(username: Faker::TvShows::RickAndMorty.character, password: 'password')
-# user2 = User.create(username: Faker::TvShows::RickAndMorty.character, password: 'password')
-# user3 = User.create(username: Faker::TvShows::RickAndMorty.character, password: 'password')
-# user4 = User.create(username: Faker::TvShows::RickAndMorty.character, password: 'password')
-# user5 = User.create(username: Faker::TvShows::RickAndMorty.character, password: 'password')
+    # {
+    # username: "Matantan", 
+    # password: "password", 
+    # fname: "Aaron", 
+    # lname: "Torres", 
+    # birthday: "1990-09-28", 
+    # gender: "M", 
+    # location: 10014
+    # }

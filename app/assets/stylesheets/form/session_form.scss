@@ -1,0 +1,135 @@
+$test-color: salmon;
+$button-text-color: #242428;
+$border-color: #dfdfe8;
+$hover-color: #f0f0f5;
+$strava-orange: #f24c03;
+
+// .form-errors {
+//     top: 10px;
+//     background-color: red;
+//     width: 400px;
+//     color: white;
+//     font-size: 14px;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+// }
+
+// .form-errors:empty {
+//     display: none;
+// }
+
+.form-container {
+    display: flex;
+    align-items: center;
+    text-align: center; 
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding-top: 116px;
+    background-size: cover;
+    background-image: image-url('cycling_peloton.jpg'); 
+
+    form {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 461px;
+        width: 400px;
+        background-color: rgba(0,0,0,0.75);
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    
+        input {
+            height: 40px;
+            width: 300px;
+            font-weight: 400;
+            font-size: 13px;
+            color: lightgray;
+            background-color: rgba(0,0,0,0.75);
+            margin: 0;
+            -webkit-appearance: none;
+            border-style: none;
+            border-radius: 3px;
+            padding-left: 10px;
+            border: solid .5px lightgray;
+        }
+    }
+
+    form input:focus {
+        background-color: rgba(255,255,255,0.9);
+        box-shadow: 0 0 8px 0 rgba(255,255,255,0.8);
+        border: .5px solid rgba(0,0,0,0.5);
+        color: #333;
+    }
+
+    form button {
+        background-color: orangered;
+        color: white;
+        -webkit-appearance: none;
+        border-style: none;
+        height: 40px;
+        width: 312px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 3px;
+    }
+
+    form button:hover {
+        cursor: pointer;
+        transition: background-color 300ms;
+        background-color: rgb(218, 65, 9);
+    }
+}
+
+.form-type {
+    color: white;
+    display: flex;
+    text-align: center;
+    font-size: 34px;
+    background-color: rgba(0,0,0,0.85);
+    width: 400px;
+    height: 82px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+form h3 {
+     color: white;
+     font-weight: 700;
+}
+
+.google {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: $button-text-color;
+    // color: white;
+    background-color: white;
+    width: 255px;
+    border-radius: 3px;
+    line-height: 24px;
+    padding: 6px 16px;
+    padding-left: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    background-image: image-url('google_logo.svg');
+    background-position: 11px;
+    background-size: 23px;
+    background-repeat: no-repeat;
+}
+
+.google:hover {
+    cursor: pointer;
+    background-image: image-url('google_logo.svg');
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    transition: all .25s ease;
+}

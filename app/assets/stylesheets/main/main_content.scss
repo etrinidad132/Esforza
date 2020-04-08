@@ -1,0 +1,66 @@
+.splash {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 70px;
+    background-size: cover;
+    
+    // display: flex;
+    // justify-content: center;
+    // height: 100vh;
+    // width: 100vw;
+    // flex-direction: row;
+    // box-sizing: border-box;
+    // background-size: unset;
+    // position: relative;
+    // overflow: hidden;
+    // // background-image: asset-url("mountains.jpg");
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // // align-items: center;
+    // text-align: center;
+    // height: 100vh;
+    // width: 100vh;
+    // box-sizing: border-box;
+    // position: relative;
+    // overflow: hidden;
+
+    .main-container {
+        // h2 {
+        //     // font-family: Andale Mono, AndaleMono, monospace;
+        //     font-size: 70px;
+        //     // color: #fff;
+        //     letter-spacing: 15.14px;
+        //     text-transform: uppercase;
+        //     line-height: 52px;
+        //     transform: scaleY(1.1);
+        //     left: 50%;
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: center;
+        // }
+        h2 {
+            // color: rgb(36, 36, 40);
+            // font-size: 48px;
+            // font-weight: 700;
+            // margin-top: 70px;
+            // margin-bottom: 80px;
+
+            padding-top: 143px;
+            // position: relative;
+            // bottom: 300px;
+            font-size: 48px;
+            font-weight: 600;
+            // justify-content: center;
+            // align-items: center;
+            // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+}

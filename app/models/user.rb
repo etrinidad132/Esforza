@@ -4,21 +4,22 @@
 #
 #  id              :bigint           not null, primary key
 #  username        :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
-#  birthday        :string           not null
-#  gender          :string           not null
-#  location        :integer          not null
+#  fname           :string
+#  lname           :string
+#  gender          :string
+#  location        :integer
 #  session_token   :string           not null
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  birthday        :string
 #
 class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true
     validates :session_token, presence: true, uniqueness: true
-    validates :password_digest, :fname, :lname, :birthday, :location, presence: true
-    validates :gender, inclusion: { in: ["M","F", "Other"]}
+    validates :password_digest, presence: true
+    # validates :password_digest, :fname, :lname, :birthday, :location, presence: true
+    validates :gender, inclusion: { in: ["M","F", "Other"]}, allow_nil: true
     validates :password, length: { minimum: 6, allow_nil: true}
 
     attr_reader :password
@@ -26,7 +27,7 @@ class User < ApplicationRecord
 
     ## Class Methods
 
-    def self.find_by_credentials(usename, password)
+    def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user
         user.is_password?(password) ? user : nil

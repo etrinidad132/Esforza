@@ -1,0 +1,159 @@
+$test-color: salmon;
+$button-text-color: #242428;
+$border-color: #dfdfe8;
+$hover-color: #f0f0f5;
+$strava-orange: #f24c03;
+
+// .modal-background {
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   background: rgba(0, 0, 0, 0.7);
+//   z-index: 10;
+// }
+
+// .modal-container {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+// .modal-container {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+///////////////////////////////////////////////////////////////////////////////
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding-top: 116px;
+    background-size: cover;
+    // background-image: image-url("cycling_peloton.jpg");
+    //////////// MODAL
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    form {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 461px;
+        width: 400px;
+        background-color: white;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        ////// INSPECTOR CONSOLE
+        width: 635px;
+        border: 0.5px solid;
+        border-radius: 5px;
+        padding: 25px;
+        text-align: initial;
+
+        input,
+        select {
+            height: 40px;
+            width: 300px;
+            font-weight: 400;
+            font-size: 13px;
+            color: black;
+            background-color: white;
+            margin: 0;
+            -webkit-appearance: none;
+            border-style: none;
+            border-radius: 3px;
+            padding-left: 10px;
+            border: solid 0.5px lightgray;
+            margin-top: 10px;
+        }
+    }
+
+    form input:focus,
+    select:focus {
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.8);
+        border: 0.5px solid rgba(0, 0, 0, 0.5);
+        color: #333;
+    }
+
+    form button {
+        background-color: orangered;
+        color: white;
+        -webkit-appearance: none;
+        border-style: none;
+        height: 40px;
+        width: 312px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 3px;
+    }
+
+    form button:hover {
+        cursor: pointer;
+        transition: background-color 300ms;
+        background-color: rgb(218, 65, 9);
+    }
+}
+
+.form-type {
+    color: white;
+    display: flex;
+    text-align: center;
+    font-size: 34px;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 400px;
+    height: 82px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.modal-form h2 {
+    color: $button-text-color;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.modal-form h3 {
+    color: $button-text-color;
+    font-size: 17px;
+}
+
+///////inspector styles
+// form
+// element.style {
+//     background-color: white;
+//     width: 635px;
+//     border: 0.5px solid;
+//     padding: 25px;
+// }
+
+// create profile
+// element.style {
+//     font-size: 25px;
+//     font-weight: 500;
+// }
