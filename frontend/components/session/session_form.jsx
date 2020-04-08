@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 class SessionForm extends React.Component {
     constructor(props) {
-        super(props) // errors array, formType, processForm()
+        super(props) // errors array, formType, processForm(), loginDemo
         this.state = {
             username: "",
             password: ""
@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
 
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.googleLogin = this.googleLogin.bind(this)
     }
 
     update(type) {
@@ -29,19 +30,24 @@ class SessionForm extends React.Component {
         }
     }
 
+    googleLogin() {
+        debugger
+        this.props.loginDemo()
+    }
+
 
     render() {
         // debugger
-        let buttonText = "";
+        let formText = "";
         let optionalLink = "";
         let optionalText = "";
 
         if (this.props.formType === "login") {
-            buttonText = "Log In";
+            formText = "Log In";
             optionalLink = "/signup";
             optionalText = "Sign Up";
         } else {
-            buttonText = "Sign Up";
+            formText = "Sign Up";
             optionalLink = "/login";
             optionalText = "Log In";
         }
@@ -59,25 +65,31 @@ class SessionForm extends React.Component {
 
         return (
             <>
-                <form>
-                    <label>Username
-                    <input type="text"
+                <div className="form-container">
+                    <h3 className="form-type">{formText}</h3>
+                    <form>
+                        <a className="google" onClick={this.googleLogin}>{formText} using Demo</a>
+                        {/* <label>Username */}
+                        <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
-                            placeholder="Username" />
-                    </label><br />
-                    <label>Password
-                    <input type="password"
+                            placeholder="Your Username" />
+                        {/* </label> */}
+                        <br />
+                        {/* <label>Password */}
+                        <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password" />
-                    </label><br />
-                    <button onClick={this.handleSubmit}>{buttonText}</button>
-                </form>
+                        {/* </label> */}
+                        <br />
+                        <button onClick={this.handleSubmit}>{formText}</button>
+                    </form>
 
-                <ul>{errorLi}</ul>
+                    <ul>{errorLi}</ul>
 
-                <Link to={optionalLink}>{optionalText}</Link>
+                    {/* <Link to={optionalLink}>{optionalText}</Link> */}
+                </div>
             </>
         )
     }

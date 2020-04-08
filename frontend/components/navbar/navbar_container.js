@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import NavBar from "./navbar";
-import { logout, receiveErrors } from '../../actions/session_actions';
+import { logout, receiveErrors, login } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
     return ({
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return ({
         logout: () => dispatch(logout()),
+        loginDemo: () => dispatch(login({ username: "demo", password: "password" })),
         receiveErrors: (errorsArray) => dispatch(receiveErrors(errorsArray))
     });
 }

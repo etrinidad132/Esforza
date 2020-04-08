@@ -1,9 +1,9 @@
-import React from "react";
 import { connect } from "react-redux";
 import SessionForm from "./session_form"
 import { signup } from "../../actions/session_actions"
-import { updateUser } from "../../actions/user_actions"
 import { openModal, closeModal } from "../../actions/modal_actions"
+import { login } from "../../actions/session_actions"
+
 
 //////    MAP UPDATEUSER TO PROPS THEN MAKE CREATE USERS REDIRECT TO DIFFERNT PAGE TO UPDATE USER PROFILE
 
@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return ({
         processForm: (user) => dispatch(signup(user)),
         openModal: (modalType) => dispatch(openModal(modalType)),
+        loginDemo: () => dispatch(login({ username: "demo", password: "password" })),
         closeModal: () => dispatch(closeModal())
     })
 }
