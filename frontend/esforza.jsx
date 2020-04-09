@@ -36,10 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.updateUser = UserUtil.updateUser;
     window.openModal = (modalType) => store.dispatch(openModal(modalType));
     window.closeModal = () => store.dispatch(closeModal());
-
     window.receiveRoutes = RouteUtil.receiveRoutes();
     window.receiveRoute = RouteUtil.receiveRoute;
-    
     window.createRoute = RouteUtil.createRoute;
     window.updateRoute = RouteUtil.updateRoute;
     window.destroyRoute = RouteUtil.destroyRoute;
