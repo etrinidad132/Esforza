@@ -8,5 +8,4 @@ Rails.application.routes.draw do
     resources :routes, only: [:index, :show, :create, :update, :destroy]
     resource :session, only: [:create, :destroy]
   end
-
 end

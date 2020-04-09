@@ -174,17 +174,27 @@ route6 = Route.create!(
     
 p "Routes Done"
 
-route = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
-    distance: ((rand(0.1..300.0) * 100).round / 100.0),
-    time: rand(0..9999),
-    elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
-)
-
+# route = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type)
+# )
+# route = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type)
+# )
+    
     
     # {
     # username: "Matantan", 
