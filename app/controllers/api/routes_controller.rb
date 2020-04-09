@@ -43,7 +43,6 @@ class Api::RoutesController < ApplicationController
     def destroy
         @route = Route.find(params[:id])
         if @route.destroy
-             #   render json: {message: "Logout Successful!"}
             render json: {}
         else
             render json: ["Route does not exist!"], status: 404
@@ -56,13 +55,3 @@ class Api::RoutesController < ApplicationController
         params.require(:route).permit(:user_id, :name, :description, :distance, :time, :elevation, :activity_type, :route_type)
     end
 end
-
-
-#  user_id: 13,
-#  name: "Flat Zone 2",
-#  description: "Welcome back, Jerky Jerk-Face.",
-#  distance: 92.66,
-#  time: 3927,
-#  elevation: 29,
-#  activity_type: "run",
-#  route_type: "MTB",

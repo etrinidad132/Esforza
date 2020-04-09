@@ -6,7 +6,9 @@ import Root from "./components/root"
 ///////////////////////////////////////////////////////////////////
 import * as SessionUtil from "./util/session_api_util"
 import * as UserUtil from "./util/user_util"
+import * as RouteUtil from "./util/route_api_util"
 import { openModal, closeModal } from "./actions/modal_actions"
+import { Route } from "react-router-dom";
 ///////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,9 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = SessionUtil.login;
     window.signup = SessionUtil.signup;
     window.logout = SessionUtil.logout;
-    window.updateUser = UserUtil.updateUser
-    window.openModal = (modalType) => store.dispatch(openModal(modalType))
-    window.closeModal = () => store.dispatch(closeModal())
+    window.updateUser = UserUtil.updateUser;
+    window.openModal = (modalType) => store.dispatch(openModal(modalType));
+    window.closeModal = () => store.dispatch(closeModal());
+
+    window.receiveRoutes = RouteUtil.receiveRoutes();
+    window.receiveRoute = RouteUtil.receiveRoute;
+    
+    window.createRoute = RouteUtil.createRoute;
+    window.updateRoute = RouteUtil.updateRoute;
+    window.destroyRoute = RouteUtil.destroyRoute;
     ///////////////////////////////////////////////////
 
     const root = document.getElementById("root")
