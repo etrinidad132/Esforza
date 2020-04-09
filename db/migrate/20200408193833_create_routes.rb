@@ -9,8 +9,9 @@ class CreateRoutes < ActiveRecord::Migration[5.2]
       t.integer :elevation, null: false
       t.string :activity_type, null: false
       t.string :route_type, null: false
+      t.text :thumbnail, null: false
       t.timestamps
     end
     add_index :routes, :user_id
-ç  end
+  end
 end

@@ -90,6 +90,7 @@ p "Users Done"
 users_array = [ user1, user2, user3, user4, user5, user6 ]
 activity_type = ["ride", "run"]
 route_type = ["road", "MTB", "cyclocross", "road", "trail"]
+thumbnail_sample = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
     
 def user_id_generator(array)
     array.sample
@@ -114,7 +115,8 @@ route1 = Route.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
+    route_type: route_type_generator(route_type),
+    thumbnail: thumbnail_sample
 )
 
 route2 = Route.create!(
@@ -125,7 +127,8 @@ route2 = Route.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
+    route_type: route_type_generator(route_type),
+    thumbnail: thumbnail_sample
 )
 
 route3 = Route.create!(
@@ -136,7 +139,8 @@ route3 = Route.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
+    route_type: route_type_generator(route_type),
+    thumbnail: thumbnail_sample
 )
 
 route4 = Route.create!(
@@ -147,7 +151,8 @@ route4 = Route.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
+    route_type: route_type_generator(route_type),
+    thumbnail: thumbnail_sample
 )
 
 route5 = Route.create!(
@@ -158,7 +163,8 @@ route5 = Route.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
+    route_type: route_type_generator(route_type),
+    thumbnail: thumbnail_sample
 )
 
 route6 = Route.create!(
@@ -169,7 +175,8 @@ route6 = Route.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type)
+    route_type: route_type_generator(route_type),
+    thumbnail: thumbnail_sample
 )
     
 p "Routes Done"
@@ -182,7 +189,8 @@ p "Routes Done"
 #     time: rand(0..9999),
 #     elevation: rand(0..300),
 #     activity_type: activity_type_generator(activity_type),
-#     route_type: route_type_generator(route_type)
+#     route_type: route_type_generator(route_type),
+    # thumbnail: thumbnail_sample
 # )
 # route = Route.create!(
 #     user_id: user_id_generator(users_array).id,

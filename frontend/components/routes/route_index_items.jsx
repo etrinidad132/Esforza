@@ -25,12 +25,13 @@ class RouteIndexItem extends React.Component {
     }
     // https://www.google.com/maps/@40.8357361,-73.9465457,19.53z
     render() {
+        // debugger
         return (
             <>
                 <div className="route-index-item-container">
                     {/* <h1>Hello from Route Index Items</h1> */}
                     <Link to={`routes/${this.props.route.id}`}>
-                        <img className="map-thumbnail" src="https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"/>
+                        <img className="map-thumbnail" src={this.props.route.thumbnail}/>
                     </Link>
                     {/* MAP WILL GO HERE*/}
                     {/* EDIT AND DELETE ICONS WILL GO HERE */}

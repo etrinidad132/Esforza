@@ -11,6 +11,7 @@
 #  elevation     :integer          not null
 #  activity_type :string           not null
 #  route_type    :string           not null
+#  thumbnail     :text             not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

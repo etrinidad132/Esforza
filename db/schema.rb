@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2020_04_08_193833) do
     t.integer "elevation", null: false
     t.string "activity_type", null: false
     t.string "route_type", null: false
+    t.text "thumbnail", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "name"], name: "index_routes_on_user_id_and_name", unique: true
     t.index ["user_id"], name: "index_routes_on_user_id"
   end
 
