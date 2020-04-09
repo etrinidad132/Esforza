@@ -9796,3 +9796,910 @@ Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 7.7ms)
 
 
   [1m[36mRoute Load (1.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-04-09 09:51:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iEAen7ssfi9neKtA3I_wcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (21.3ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (66.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (157.1ms)
+Completed 200 OK in 2160ms (Views: 2107.0ms | ActiveRecord: 30.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 09:51:38 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iEAen7ssfi9neKtA3I_wcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (6.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (7.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/index.json.jbuilder (49.8ms)
+Completed 200 OK in 110ms (Views: 73.7ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 09:53:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (45.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iEAen7ssfi9neKtA3I_wcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (4.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 2356ms (Views: 2304.1ms | ActiveRecord: 45.7ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 09:53:21 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iEAen7ssfi9neKtA3I_wcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (7.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (1.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.1ms)
+  Rendered api/routes/index.json.jbuilder (23.7ms)
+Completed 200 OK in 63ms (Views: 47.2ms | ActiveRecord: 13.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-09 09:53:49 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iEAen7ssfi9neKtA3I_wcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (13.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Boxer"], ["id", 29], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Ars1XM7WxuNRr5brgRvqLQ"], ["id", 29], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Update (38.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ars1XM7WxuNRr5brgRvqLQ"], ["updated_at", "2020-04-09 13:53:50.129744"], ["id", 29]]
+  ↳ app/models/user.rb:57
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:57
+Completed 200 OK in 106ms (Views: 0.6ms | ActiveRecord: 63.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 09:53:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 214ms (Views: 205.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 09:53:53 -0400
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (3.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (0.6ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.3ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.4ms)
+  Rendered api/routes/index.json.jbuilder (28.5ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 09:55:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 542ms (Views: 530.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 09:56:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 882ms (Views: 877.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 09:56:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 773ms (Views: 768.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 09:56:35 -0400
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (57.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (2.5ms)
+  Rendered api/routes/_route.json.jbuilder (0.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.3ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.4ms)
+  Rendered api/routes/_route.json.jbuilder (0.4ms)
+  Rendered api/routes/index.json.jbuilder (86.6ms)
+Completed 200 OK in 106ms (Views: 45.9ms | ActiveRecord: 57.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 09:56:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 193ms (Views: 183.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 09:57:00 -0400
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (8.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (2.6ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.3ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/index.json.jbuilder (30.6ms)
+Completed 200 OK in 57ms (Views: 45.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/routes/27" for ::1 at 2020-04-09 09:57:26 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mRoute Load (6.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/_route.json.jbuilder (2.1ms)
+  Rendered api/routes/show.json.jbuilder (5.3ms)
+Completed 200 OK in 39ms (Views: 17.6ms | ActiveRecord: 6.8ms)
+
+
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-04-09 09:59:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 1049ms (Views: 1041.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 09:59:40 -0400
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (24.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (4.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.4ms)
+  Rendered api/routes/index.json.jbuilder (60.8ms)
+Completed 200 OK in 93ms (Views: 64.3ms | ActiveRecord: 24.3ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 10:00:11 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"31", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (39.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mRoute Create (25.0ms)[0m  [1m[32mINSERT INTO "routes" ("user_id", "name", "description", "distance", "time", "elevation", "activity_type", "route_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 31], ["name", "Orlando"], ["description", "The city of Orlando is filled with clubs, bars, and attractions"], ["distance", 13.2], ["time", 9999], ["elevation", 123], ["activity_type", "ride"], ["route_type", "MTB"], ["created_at", "2020-04-09 14:00:11.564422"], ["updated_at", "2020-04-09 14:00:11.564422"]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/_route.json.jbuilder (2.2ms)
+  Rendered api/routes/show.json.jbuilder (8.6ms)
+Completed 200 OK in 361ms (Views: 41.3ms | ActiveRecord: 94.2ms)
+
+
+  [1m[36mRoute Load (8.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-04-09 10:01:55 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1861ms (Views: 1852.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/32" for ::1 at 2020-04-09 10:02:25 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"32", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"32"}
+  [1m[36mRoute Load (2.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Unpermitted parameter: :id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:35
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:35
+  [1m[36mRoute Update (22.1ms)[0m  [1m[33mUPDATE "routes" SET "description" = $1, "updated_at" = $2 WHERE "routes"."id" = $3[0m  [["description", "As the skylights turn off, the lights of Orlando turn on"], ["updated_at", "2020-04-09 14:02:25.770631"], ["id", 32]]
+  ↳ app/controllers/api/routes_controller.rb:35
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:35
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/_route.json.jbuilder (0.8ms)
+  Rendered api/routes/show.json.jbuilder (5.8ms)
+Completed 200 OK in 119ms (Views: 21.3ms | ActiveRecord: 68.9ms)
+
+
+  [1m[36mRoute Load (12.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-04-09 10:03:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 862ms (Views: 848.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/routes/32" for ::1 at 2020-04-09 10:03:47 -0400
+Processing by Api::RoutesController#destroy as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mRoute Load (3.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:45
+  [1m[36mRoute Destroy (7.2ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 32]]
+  ↳ app/controllers/api/routes_controller.rb:45
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:45
+Completed 200 OK in 105ms (Views: 0.3ms | ActiveRecord: 32.5ms)
+
+
+  [1m[36mRoute Load (24.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-04-09 10:35:47 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 1132ms (Views: 1109.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 10:37:18 -0400
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (73.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (11.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.3ms)
+  Rendered api/routes/_route.json.jbuilder (0.3ms)
+  Rendered api/routes/_route.json.jbuilder (0.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.4ms)
+  Rendered api/routes/index.json.jbuilder (212.6ms)
+Completed 200 OK in 265ms (Views: 175.0ms | ActiveRecord: 73.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 10:37:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 234ms (Views: 227.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-09 10:37:45 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Boxer", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Boxer"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  Rendering api/users/show.json.jbuilder
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (23.3ms)
+  Rendered api/users/show.json.jbuilder (31.6ms)
+Completed 200 OK in 447ms (Views: 54.2ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-09 10:38:01 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ars1XM7WxuNRr5brgRvqLQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  Rendered api/routes/_route.json.jbuilder (0.8ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/_route.json.jbuilder (0.1ms)
+  Rendered api/routes/_route.json.jbuilder (0.2ms)
+  Rendered api/routes/index.json.jbuilder (23.9ms)
+Completed 200 OK in 65ms (Views: 47.4ms | ActiveRecord: 5.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-09 10:38:29 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ars1XM7WxuNRr5brgRvqLQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Boxer"], ["id", 29], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (7.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "eTVLXCFxii6suFOT8WJx9g"], ["id", 29], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Update (35.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eTVLXCFxii6suFOT8WJx9g"], ["updated_at", "2020-04-09 14:38:29.430451"], ["id", 29]]
+  ↳ app/models/user.rb:57
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:57
+Completed 200 OK in 113ms (Views: 0.4ms | ActiveRecord: 68.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 10:38:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 178ms (Views: 170.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/27" for ::1 at 2020-04-09 10:38:51 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mRoute Load (1.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/_route.json.jbuilder (1.4ms)
+  Rendered api/routes/show.json.jbuilder (8.9ms)
+Completed 200 OK in 47ms (Views: 29.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 10:40:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 1657ms (Views: 1649.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:40:38 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (2.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 39ms (ActiveRecord: 5.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/" for ::1 at 2020-04-09 10:42:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 886ms (Views: 877.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 10:43:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 882ms (Views: 874.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:43:53 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (7.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 10ms (ActiveRecord: 7.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:44:02 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (3.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 7ms (ActiveRecord: 3.0ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/" for ::1 at 2020-04-09 10:45:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 1665ms (Views: 1654.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:45:24 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (10.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 110ms (ActiveRecord: 37.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/" for ::1 at 2020-04-09 10:48:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 826ms (Views: 818.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:48:33 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (9.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 39ms (ActiveRecord: 9.0ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:51:25 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 169ms (ActiveRecord: 144.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:52:17 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 40ms (ActiveRecord: 24.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:52:27 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 7ms (ActiveRecord: 1.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 10:54:04 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 40ms (ActiveRecord: 16.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/" for ::1 at 2020-04-09 10:58:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 935ms (Views: 919.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:00:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 590ms (Views: 575.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:00:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 802ms (Views: 792.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:00:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 274ms (Views: 265.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:01:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 1254ms (Views: 1246.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 11:01:16 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 95ms (ActiveRecord: 42.9ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started GET "/" for ::1 at 2020-04-09 11:09:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 1347ms (Views: 1338.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/routes/7" for ::1 at 2020-04-09 11:09:22 -0400
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mRoute Load (14.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:18
+Completed 404 Not Found in 1148ms (ActiveRecord: 16.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=7:
+  app/controllers/api/routes_controller.rb:18:in `show'
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:10:09 -0400
+Processing by Api::RoutesController#create as JSON
+Completed 400 Bad Request in 21ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: route:
+  app/controllers/api/routes_controller.rb:55:in `route_params'
+  app/controllers/api/routes_controller.rb:23:in `create'
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:11:06 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (24.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 731ms (Views: 1.5ms | ActiveRecord: 137.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:13:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 987ms (Views: 977.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:13:18 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 92ms (Views: 1.4ms | ActiveRecord: 25.6ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:13:28 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:16:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 1060ms (Views: 1030.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:16:12 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:18:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 168ms (Views: 163.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:18:26 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+No template found for Api::RoutesController#create, rendering head :no_content
+Completed 204 No Content in 532ms (ActiveRecord: 113.4ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:19:36 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 176ms (Views: 0.2ms | ActiveRecord: 87.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:22:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 944ms (Views: 931.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:22:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 274ms (Views: 270.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:23:07 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (2.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:23:59 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:24:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 948ms (Views: 940.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:24:40 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (15.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (6.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 136ms (Views: 0.2ms | ActiveRecord: 70.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:24:51 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:25:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 162ms (Views: 151.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:26:06 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (4.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-09 11:26:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1572ms (Views: 1564.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:26:38 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/routes/" for ::1 at 2020-04-09 11:26:48 -0400
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"user_id"=>"1", "name"=>"Orlando", "description"=>"The city of Orlando is filled with clubs, bars, and attractions", "distance"=>"13.2", "time"=>"9999", "elevation"=>"123", "activity_type"=>"ride", "route_type"=>"MTB"}}
+  [1m[35m (11.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 12.5ms)
+
+
+Started DELETE "/api/routes/1" for ::1 at 2020-04-09 11:30:57 -0400
+Processing by Api::RoutesController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (13.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:44
+Completed 404 Not Found in 94ms (ActiveRecord: 13.6ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:44:in `destroy'
+
+Started GET "/" for ::1 at 2020-04-09 11:34:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 474ms (Views: 455.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/1" for ::1 at 2020-04-09 11:35:08 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"1", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"1"}
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Completed 404 Not Found in 118ms (ActiveRecord: 1.6ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-04-09 11:35:37 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2526ms (Views: 2517.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/1" for ::1 at 2020-04-09 11:35:47 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"1", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"1"}
+  [1m[36mRoute Load (1.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Completed 404 Not Found in 15ms (ActiveRecord: 1.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-04-09 11:35:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 227ms (Views: 222.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/1" for ::1 at 2020-04-09 11:36:14 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"1", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"1"}
+  [1m[36mRoute Load (18.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Completed 404 Not Found in 21ms (ActiveRecord: 18.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-04-09 11:36:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 912ms (Views: 905.2ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/1" for ::1 at 2020-04-09 11:36:36 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"1", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"1"}
+  [1m[36mRoute Load (5.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Completed 404 Not Found in 35ms (ActiveRecord: 23.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-04-09 11:37:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 1114ms (Views: 1106.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/1" for ::1 at 2020-04-09 11:37:26 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"1", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"1"}
+  [1m[36mRoute Load (13.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Completed 404 Not Found in 16ms (ActiveRecord: 13.6ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-04-09 11:38:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1032ms (Views: 1025.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/routes/1" for ::1 at 2020-04-09 11:38:27 -0400
+Processing by Api::RoutesController#update as JSON
+  Parameters: {"route"=>{"id"=>"1", "description"=>"As the skylights turn off, the lights of Orlando turn on"}, "id"=>"1"}
+  [1m[36mRoute Load (1.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:33
+Completed 404 Not Found in 31ms (ActiveRecord: 8.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Route with 'id'=1:
+  app/controllers/api/routes_controller.rb:33:in `update'
+

@@ -8,7 +8,7 @@ import * as SessionUtil from "./util/session_api_util"
 import * as UserUtil from "./util/user_util"
 import * as RouteUtil from "./util/route_api_util"
 import { openModal, closeModal } from "./actions/modal_actions"
-import { Route } from "react-router-dom";
+import { fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute } from "./actions/route_actions";
 ///////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,13 +34,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = SessionUtil.signup;
     window.logout = SessionUtil.logout;
     window.updateUser = UserUtil.updateUser;
-    window.openModal = (modalType) => store.dispatch(openModal(modalType));
-    window.closeModal = () => store.dispatch(closeModal());
-    window.receiveRoutes = RouteUtil.receiveRoutes();
-    window.receiveRoute = RouteUtil.receiveRoute;
-    window.createRoute = RouteUtil.createRoute;
-    window.updateRoute = RouteUtil.updateRoute;
-    window.destroyRoute = RouteUtil.destroyRoute;
+    // window.openModal = (modalType) => store.dispatch(openModal(modalType));
+    // window.closeModal = () => store.dispatch(closeModal());
+    window.fetchRoutes = () => store.dispatch(fetchRoutes());
+    window.fetchRoute = (routeId) => store.dispatch(fetchRoute(routeId));
+    window.createRoute = (route) => store.dispatch(createRoute(route));
+    window.updateRoute = (route) => store.dispatch(updateRoute(route));
+    window.destroyRoute = (routeId) => store.dispatch(destroyRoute(routeId));
+
+    // window.receiveRoutes = RouteUtil.receiveRoutes();
+    // window.receiveRoute = RouteUtil.receiveRoute;
+    // window.createRoute = RouteUtil.createRoute;
+    // window.updateRoute = RouteUtil.updateRoute;
+    // window.destroyRoute = RouteUtil.destroyRoute;
     ///////////////////////////////////////////////////
 
     const root = document.getElementById("root")
