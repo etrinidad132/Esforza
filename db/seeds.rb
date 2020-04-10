@@ -87,10 +87,10 @@ user1 = User.create!(
 p "Users Done"
 
 # Route Helper Methods
-users_array = [ user1, user2, user3, user4, user5, user6 ]
-activity_type = ["ride", "run"]
-route_type = ["road", "MTB", "cyclocross", "road", "trail"]
-thumbnail_sample = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
+# users_array = [ user1, user2, user3, user4, user5, user6 ]
+# activity_type = ["ride", "run"]
+# route_type = ["road", "MTB", "cyclocross", "road", "trail"]
+# thumbnail_sample = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
     
 def user_id_generator(array)
     array.sample
