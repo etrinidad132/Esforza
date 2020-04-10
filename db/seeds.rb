@@ -39,50 +39,50 @@ user1 = User.create!(
     gender: "M", 
     location: 10032 )
 
-user2 = User.create!(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user2 = User.create!(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user3 = User.create!(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user3 = User.create!(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user4 = User.create!(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user4 = User.create!(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user5 = User.create!(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user5 = User.create!(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
 
-user6 = User.create!(
-    username: Faker::Esport.player, 
-    password: "password", 
-    fname: Faker::Name.first_name, 
-    lname: Faker::Name.last_name, 
-    birthday: random_yankees_date, 
-    gender: random_gender, 
-    location: Faker::Address.zip_code.to_i )
+# user6 = User.create!(
+#     username: Faker::Esport.player, 
+#     password: "password", 
+#     fname: Faker::Name.first_name, 
+#     lname: Faker::Name.last_name, 
+#     birthday: random_yankees_date, 
+#     gender: random_gender, 
+#     location: Faker::Address.zip_code.to_i )
     
 p "Users Done"
 
@@ -107,77 +107,113 @@ end
 # Routes
 
 
-route1 = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
+routeSeed1 = Route.create!(
+    user_id: user1.id,
+    name: "6 Mile Slough",
+    description: "A nature walk",
     distance: ((rand(0.1..300.0) * 100).round / 100.0),
     time: rand(0..9999),
     elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type),
-    thumbnail: thumbnail_sample
+    activity_type: "run",
+    route_type: "road",
+    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
 )
 
-route2 = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
+routeSeed2 = Route.create!(
+    user_id: user1.id,
+    name: "Eco Park",
+    description: "Kayak Pier",
     distance: ((rand(0.1..300.0) * 100).round / 100.0),
     time: rand(0..9999),
     elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type),
-    thumbnail: thumbnail_sample
+    activity_type: "run",
+    route_type: "road",
+    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
 )
 
-route3 = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
+routeSeed3 = Route.create!(
+    user_id: user1.id,
+    name: "Disney Springs",
+    description: "Entertainment and Retail shopping area",
     distance: ((rand(0.1..300.0) * 100).round / 100.0),
     time: rand(0..9999),
     elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type),
-    thumbnail: thumbnail_sample
+    activity_type: "ride",
+    route_type: "cyclocross",
+    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
 )
 
-route4 = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
-    distance: ((rand(0.1..300.0) * 100).round / 100.0),
-    time: rand(0..9999),
-    elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type),
-    thumbnail: thumbnail_sample
-)
+# route1 = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type),
+#     thumbnail: thumbnail_sample
+# )
 
-route5 = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
-    distance: ((rand(0.1..300.0) * 100).round / 100.0),
-    time: rand(0..9999),
-    elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type),
-    thumbnail: thumbnail_sample
-)
+# route2 = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type),
+#     thumbnail: thumbnail_sample
+# )
 
-route6 = Route.create!(
-    user_id: user_id_generator(users_array).id,
-    name: Faker::Games::SuperSmashBros.stage,
-    description: Faker::TvShows::MichaelScott.quote,
-    distance: ((rand(0.1..300.0) * 100).round / 100.0),
-    time: rand(0..9999),
-    elevation: rand(0..300),
-    activity_type: activity_type_generator(activity_type),
-    route_type: route_type_generator(route_type),
-    thumbnail: thumbnail_sample
-)
+# route3 = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type),
+#     thumbnail: thumbnail_sample
+# )
+
+# route4 = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type),
+#     thumbnail: thumbnail_sample
+# )
+
+# route5 = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type),
+#     thumbnail: thumbnail_sample
+# )
+
+# route6 = Route.create!(
+#     user_id: user_id_generator(users_array).id,
+#     name: Faker::Games::SuperSmashBros.stage,
+#     description: Faker::TvShows::MichaelScott.quote,
+#     distance: ((rand(0.1..300.0) * 100).round / 100.0),
+#     time: rand(0..9999),
+#     elevation: rand(0..300),
+#     activity_type: activity_type_generator(activity_type),
+#     route_type: route_type_generator(route_type),
+#     thumbnail: thumbnail_sample
+# )
     
 p "Routes Done"
 
@@ -191,6 +227,7 @@ p "Routes Done"
 #     activity_type: activity_type_generator(activity_type),
 #     route_type: route_type_generator(route_type),
     # thumbnail: thumbnail_sample
+
 # )
 # route = Route.create!(
 #     user_id: user_id_generator(users_array).id,
