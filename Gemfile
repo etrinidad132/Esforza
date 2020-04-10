@@ -53,6 +53,7 @@ group :development do
   gem "binding_of_caller"
   gem "faker"
   gem "figaro"
+  gem 'font-awesome-sass'
 end
 
 group :test do

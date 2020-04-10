@@ -23,4 +23,5 @@ class Route < ApplicationRecord
 
     ## Associations
     belongs_to :user
+    has_many :locations
 end

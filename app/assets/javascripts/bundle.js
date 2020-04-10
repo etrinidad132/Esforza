@@ -386,7 +386,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["AuthRoute"], {
     path: "/signup",
     component: _session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_sign_up_modal_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_sign_up_modal_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App); // import React from "react";
@@ -664,10 +664,15 @@ var RouteIndex = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(RouteIndex);
 
   function RouteIndex(props) {
+    var _this;
+
     _classCallCheck(this, RouteIndex);
 
     // routes, currentUser, fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {}; // this.deleteRender = this.deleteRender.bind(this)
+
+    return _this;
   }
 
   _createClass(RouteIndex, [{
@@ -691,18 +696,27 @@ var RouteIndex = /*#__PURE__*/function (_React$Component) {
       }
 
       return hourText >= 1 ? "".concat(hourText, ":").concat(minText, ":").concat(secText) : "".concat(minText, ":").concat(secText);
-    }
+    } // deleteRender(routeId) {
+    //     debugger
+    //     return ((routeId) => {
+    //         this.setState({ state: this.state })
+    //         debugger
+    //         return (this.props.destroyRoute(routeId))
+    //     })
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       var indexItems = this.props.routes.map(function (route) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_route_index_items__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: route.id,
           route: route,
-          updateRoute: _this.props.updateRoute,
-          destroyRoute: _this.props.destroyRoute
+          updateRoute: _this2.props.updateRoute,
+          destroyRoute: _this2.props.destroyRoute // destroyRoute={this.deleteRender}
+
         });
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -822,6 +836,8 @@ var RouteIndexItem = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props); // route, updateRoute, destroyRoute, key
 
     _this.timeConverter = _this.timeConverter.bind(_assertThisInitialized(_this));
+    _this.destroyRoute = _this.destroyRoute.bind(_assertThisInitialized(_this));
+    _this.updateRoute = _this.updateRoute.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -841,21 +857,40 @@ var RouteIndexItem = /*#__PURE__*/function (_React$Component) {
       }
 
       return hourText >= 1 ? "".concat(hourText, ":").concat(minText, ":").concat(secText) : "".concat(minText, ":").concat(secText);
-    } // https://www.google.com/maps/@40.8357361,-73.9465457,19.53z
-
+    }
+  }, {
+    key: "destroyRoute",
+    value: function destroyRoute() {
+      debugger;
+      this.props.destroyRoute(this.props.route.id);
+      alert("delete button is working");
+    }
+  }, {
+    key: "updateRoute",
+    value: function updateRoute() {
+      debugger;
+      alert("update button is working"); //link to update route page
+      // this.props.updateRoute()
+    }
   }, {
     key: "render",
     value: function render() {
       // debugger
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "route-index-item-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-wrench",
+        onClick: this.updateRoute
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-times",
+        onClick: this.destroyRoute
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "routes/".concat(this.props.route.id)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "map-thumbnail",
         src: this.props.route.thumbnail
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "route-item-stats"
+        className: "route-index-item-stats"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "route-index-ul"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -866,9 +901,9 @@ var RouteIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "stat-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.route.distance, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("abbr", {
         title: "Miles"
-      }, "mi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Distance"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.route.elevation, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("abbr", {
+      }, " mi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Distance"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.route.elevation, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("abbr", {
         title: "Feet"
-      }, "ft"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Elevation")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Est. Moving Time"), this.timeConverter(this.props.route.time)))));
+      }, " ft"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Elevation")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Est. Moving Time  "), this.timeConverter(this.props.route.time)))));
     }
   }]);
 
@@ -1897,7 +1932,7 @@ var Auth = function Auth(_ref) {
     exact: exact,
     render: function render(props) {
       return !loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-        to: "/"
+        to: "/routes"
       });
     }
   });

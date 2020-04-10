@@ -41,7 +41,6 @@ class SessionForm extends React.Component {
         let formText = "";
         let optionalLink = "";
         let optionalText = "";
-
         if (this.props.formType === "login") {
             formText = "Log In";
             optionalLink = "/signup";

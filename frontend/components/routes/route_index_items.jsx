@@ -6,6 +6,8 @@ class RouteIndexItem extends React.Component {
         super(props)// route, updateRoute, destroyRoute, key
 
         this.timeConverter = this.timeConverter.bind(this)
+        this.destroyRoute = this.destroyRoute.bind(this)
+        this.updateRoute = this.updateRoute.bind(this)
     }
 
     timeConverter(seconds) {
@@ -23,19 +25,34 @@ class RouteIndexItem extends React.Component {
 
         return ((hourText >= 1) ? `${hourText}:${minText}:${secText}` : `${minText}:${secText}`);
     }
-    // https://www.google.com/maps/@40.8357361,-73.9465457,19.53z
+
+    destroyRoute() {
+        debugger
+        this.props.destroyRoute(this.props.route.id)
+        alert("delete button is working")
+    }
+
+    updateRoute() {
+        debugger
+        alert("update button is working")
+        //link to update route page
+        // this.props.updateRoute()
+    }
+
     render() {
         // debugger
         return (
             <>
                 <div className="route-index-item-container">
                     {/* <h1>Hello from Route Index Items</h1> */}
+                    <i className="fas fa-wrench" onClick={this.updateRoute}></i>
+                    <i className="fas fa-times" onClick={this.destroyRoute}></i>
                     <Link to={`routes/${this.props.route.id}`}>
-                        <img className="map-thumbnail" src={this.props.route.thumbnail}/>
+                        <img className="map-thumbnail" src={this.props.route.thumbnail} />
                     </Link>
                     {/* MAP WILL GO HERE*/}
                     {/* EDIT AND DELETE ICONS WILL GO HERE */}
-                    <div className="route-item-stats">
+                    <div className="route-index-item-stats">
                         <ul className="route-index-ul">
                             <div className="route-name">
                                 <Link to={`routes/${this.props.route.id}`}>{this.props.route.name}</Link>
@@ -44,19 +61,19 @@ class RouteIndexItem extends React.Component {
                             <div className="stat-list">
                                 <section>
                                     <h2>{this.props.route.distance}
-                                        <abbr title="Miles">mi</abbr>
+                                        <abbr title="Miles"> mi</abbr><br />
                                         <label>Distance</label>
                                     </h2>
                                 </section>
 
                                 <section>
                                     <h2>{this.props.route.elevation}
-                                        <abbr title="Feet">ft</abbr>
+                                        <abbr title="Feet"> ft</abbr><br />
                                         <label>Elevation</label>
                                     </h2>
                                 </section>
                             </div>
-                            <label>Est. Moving Time</label>
+                            <label>Est. Moving Time  </label>
                             {this.timeConverter(this.props.route.time)}
                         </ul>
                     </div>

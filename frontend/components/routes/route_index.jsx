@@ -5,6 +5,9 @@ import RouteIndexItem from "./route_index_items"
 class RouteIndex extends React.Component {
     constructor(props) {// routes, currentUser, fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute
         super(props)
+        this.state = {}
+
+        // this.deleteRender = this.deleteRender.bind(this)
     }
 
     componentDidMount() {
@@ -27,6 +30,15 @@ class RouteIndex extends React.Component {
         return ((hourText >= 1) ? `${hourText}:${minText}:${secText}` : `${minText}:${secText}`);
     }
 
+    // deleteRender(routeId) {
+    //     debugger
+    //     return ((routeId) => {
+    //         this.setState({ state: this.state })
+    //         debugger
+    //         return (this.props.destroyRoute(routeId))
+    //     })
+    // }
+
     render() {
         const indexItems = this.props.routes.map(route => {
             return (
@@ -35,6 +47,9 @@ class RouteIndex extends React.Component {
                     route={route}
                     updateRoute={this.props.updateRoute}
                     destroyRoute={this.props.destroyRoute}
+                    // destroyRoute={this.deleteRender}
+
+
                 />
             )
         })
