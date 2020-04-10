@@ -51,7 +51,7 @@ $strava-orange: #f24c03;
             font-weight: 700;
         }
 
-        a:hover {
+        a:hover, button:hover {
             background-color: $hover-color;
         }
     }

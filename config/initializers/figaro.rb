@@ -1,0 +1,1 @@
+# Figaro.require_keys("google_maps_key")
