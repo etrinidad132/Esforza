@@ -255,13 +255,13 @@ locationSeed1 = Location.create!(
 )
 locationSeed2 = Location.create!(
     route_id: routeSeed1.id, 
-    sequence: 1, 
+    sequence: 2, 
     lat: lat_generator(lat_array), 
     lng: lng_generator(lng_array)
 )
 locationSeed3 = Location.create!(
     route_id: routeSeed1.id, 
-    sequence: 1, 
+    sequence: 3, 
     lat: lat_generator(lat_array), 
     lng: lng_generator(lng_array)
 )

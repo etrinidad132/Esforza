@@ -9,6 +9,7 @@ import * as UserUtil from "./util/user_util"
 import * as RouteUtil from "./util/route_api_util"
 import { openModal, closeModal } from "./actions/modal_actions"
 import { fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute } from "./actions/route_actions";
+import { fetchLocations, fetchLocation, createLocation, updateLocation, deleteLocation } from "./actions/location_actions";
 ///////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,6 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createRoute = (route) => store.dispatch(createRoute(route));
     window.updateRoute = (route) => store.dispatch(updateRoute(route));
     window.destroyRoute = (routeId) => store.dispatch(destroyRoute(routeId));
+
+    window.fetchLocations = () => store.dispatch(fetchLocations());
+    window.fetchLocation = (locationId) => store.dispatch(fetchLocation(locationId));
+    window.createLocation = (location) => store.dispatch(createLocation(location));
+    window.updateLocation = (location) => store.dispatch(updateLocation(location));
+    window.deleteLocation = (locationId) => store.dispatch(deleteLocation(locationId));
+    
+
 
     // window.receiveRoutes = RouteUtil.receiveRoutes();
     // window.receiveRoute = RouteUtil.receiveRoute;

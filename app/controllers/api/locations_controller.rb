@@ -13,24 +13,29 @@ class Api::LocationsController < ApplicationController
         @location = Location.new(location_params)
 
         if @location.save
-            render "api/routes/show"
+            render "api/locations/show"
         else
             render json: @location.errors.full_messages, status: 422
         end
     end
     
     def update
-        @location = current_user.routes.locations.find(params[:id])
+        # debugger
+        if current_user
+            @location = current_user.routes.locations.find(params[:id])
+        else
+            @location = Location.find(params[:id])
+        end
         
         if @location.update(location_params)
-            render "api/routes/show"
+            render "api/locations/show"
         else
             render json: @location.errors.full_messages, status: 422
         end
 
     end
 
-    def desroy
+    def destroy
         @location = Location.find(params[:id])
         if @location.destroy
             render json: {}

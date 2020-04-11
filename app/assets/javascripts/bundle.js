@@ -86,6 +86,108 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/location_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/location_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_LOCATIONS, RECEIVE_LOCATION, REMOVE_LOCATION, RECEIVE_LOCATION_ERRORS, fetchLocations, fetchLocation, createLocation, updateLocation, deleteLocation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LOCATIONS", function() { return RECEIVE_LOCATIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LOCATION", function() { return RECEIVE_LOCATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_LOCATION", function() { return REMOVE_LOCATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LOCATION_ERRORS", function() { return RECEIVE_LOCATION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLocations", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLocation", function() { return fetchLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLocation", function() { return createLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLocation", function() { return updateLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteLocation", function() { return deleteLocation; });
+/* harmony import */ var _util_location_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/location_util */ "./frontend/util/location_util.js");
+
+var RECEIVE_LOCATIONS = "RECEIVE_LOCATIONS";
+var RECEIVE_LOCATION = "RECEIVE_LOCATION";
+var REMOVE_LOCATION = "REMOVE_LOCATION";
+var RECEIVE_LOCATION_ERRORS = "REMOVE_LOCATION_ERRORS";
+
+var receiveLocations = function receiveLocations(locations) {
+  return {
+    type: RECEIVE_LOCATIONS,
+    locations: locations
+  };
+};
+
+var receiveLocation = function receiveLocation(location) {
+  return {
+    type: RECEIVE_LOCATION,
+    location: location
+  };
+};
+
+var removeLocation = function removeLocation(locationId) {
+  return {
+    type: REMOVE_LOCATION,
+    locationId: locationId
+  };
+};
+
+var receiveErrors = function receiveErrors(error) {
+  return {
+    type: RECEIVE_LOCATION_ERRORS,
+    error: error
+  };
+}; // thunk actions
+
+
+var fetchLocations = function fetchLocations() {
+  return function (dispatch) {
+    return _util_location_util__WEBPACK_IMPORTED_MODULE_0__["fetchLocations"]().then(function (locations) {
+      return dispatch(receiveLocations(locations));
+    }, function (err) {
+      return dispatch(receiveErrors(err.statusText));
+    });
+  };
+};
+var fetchLocation = function fetchLocation(locationId) {
+  return function (dispatch) {
+    return _util_location_util__WEBPACK_IMPORTED_MODULE_0__["fetchLocation"](locationId).then(function (location) {
+      return dispatch(receiveLocation(location));
+    }, function (err) {
+      return dispatch(receiveErrors(err.statusText));
+    });
+  };
+};
+var createLocation = function createLocation(location) {
+  return function (dispatch) {
+    return _util_location_util__WEBPACK_IMPORTED_MODULE_0__["createLocation"](location).then(function (location) {
+      return dispatch(receiveLocation(location));
+    }, function (err) {
+      return dispatch(receiveErrors(err.statusText));
+    });
+  };
+};
+var updateLocation = function updateLocation(location) {
+  return function (dispatch) {
+    return _util_location_util__WEBPACK_IMPORTED_MODULE_0__["updateLocation"](location).then(function (location) {
+      return dispatch(receiveLocation(location));
+    }, function (err) {
+      return dispatch(receiveErrors(err.statusText));
+    });
+  };
+};
+var deleteLocation = function deleteLocation(locationId) {
+  return function (dispatch) {
+    return _util_location_util__WEBPACK_IMPORTED_MODULE_0__["deleteLocation"](locationId).then(function (location) {
+      return dispatch(removeLocation(location));
+    }, function (err) {
+      return dispatch(receiveErrors(err.statusText));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -1418,12 +1520,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_route_api_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util/route_api_util */ "./frontend/util/route_api_util.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _actions_route_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./actions/route_actions */ "./frontend/actions/route_actions.js");
+/* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./actions/location_actions */ "./frontend/actions/location_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
  ///////////////////////////////////////////////////////////////////
+
 
 
 
@@ -1477,6 +1581,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.destroyRoute = function (routeId) {
     return store.dispatch(Object(_actions_route_actions__WEBPACK_IMPORTED_MODULE_8__["destroyRoute"])(routeId));
+  };
+
+  window.fetchLocations = function () {
+    return store.dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_9__["fetchLocations"])());
+  };
+
+  window.fetchLocation = function (locationId) {
+    return store.dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_9__["fetchLocation"])(locationId));
+  };
+
+  window.createLocation = function (location) {
+    return store.dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_9__["createLocation"])(location));
+  };
+
+  window.updateLocation = function (location) {
+    return store.dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_9__["updateLocation"])(location));
+  };
+
+  window.deleteLocation = function (locationId) {
+    return store.dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_9__["deleteLocation"])(locationId));
   }; // window.receiveRoutes = RouteUtil.receiveRoutes();
   // window.receiveRoute = RouteUtil.receiveRoute;
   // window.createRoute = RouteUtil.createRoute;
@@ -1505,12 +1629,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _route_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./route_reducer */ "./frontend/reducers/route_reducer.js");
+/* harmony import */ var _locations_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./locations_reducer */ "./frontend/reducers/locations_reducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  routes: _route_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  routes: _route_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  locations: _locations_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -1534,6 +1661,47 @@ __webpack_require__.r(__webpack_exports__);
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   routes: _route_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
+
+/***/ }),
+
+/***/ "./frontend/reducers/locations_reducer.js":
+/*!************************************************!*\
+  !*** ./frontend/reducers/locations_reducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/location_actions */ "./frontend/actions/location_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var locationsReducer = function locationsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState = {};
+
+  switch (action.type) {
+    case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LOCATIONS"]:
+      return action.locations;
+
+    case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LOCATION"]:
+      return Object.assign({}, state, _defineProperty({}, action.location.id, action.location));
+
+    case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_LOCATION"]:
+      newState = Object.assign({}, state);
+      delete newState[action.locationId];
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (locationsReducer);
 
 /***/ }),
 
@@ -1847,6 +2015,59 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/location_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/location_util.js ***!
+  \****************************************/
+/*! exports provided: fetchLocations, fetchLocation, createLocation, updateLocation, deleteLocation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLocations", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLocation", function() { return fetchLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLocation", function() { return createLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLocation", function() { return updateLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteLocation", function() { return deleteLocation; });
+var fetchLocations = function fetchLocations() {
+  return $.ajax({
+    method: "GET",
+    url: "api/locations/"
+  });
+};
+var fetchLocation = function fetchLocation(locationId) {
+  return $.ajax({
+    method: "GET",
+    url: "api/locations/".concat(locationId)
+  });
+};
+var createLocation = function createLocation(location) {
+  return $.ajax({
+    method: "POST",
+    url: "api/locations/",
+    data: {
+      location: location
+    }
+  });
+};
+var updateLocation = function updateLocation(location) {
+  return $.ajax({
+    method: "PATCH",
+    url: "api/locations/".concat(location.id),
+    data: {
+      location: location
+    }
+  });
+};
+var deleteLocation = function deleteLocation(locationId) {
+  return $.ajax({
+    method: "DELETE",
+    url: "api/locations/".concat(locationId)
+  });
+};
 
 /***/ }),
 
