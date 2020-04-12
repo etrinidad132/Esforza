@@ -12,7 +12,15 @@ class RouteNew extends React.Component {
         this.previousMarkersArray = [];
 
         this.placeMarker = this.placeMarker.bind(this);
+        this.drawRoute = this.drawRoute.bind(this);
         this.displayRoute = this.displayRoute.bind(this);
+        this.plotElevation = this.plotElevation.bind(this);
+        this.createUrl = this.createUrl.bind(this);
+        this.calcTotalDistance = this.calcTotalDistance.bind(this);
+        this.clear = this.clear.bind(this);
+        this.undo = this.undo.bind(this);
+        this.redo = this.redo.bind(this);
+        this.clearStatistics = this.clearStatistics.bind(this);
     }
 
     componentDidMount() {
@@ -38,6 +46,29 @@ class RouteNew extends React.Component {
         google.maps.event.addListener(this.map, "click", (event) => {
             // debugger
             this.placeMarker(event, latlng);// make this function next
+        })
+
+        this.directionsRenderer.addListener("directions_changed", () => {
+            // debugger
+            const route = this.markersArray.map(marker => {
+                return ({
+                    lat: marker.gePosition().lat(),
+                    lng: marker.gePosition().lat()
+                })
+            })
+
+            const directions = this.directionsRenderer.getDirections();
+
+            if (directions !== null) {
+                // debugger
+                this.elevationService.getElevationAlongPath({// asynch request that returns a response, and give it to the callback
+                    path: path,
+                    samples: 5
+                }, this.plotElevation)// tha call back // make this fourth
+
+                this.createUrl(directions); // make this fifth
+                this.calcTotalDistance(directions); // make this sixth
+            }
         })
     }
 
@@ -75,7 +106,7 @@ class RouteNew extends React.Component {
         })
     }
 
-    displayroute(origin, destination, midMarkers, directionsService, directionsRender) {
+    displayRoute(origin, destination, midMarkers, directionsService, directionsRender) {
         // debugger
         directionsService.route({
             origin: origin,
@@ -85,15 +116,171 @@ class RouteNew extends React.Component {
             }),
             travelMode: "BICYCLING",
             avoidTolls: true
-        }, 
-        
-        (response, status) =>  {
+        },
 
-            if (status === "OK") {
-                directionsRender.setDirections(response)
-            } else {
-                alert(`Something went wrong due to ${status}`)
+            (response, status) => {
+
+                if (status === "OK") {
+                    directionsRender.setDirections(response)
+                } else {
+                    alert(`Something went wrong due to ${status}`)
+                }
+            })
+    }
+
+    plotElevation(elevationsArray, status) {
+        let total = 0;
+
+        for (let i = 0; i < elevationsArray.length - 1; i++) {
+            let current = elevationsArray[i];
+            let next = elevationsArray[i + 1];
+
+            if (Math.sign(current - next) === -1) {
+                total += (next - current);
             }
+
+            const elevation = Math.round(total);
+
+            this.setState({
+                elevation: elevation
+            })
+            // debugger
+            let elevationElement = document.getElementById("elevation");
+            elevationElement.innerHTML = (elevation + " " + "ft");
+        }
+    }
+
+    createUrl(directions) {
+        // debugger
+        const route = directions.route[0];
+        const overviewPath = route.overview_path;
+        const thumbnailUrl = `https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C${overviewPath[0].lat()},${overviewPath[0].lng()}&markers=label:E%7C${overviewPath[overviewPath.length - 1].lat()},${overviewPath[overviewPath.length - 1].lng()}`;
+        const pathColorUrl = `&path=color:0x000025cf[weight:2]`
+        // 0x000025cf // double check this color // not sure if correct format
+        const overviewPolyline = `enc:${route.overview_polyline}`;
+        const secret = `&key=${window.secret}`;
+
+        thumbnailUrl += pathColorUrl + overviewPolyline + secret;
+
+        this.setState({
+            thumbnail: thumbnailUrl
+        });
+    }
+
+    calcTotalDistance(directions) {
+        // debugger
+        let distance = 0;
+        const route = directions.routes[0];
+
+        for (let i = 0; i < route.legs.length; i++) {
+            distance += route.legs[i].distance.value;
+        }
+
+        distance /= 1000;
+        distance /= 1.60934;
+        distanceString = distance.toFixed(2); // to limit and stringify float
+
+        const time = (60 * distanceString / 4.43).toFixed(2);
+        this.setState({
+            time: time,
+            distance: distanceString
+        })
+
+        // see if there is a better way to do this once you learn more things if you ever come back to this
+        const distanceElement = document.getElementById("distance")
+        const timeElement = document.getElementById("time");
+
+        distanceElement.innerHTML = distanceString + " " + "mi";
+        timeElement.innerHTML = this.timeConverter(time); // make this seventh
+    }
+
+    timeConverter(timeMinutes) {
+        // debugger
+        let sec = timeMinutes % 1;
+        const min = Math.floor(timeMinutes % 60);
+        const hour = Math.floor(timeMinutes / 60);
+        sec = Math.floor(60 * sec);
+
+        if (sec < 10) {
+            sec = `0${sec}`;
+        }
+
+
+        if (hour >= 1 && min < 10) {
+            min = `0${min}`;
+        }
+
+        return hour >= 1 ? `${hour}:${min}:${sec}` : `${min}:${sec}`;
+    }
+
+    clear() {
+        if (this.markersArray === 0) {
+            return;
+        }
+        this.previousMarkersArray = [];
+        this.clearStatistics()
+    }
+
+    undo() {
+        // debugger
+        let lastMarker = this.markersArray[this.markersArray.length - 1];
+
+        if (!lastMarker) {
+            return;
+        }
+
+        if (this.markersArray.length === 1) {
+            this.markersArray.pop().setMap(null);
+
+        } else if (this.markersArray.length === 2) {
+            lastMarker = this.markersArray[0];
+            const firstMarker = this.markersArray[1];
+
+            this.clearStatistics() //make this ninth
+            this.placeMarker(lastMarker.position);
+            lastMarker = firstMarker;
+
+        } else if (this.markersArray.length > 2) {
+            this.markersArray.pop().setMap(null);
+            this.drawRoute();
+        }
+        this.previousMarkersArray.push({
+            action: "undo",
+            markers: last
+        });
+    }
+
+    redo() {
+        // debugger
+        if (this.previousMarkersArray.length === 0) {
+            return;
+        }
+
+        const lastMarker = this.markersArray[this.markersArray.length - 1];
+
+        if (lastMarker.action === 'undo') {
+
+            if (lastMarker.markers instanceof Array) {
+                this.clear(); // make this eleventh
+                this.prevMarkers.pop();
+
+            } else {
+                this.placeMarker(lastMarker.markers.position);
+                this.prevMarkers.pop();
+            }
+        }
+    }
+
+    clearStatistics() {
+        // debugger
+        document.getElementById("time").innerHTML = "";
+        document.getElementById("distance").innerHTML = "";
+        document.getElementById("elevation").innerHTML = "";
+        this.directionsRenderer.set("directions", null);
+        this.markersArray.pop().setMap(null);
+        this.markersArray = [];
+        this.setState({
+            create: false
         })
     }
 
@@ -101,7 +288,58 @@ class RouteNew extends React.Component {
     render() {
         return (
             <div>
-                <h1 style="font-size=100px">Hi From Map</h1>
+                {/* create new route modal here */}
+                {/* <h1 style="font-size=100px">Hi From Map</h1> */}
+                <div>
+                    <div className="route-navbar">
+                        <nav className="route-navbar-left">
+                            <Link className="logo" to="/routes">ESFORZA</Link>
+                            <h1>ROUTE BUILDER</h1>
+                        </nav>
+
+                        <nav>
+                            <Link className='exit' to='/routes'>Exit Builder</Link>
+                        </nav>
+                    </div>
+
+                    <div className="route-toolbar">
+                        <div className="route-toolbar-left">
+
+                            <div className="toolbar-btn" onClick={this.undo}>{/* make this eighth */}
+                                <div className="toolbar-btn-icon">
+                                    <i className="fas fa-undo-alt"></i>{/* see if you can find a different undo button during styling */}
+                                </div>
+
+                                <div className="toolbar-btn-label">Undo</div>
+                            </div>
+
+                            <div className="toolbar-btn" onClick={this.redo}>{/* make this tenth */}
+                                <div className="toolbar-btn-icon">
+                                    <i className="fas fa-redo-alt"></i>{/* see if you can find a different redo button during styling */}
+                                </div>
+
+                                <div className="toolbar-btn-label">Redo</div>
+                            </div>
+
+                            <div className='toolbar-btn' onClick={this.clear}>
+                                <div className='toolbar-btn-icon'>
+                                    <i className="fas fa-times"></i>{/* see if you can find a different times button during styling */}
+                                </div>
+
+                                <div className='toolbar-btn-label'>Clear</div>
+                            </div>
+                        </div>
+                        {/* you stopped here right before the save button ternary */}
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
 
                 <div id="map" ref='map'></div>{/* this is too create an object for the map to hook on to */}
             </div>

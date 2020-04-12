@@ -11,7 +11,7 @@
     <%= javascript_include_tag  "https://kit.fontawesome.com/11ce0e586d.js"%>
     
     <script type="text/javascript">
-      window.googleAPIKey = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
+      window.secret = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
     </script>
 
 

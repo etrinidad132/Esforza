@@ -40,7 +40,10 @@ class NavBar extends React.Component { // currentUser, logout, receiveErrors()
         return (
             <header className="header" >
                 <div className="container header-content">
-                    <h1 className="logo">ESFORZA</h1>
+                    {/* <h1 className="logo">ESFORZA</h1> */}
+                    <Link className="logo" to="/routes">ESFORZA</Link>
+                    {/* <Link className="logo" to="/dashboard">ESFORZA</Link> */}
+
                     <nav className="main-nav">
                         {element}
                     </nav>

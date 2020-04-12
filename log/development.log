@@ -16882,3 +16882,341 @@ Processing by Api::RoutesController#index as JSON
 Completed 200 OK in 187ms (Views: 145.4ms | ActiveRecord: 28.6ms)
 
 
+Started GET "/api/routes" for ::1 at 2020-04-12 00:19:34 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (39.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Np0xrqEnF_dwkKl-Dx-29A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (43.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (24.9ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (142.9ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (19.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (5.9ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (9.6ms)
+  Rendered api/routes/index.json.jbuilder (455.6ms)
+Completed 200 OK in 1130ms (Views: 431.0ms | ActiveRecord: 245.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:19:53 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Np0xrqEnF_dwkKl-Dx-29A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (5.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (3.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.9ms)
+  Rendered api/routes/index.json.jbuilder (28.5ms)
+Completed 200 OK in 66ms (Views: 47.3ms | ActiveRecord: 9.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-12 00:19:55 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Np0xrqEnF_dwkKl-Dx-29A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (12.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (12.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 70], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "5ZVOAR0EPgAMOfJbCmw9YQ"], ["id", 70], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Update (54.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "5ZVOAR0EPgAMOfJbCmw9YQ"], ["updated_at", "2020-04-12 04:19:56.190224"], ["id", 70]]
+  ↳ app/models/user.rb:57
+  [1m[35m (25.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:57
+Completed 200 OK in 211ms (Views: 2.2ms | ActiveRecord: 107.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:19:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 3880ms (Views: 3864.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-12 00:20:14 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  Rendering api/users/show.json.jbuilder
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (3.8ms)
+  Rendered api/users/show.json.jbuilder (7.4ms)
+Completed 200 OK in 344ms (Views: 19.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:20:15 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5ZVOAR0EPgAMOfJbCmw9YQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (4.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (1.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.4ms)
+  Rendered api/routes/index.json.jbuilder (22.1ms)
+Completed 200 OK in 47ms (Views: 32.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:21:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5ZVOAR0EPgAMOfJbCmw9YQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (4.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 466ms (Views: 457.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:21:14 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5ZVOAR0EPgAMOfJbCmw9YQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.3ms)
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (3.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (1.5ms)
+  [1m[35m (71.3ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (73.3ms)
+  Rendered api/routes/index.json.jbuilder (93.7ms)
+Completed 200 OK in 112ms (Views: 34.0ms | ActiveRecord: 75.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-12 00:21:17 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5ZVOAR0EPgAMOfJbCmw9YQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 70], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["id", 70], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["updated_at", "2020-04-12 04:21:17.189581"], ["id", 70]]
+  ↳ app/models/user.rb:57
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:57
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:21:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 98ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:21:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 134ms (Views: 128.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:21:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 118ms (Views: 112.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-12 00:21:36 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  Rendering api/users/show.json.jbuilder
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  Rendered api/users/show.json.jbuilder (4.6ms)
+Completed 200 OK in 310ms (Views: 18.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:21:37 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (3.7ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (3.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (5.4ms)
+  Rendered api/routes/index.json.jbuilder (31.6ms)
+Completed 200 OK in 82ms (Views: 54.7ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:22:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 255ms (Views: 244.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:22:24 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.4ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (3.9ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (4.5ms)
+  Rendered api/routes/index.json.jbuilder (27.9ms)
+Completed 200 OK in 54ms (Views: 45.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 00:22:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (5.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 210ms (Views: 202.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:22:36 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (4.5ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.1ms)
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (6.7ms)
+  Rendered api/routes/index.json.jbuilder (45.7ms)
+Completed 200 OK in 101ms (Views: 62.8ms | ActiveRecord: 24.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-12 00:22:45 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4m5v_5HWM4nF4MFDu6PdCA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 70], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "xcpx9XoN3b5vMKhjoi0AgA"], ["id", 70], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Update (8.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xcpx9XoN3b5vMKhjoi0AgA"], ["updated_at", "2020-04-12 04:22:45.950703"], ["id", 70]]
+  ↳ app/models/user.rb:57
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:57
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-12 00:22:48 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  Rendering api/users/show.json.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  Rendered api/users/show.json.jbuilder (4.6ms)
+Completed 200 OK in 308ms (Views: 17.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-04-12 00:22:49 -0400
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (14.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xcpx9XoN3b5vMKhjoi0AgA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 70]]
+  ↳ app/views/api/routes/index.json.jbuilder:2
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 43]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 44]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (1.8ms)
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 45]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (5.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."route_id" = $1[0m  [["route_id", 46]]
+  ↳ app/views/api/routes/_route.json.jbuilder:1
+  Rendered api/routes/_route.json.jbuilder (2.2ms)
+  Rendered api/routes/index.json.jbuilder (28.8ms)
+Completed 200 OK in 66ms (Views: 39.4ms | ActiveRecord: 21.1ms)
+
+
