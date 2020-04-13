@@ -1079,15 +1079,14 @@ var RouteIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "destroyRoute",
     value: function destroyRoute() {
-      debugger;
-      this.props.destroyRoute(this.props.route.id);
-      alert("delete button is working");
+      // debugger
+      this.props.destroyRoute(this.props.route.id); // alert("delete button is working")
     }
   }, {
     key: "updateRoute",
-    value: function updateRoute() {
-      debugger;
-      alert("update button is working"); //link to update route page
+    value: function updateRoute() {// debugger
+      // alert("update button is working")
+      //link to update route page
       // this.props.updateRoute()
     }
   }, {
@@ -1226,7 +1225,9 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       this.directionsService = new google.maps.DirectionsService();
       this.directionsRenderer = new google.maps.DirectionsRenderer({
         map: this.map
-      });
+      }); // const that = this;
+      // debugger
+
       google.maps.event.addListener(this.map, "click", function (event) {
         // debugger
         var latLng = {
@@ -1237,7 +1238,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
         _this2.placeMarker(latLng); // make this function next
 
       });
-      this.directionsRenderer.addListener("directions_changed", function () {
+      this.directionsRenderer.addListener("directions_changed", function (that) {
         // debugger
         var route = _this2.markersArray.map(function (marker) {
           return {
@@ -1246,16 +1247,19 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
           };
         });
 
-        var directions = _this2.directionsRenderer.getDirections();
+        var elevation = _this2.elevationService;
+
+        var directions = _this2.directionsRenderer.getDirections(); // debugger
+
 
         if (directions !== null) {
           // debugger
-          _this2.elevationService.getElevationAlongPath({
+          // this.elevationService.getElevationAlongPath({// asynch request that returns a response, and give it to the callback
+          elevation.getElevationAlongPath({
             // asynch request that returns a response, and give it to the callback
             path: route,
             samples: 5
           }, _this2.plotElevation); // tha call back // make this fourth
-
 
           _this2.createUrl(directions); // make this fifth
 
@@ -1327,11 +1331,13 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "plotElevation",
     value: function plotElevation(elevationsArray, status) {
+      // debugger
       var total = 0;
 
       for (var i = 0; i < elevationsArray.length - 1; i++) {
-        var current = elevationsArray[i];
-        var next = elevationsArray[i + 1];
+        // let current = elevationsArray[i];
+        var current = elevationsArray[1].elevation;
+        var next = elevationsArray[i + 1].elevation;
 
         if (Math.sign(current - next) === -1) {
           total += next - current;
@@ -1349,15 +1355,17 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "createUrl",
     value: function createUrl(directions) {
-      debugger;
+      // debugger
       var route = directions.routes[0];
       var overviewPath = route.overview_path;
       var thumbnailUrl = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C".concat(overviewPath[0].lat(), ",").concat(overviewPath[0].lng(), "&markers=label:E%7C").concat(overviewPath[overviewPath.length - 1].lat(), ",").concat(overviewPath[overviewPath.length - 1].lng());
-      var pathColorUrl = "&path=color:0x000025cf[weight:2]"; // 0x000025cf // double check this color // not sure if correct format
+      var pathColorUrl = "&path=color:0x000033ff|weight:2|"; //this works black
+      // const pathColorUrl = `&path=color:0x0000ff80|weight:2|`// this works blue
 
       var overviewPolyline = "enc:".concat(route.overview_polyline);
       var key = "&key=".concat(window.secret);
-      thumbnailUrl += pathColorUrl + overviewPolyline + key;
+      thumbnailUrl += pathColorUrl + overviewPolyline + key; // debugger
+
       this.setState({
         thumbnail: thumbnailUrl
       });
@@ -1443,7 +1451,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
 
       this.previousMarkersArray.push({
         action: "undo",
-        markers: last
+        markers: lastMarker
       });
     }
   }, {
@@ -1454,16 +1462,16 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
         return;
       }
 
-      var lastMarker = this.markersArray[this.markersArray.length - 1];
+      var lastMarker = this.previousMarkersArray[this.previousMarkersArray.length - 1];
 
       if (lastMarker.action === 'undo') {
         if (lastMarker.markers instanceof Array) {
           this.clear(); // make this eleventh
 
-          this.prevMarkers.pop();
+          this.previousMarkersArray.pop();
         } else {
           this.placeMarker(lastMarker.markers.position);
-          this.prevMarkers.pop();
+          this.previousMarkersArray.pop();
         }
       }
     } //refactor this/////////////////////
@@ -1666,7 +1674,6 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
 
     _this.state = {
       user_id: props.currentUser.id,
-      // user_id: this.props.currentUser.id,
       name: '',
       description: '',
       distance: props.routeInfo.distance,
@@ -1674,7 +1681,7 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
       elevation: props.routeInfo.elevation,
       thumbnail: props.routeInfo.thumbnail,
       activity_type: "ride",
-      route_type: ""
+      route_type: "road"
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.update = _this.update.bind(_assertThisInitialized(_this));
@@ -1690,9 +1697,9 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
 
       var that = this;
       this.props.createRoute(this.state).then(function (res) {
-        debugger;
+        // debugger
         that.props.routeInfo.coordinatesArray.forEach(function (coordinate) {
-          debugger;
+          // debugger
           that.props.createLocation({
             route_id: res.route.id,
             sequence: coordinate.sequence,
@@ -1750,7 +1757,7 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
         value: this.state.route_type,
         onChange: this.update("route_type")
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "road"
+        defaultValue: "road"
       }, "Road"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "MTB"
       }, "MTB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {

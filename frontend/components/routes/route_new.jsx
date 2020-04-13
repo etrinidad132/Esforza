@@ -34,25 +34,26 @@ class RouteNew extends React.Component {
         //     center = lat and lng based on the currentUser.location(zipcode)
         // }
         //////////////////////////////////////////////////////////////////////
-
+        
         const center = { lat: 40.7362791, lng: -73.9941211 }; // NYC a/A Campus, at least I think
-
+        
         this.map = new google.maps.Map(this.refs.map, {
             zoom: 13,
             center: center
         })
-
+        
         this.elevationService = new google.maps.ElevationService;
         this.directionsService = new google.maps.DirectionsService;
         this.directionsRenderer = new google.maps.DirectionsRenderer({ map: this.map });
-
+        // const that = this;
+        // debugger
         google.maps.event.addListener(this.map, "click", (event) => {
             // debugger
             const latLng = { lat: event.latLng.lat(), lng: event.latLng.lng()};
             this.placeMarker(latLng);// make this function next
         })
 
-        this.directionsRenderer.addListener("directions_changed", () => {
+        this.directionsRenderer.addListener("directions_changed", (that) => {
             // debugger
             const route = this.markersArray.map(marker => {
                 return ({
@@ -60,12 +61,14 @@ class RouteNew extends React.Component {
                     lng: marker.getPosition().lat()
                 })
             })
-
+            const elevation = this.elevationService;
             const directions = this.directionsRenderer.getDirections();
-
+            
+            // debugger
             if (directions !== null) {
                 // debugger
-                this.elevationService.getElevationAlongPath({// asynch request that returns a response, and give it to the callback
+                // this.elevationService.getElevationAlongPath({// asynch request that returns a response, and give it to the callback
+                elevation.getElevationAlongPath({// asynch request that returns a response, and give it to the callback
                     path: route,
                     samples: 5
                 }, this.plotElevation)// tha call back // make this fourth
@@ -135,11 +138,13 @@ class RouteNew extends React.Component {
     }
 
     plotElevation(elevationsArray, status) {
+        // debugger
         let total = 0;
 
         for (let i = 0; i < elevationsArray.length - 1; i++) {
-            let current = elevationsArray[i];
-            let next = elevationsArray[i + 1];
+            // let current = elevationsArray[i];
+            let current = elevationsArray[1].elevation;
+            let next = elevationsArray[i + 1].elevation;
 
             if (Math.sign(current - next) === -1) {
                 total += (next - current);
@@ -157,17 +162,18 @@ class RouteNew extends React.Component {
     }
 
     createUrl(directions) {
-        debugger
+        // debugger
         const route = directions.routes[0];
         const overviewPath = route.overview_path;
         let thumbnailUrl = `https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C${overviewPath[0].lat()},${overviewPath[0].lng()}&markers=label:E%7C${overviewPath[overviewPath.length - 1].lat()},${overviewPath[overviewPath.length - 1].lng()}`;
-        const pathColorUrl = `&path=color:0x000025cf[weight:2]`
-        // 0x000025cf // double check this color // not sure if correct format
+        const pathColorUrl = `&path=color:0x000033ff|weight:2|`//this works black
+        // const pathColorUrl = `&path=color:0x0000ff80|weight:2|`// this works blue
         const overviewPolyline = `enc:${route.overview_polyline}`;
         const key = `&key=${window.secret}`;
-
+        
         thumbnailUrl += pathColorUrl + overviewPolyline + key;
-
+        
+        // debugger
         this.setState({
             thumbnail: thumbnailUrl
         });
@@ -252,7 +258,7 @@ class RouteNew extends React.Component {
         }
         this.previousMarkersArray.push({
             action: "undo",
-            markers: last
+            markers: lastMarker
         });
     }
 
@@ -262,17 +268,17 @@ class RouteNew extends React.Component {
             return;
         }
 
-        const lastMarker = this.markersArray[this.markersArray.length - 1];
+        const lastMarker = this.previousMarkersArray[this.previousMarkersArray.length - 1];
 
         if (lastMarker.action === 'undo') {
 
             if (lastMarker.markers instanceof Array) {
                 this.clear(); // make this eleventh
-                this.prevMarkers.pop();
+                this.previousMarkersArray.pop();
 
             } else {
                 this.placeMarker(lastMarker.markers.position);
-                this.prevMarkers.pop();
+                this.previousMarkersArray.pop();
             }
         }
     }

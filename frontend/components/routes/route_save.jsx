@@ -7,7 +7,6 @@ class RouteSave extends React.Component {
         // debugger
         this.state = {
             user_id: props.currentUser.id,
-            // user_id: this.props.currentUser.id,
             name: '',
             description: '',
             distance: props.routeInfo.distance,
@@ -15,7 +14,7 @@ class RouteSave extends React.Component {
             elevation: props.routeInfo.elevation,
             thumbnail: props.routeInfo.thumbnail,
             activity_type: "ride",
-            route_type: ""
+            route_type: "road"
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,12 +24,12 @@ class RouteSave extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger
-        const that = this
+        const that = this;
         this.props.createRoute(this.state)
             .then(res => {
-                debugger
+                // debugger
                 that.props.routeInfo.coordinatesArray.forEach(coordinate => {
-                    debugger
+                    // debugger
                     that.props.createLocation({
                         route_id: res.route.id,
                         sequence: coordinate.sequence,
@@ -85,10 +84,10 @@ class RouteSave extends React.Component {
                                     value={this.state.route_type}
                                     onChange={this.update("route_type")}>
 
-                                    <option value="road">Road</option>
+                                    <option defaultValue="road" >Road</option>
+                                    {/* <option value="road" selected>Road</option> */}
                                     <option value="MTB">MTB</option>
                                     <option value="cyclocross">Cyclocross</option>
-                                    {/* <option value="road">Road</option> */}
                                     <option value="trail">Trail</option>
                                 </select>
                             </section>
