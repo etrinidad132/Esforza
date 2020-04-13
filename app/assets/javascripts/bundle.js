@@ -204,6 +204,7 @@ __webpack_require__.r(__webpack_exports__);
 var OPEN_MODAL = "OPEN_MODAL";
 var CLOSE_MODAL = "DISPLAY_MODAL";
 var openModal = function openModal(modalType) {
+  // debugger
   return {
     type: OPEN_MODAL,
     modal: modalType
@@ -221,7 +222,7 @@ var closeModal = function closeModal() {
 /*!*******************************************!*\
   !*** ./frontend/actions/route_actions.js ***!
   \*******************************************/
-/*! exports provided: RECEIVE_ROUTES, RECEIVE_ROUTE, DELETE_ROUTE, RECEIVE_ROUTE_ERROR, fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute */
+/*! exports provided: RECEIVE_ROUTES, RECEIVE_ROUTE, DELETE_ROUTE, RECEIVE_ROUTE_ERROR, RECEIVE_ROUTE_CRUD_ERRORS, fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -230,6 +231,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ROUTE", function() { return RECEIVE_ROUTE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_ROUTE", function() { return DELETE_ROUTE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ROUTE_ERROR", function() { return RECEIVE_ROUTE_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ROUTE_CRUD_ERRORS", function() { return RECEIVE_ROUTE_CRUD_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRoutes", function() { return fetchRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRoute", function() { return fetchRoute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createRoute", function() { return createRoute; });
@@ -240,7 +242,8 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_ROUTES = "RECEIVE_ROUTES";
 var RECEIVE_ROUTE = "RECEIVE_ROUTE";
 var DELETE_ROUTE = "DELETE_ROUTE";
-var RECEIVE_ROUTE_ERROR = "RECEIVE_ROUTE_ERROR"; // export const RECEIVE_ROUTE_CRUD_ERRORS = "RECEIVE_ROUTE_CRUD_ERRORS";
+var RECEIVE_ROUTE_ERROR = "RECEIVE_ROUTE_ERROR";
+var RECEIVE_ROUTE_CRUD_ERRORS = "RECEIVE_ROUTE_CRUD_ERRORS";
 
 var receiveRoutes = function receiveRoutes(routes) {
   return {
@@ -276,14 +279,15 @@ var receiveErrors = function receiveErrors(error) {
     type: RECEIVE_ROUTE_ERROR,
     error: error
   };
-}; // const receiveCrudErrors = (errorsArray) => {
-//     debugger
-//     return ({
-//         type: RECEIVE_ROUTE_CRUD_ERRORS,
-//         errors: errorsArray
-//     })
-// }
-/// Thunk Actions
+};
+
+var receiveCrudErrors = function receiveCrudErrors(errorsArray) {
+  debugger;
+  return {
+    type: RECEIVE_ROUTE_CRUD_ERRORS,
+    errors: errorsArray
+  };
+}; /// Thunk Actions
 
 
 var fetchRoutes = function fetchRoutes() {
@@ -493,7 +497,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["AuthRoute"], {
     path: "/signup",
     component: _session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_sign_up_modal_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App); // import React from "react";
@@ -1143,8 +1147,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1181,7 +1183,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      coodinatesArray: [],
+      coordinatesArray: [],
       create: false
     };
     _this.markersArray = [];
@@ -1195,6 +1197,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
     _this.clear = _this.clear.bind(_assertThisInitialized(_this));
     _this.undo = _this.undo.bind(_assertThisInitialized(_this));
     _this.redo = _this.redo.bind(_assertThisInitialized(_this));
+    _this.save = _this.save.bind(_assertThisInitialized(_this));
     _this.clearStatistics = _this.clearStatistics.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1289,7 +1292,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       this.displayRoute( // this function third
       this.markersArray[0].position, this.markersArray[this.markersArray.length - 1].position, this.markersArray.slice(1, this.markersArray.length - 1), this.directionsService, this.directionsRenderer);
       this.setState({
-        coodinatesArray: this.markersArray.map(function (marker, index) {
+        coordinatesArray: this.markersArray.map(function (marker, index) {
           // debugger
           return {
             lat: marker.getPosition().lat(),
@@ -1353,8 +1356,8 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       var pathColorUrl = "&path=color:0x000025cf[weight:2]"; // 0x000025cf // double check this color // not sure if correct format
 
       var overviewPolyline = "enc:".concat(route.overview_polyline);
-      var secret = "&key=".concat(window.secret);
-      thumbnailUrl += pathColorUrl + overviewPolyline + secret;
+      var key = "&key=".concat(window.secret);
+      thumbnailUrl += pathColorUrl + overviewPolyline + key;
       this.setState({
         thumbnail: thumbnailUrl
       });
@@ -1399,7 +1402,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       }
 
       if (hour >= 1 && min < 10) {
-        min = (_readOnlyError("min"), "0".concat(min));
+        min = "0".concat(min);
       }
 
       return hour >= 1 ? "".concat(hour, ":").concat(min, ":").concat(sec) : "".concat(min, ":").concat(sec);
@@ -1468,6 +1471,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "save",
     value: function save(e) {
+      // debugger
       e.preventDefault();
       this.props.openModal("saveRoute"); // make this thirteenth
       ///////////////////////////////
@@ -1489,8 +1493,9 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      // debugger
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        routeInfomation: this.state
+        routeInfo: this.state
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "route-navbar"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
@@ -1533,8 +1538,8 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "toolbar-btn-label"
       }, "Clear"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn" + (!this.state.clear ? " " + "disabled" : " "),
-        disabled: !this.state.clear,
+        className: "btn" + (!this.state.create ? " " + "disabled" : " "),
+        disabled: !this.state.create,
         onClick: this.save
       }, "Save")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "map",
@@ -1572,7 +1577,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_route_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/route_actions */ "./frontend/actions/route_actions.js");
 /* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/location_actions */ "./frontend/actions/location_actions.js");
-/* harmony import */ var _route_new__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./route_new */ "./frontend/components/routes/route_new.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _route_new__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./route_new */ "./frontend/components/routes/route_new.jsx");
+
 
 
 
@@ -1594,12 +1601,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     // to fetch all the markers after they have been placed on the map
     createLocation: function createLocation(location) {
       return dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_2__["createLocation"])(location));
-    } // to save new markers to the DB
-
+    },
+    // to save new markers to the DB
+    openModal: function openModal(modalType) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])(modalType));
+    }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_route_new__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_route_new__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -1652,15 +1662,17 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, RouteSave);
 
-    _this = _super.call(this, props);
+    _this = _super.call(this, props); // debugger
+
     _this.state = {
-      user_id: _this.props.currentUser.id,
+      user_id: props.currentUser.id,
+      // user_id: this.props.currentUser.id,
       name: '',
       description: '',
-      distance: _this.props.routeInfomation.distance,
-      time: _this.props.routeInfomation.time,
-      elevation: _this.props.routeInfomation.elevation,
-      thumbnail: _this.props.routeInfomation.thumbnail,
+      distance: props.routeInfo.distance,
+      time: props.routeInfo.time,
+      elevation: props.routeInfo.elevation,
+      thumbnail: props.routeInfo.thumbnail,
       activity_type: "ride",
       route_type: ""
     };
@@ -1674,14 +1686,18 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault();
+      e.preventDefault(); // debugger
+
+      var that = this;
       this.props.createRoute(this.state).then(function (res) {
-        _this2.props.routeInfomation.coodinatesArray.forEach(function (coodinate) {
-          _this2.props.createLocation({
-            route_id: res.payload.routes.id,
-            sequence: coodinate.sequence,
-            lat: coodinate.lat,
-            lng: coodinate.lng
+        debugger;
+        that.props.routeInfo.coordinatesArray.forEach(function (coordinate) {
+          debugger;
+          that.props.createLocation({
+            route_id: res.route.id,
+            sequence: coordinate.sequence,
+            lat: coordinate.lat,
+            lng: coordinate.lng
           });
         });
 
@@ -1689,7 +1705,7 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
 
         return res;
       }).then(function (res) {
-        return _this2.props.history.push("/routes/".concat(res.payload.routes.id));
+        return _this2.props.history.push("/routes/".concat(res.route.id));
       });
     }
   }, {
@@ -1697,8 +1713,9 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
     value: function update(field) {
       var _this3 = this;
 
-      return function (e) {
-        _this3.setState(_defineProperty({}, field, e.target.value));
+      // debugger
+      return function (event) {
+        _this3.setState(_defineProperty({}, field, event.target.value));
       };
     }
   }, {
@@ -1739,8 +1756,6 @@ var RouteSave = /*#__PURE__*/function (_React$Component) {
       }, "MTB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "cyclocross"
       }, "Cyclocross"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "road"
-      }, "Road"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "trail"
       }, "Trail"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "route-save-label-parent"

@@ -4,42 +4,49 @@ import { withRouter } from 'react-router-dom';
 class RouteSave extends React.Component {
     constructor(props) {
         super(props);
+        // debugger
         this.state = {
-            user_id: this.props.currentUser.id,
+            user_id: props.currentUser.id,
+            // user_id: this.props.currentUser.id,
             name: '',
             description: '',
-            distance: this.props.routeInfomation.distance,
-            time: this.props.routeInfomation.time,
-            elevation: this.props.routeInfomation.elevation,
-            thumbnail: this.props.routeInfomation.thumbnail,
+            distance: props.routeInfo.distance,
+            time: props.routeInfo.time,
+            elevation: props.routeInfo.elevation,
+            thumbnail: props.routeInfo.thumbnail,
             activity_type: "ride",
             route_type: ""
         }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
+        // debugger
+        const that = this
         this.props.createRoute(this.state)
             .then(res => {
-                this.props.routeInfomation.coodinatesArray.forEach(coodinate => {
-                    this.props.createLocation({
-                        route_id: res.payload.routes.id,
-                        sequence: coodinate.sequence,
-                        lat: coodinate.lat,
-                        lng: coodinate.lng,
+                debugger
+                that.props.routeInfo.coordinatesArray.forEach(coordinate => {
+                    debugger
+                    that.props.createLocation({
+                        route_id: res.route.id,
+                        sequence: coordinate.sequence,
+                        lat: coordinate.lat,
+                        lng: coordinate.lng,
                     })
                 })
                 this.props.closeModal();
                 return res;
-            }).then(res => this.props.history.push(`/routes/${res.payload.routes.id}`));
+            }).then(res => this.props.history.push(`/routes/${res.route.id}`));
     }
 
     update(field) {
-        return (e) => {
-            this.setState({ [field]: e.target.value });
+        // debugger
+        return (event) => {
+            this.setState({ [field]: event.target.value });
         };
     }
 
@@ -81,7 +88,7 @@ class RouteSave extends React.Component {
                                     <option value="road">Road</option>
                                     <option value="MTB">MTB</option>
                                     <option value="cyclocross">Cyclocross</option>
-                                    <option value="road">Road</option>
+                                    {/* <option value="road">Road</option> */}
                                     <option value="trail">Trail</option>
                                 </select>
                             </section>

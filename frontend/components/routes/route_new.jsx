@@ -6,7 +6,7 @@ class RouteNew extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            coodinatesArray: [],
+            coordinatesArray: [],
             create: false
         }
 
@@ -22,6 +22,7 @@ class RouteNew extends React.Component {
         this.clear = this.clear.bind(this);
         this.undo = this.undo.bind(this);
         this.redo = this.redo.bind(this);
+        this.save = this.save.bind(this);
         this.clearStatistics = this.clearStatistics.bind(this);
     }
 
@@ -100,7 +101,7 @@ class RouteNew extends React.Component {
         )
 
         this.setState({
-            coodinatesArray: this.markersArray.map((marker, index) => {
+            coordinatesArray: this.markersArray.map((marker, index) => {
                 // debugger
                 return ({
                     lat: marker.getPosition().lat(),
@@ -163,9 +164,9 @@ class RouteNew extends React.Component {
         const pathColorUrl = `&path=color:0x000025cf[weight:2]`
         // 0x000025cf // double check this color // not sure if correct format
         const overviewPolyline = `enc:${route.overview_polyline}`;
-        const secret = `&key=${window.secret}`;
+        const key = `&key=${window.secret}`;
 
-        thumbnailUrl += pathColorUrl + overviewPolyline + secret;
+        thumbnailUrl += pathColorUrl + overviewPolyline + key;
 
         this.setState({
             thumbnail: thumbnailUrl
@@ -202,7 +203,7 @@ class RouteNew extends React.Component {
     timeConverter(timeMinutes) {
         // debugger
         let sec = timeMinutes % 1;
-        const min = Math.floor(timeMinutes % 60);
+        let min = Math.floor(timeMinutes % 60);
         const hour = Math.floor(timeMinutes / 60);
         sec = Math.floor(60 * sec);
 
@@ -277,6 +278,7 @@ class RouteNew extends React.Component {
     }
     //refactor this/////////////////////
     save(e) {
+        // debugger
         e.preventDefault();
         this.props.openModal("saveRoute"); // make this thirteenth
         ///////////////////////////////
@@ -297,10 +299,12 @@ class RouteNew extends React.Component {
 
 
     render() {
+        // debugger
         return (
             <div>
                 {/* create new route modal here */}
-                <Modal routeInfomation={this.state}/>
+                {/* <Modal routeInfomation={this.state}/> */}
+                <Modal routeInfo={this.state}/>
                 {/* <h1 style="font-size=100px">Hi From Map</h1> */}
                 <div>
                     <div className="route-navbar">
@@ -344,8 +348,8 @@ class RouteNew extends React.Component {
 
                         <div>
                             <button
-                                className={"btn" + (!this.state.clear ? " " + "disabled" : " ")}
-                                disabled={!this.state.clear}
+                                className={"btn" + (!this.state.create ? " " + "disabled" : " ")}
+                                disabled={!this.state.create}
                                 onClick={this.save}>Save{/* make this twelve */}
                             </button>
                         </div>

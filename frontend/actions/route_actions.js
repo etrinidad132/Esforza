@@ -5,7 +5,7 @@ export const RECEIVE_ROUTES = "RECEIVE_ROUTES";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE";
 export const DELETE_ROUTE = "DELETE_ROUTE";
 export const RECEIVE_ROUTE_ERROR = "RECEIVE_ROUTE_ERROR";
-// export const RECEIVE_ROUTE_CRUD_ERRORS = "RECEIVE_ROUTE_CRUD_ERRORS";
+export const RECEIVE_ROUTE_CRUD_ERRORS = "RECEIVE_ROUTE_CRUD_ERRORS";
 
 const receiveRoutes = (routes) => {
     return ({
@@ -47,13 +47,13 @@ const receiveErrors = (error) => {
         error: error
     })
 }
-// const receiveCrudErrors = (errorsArray) => {
-//     debugger
-//     return ({
-//         type: RECEIVE_ROUTE_CRUD_ERRORS,
-//         errors: errorsArray
-//     })
-// }
+const receiveCrudErrors = (errorsArray) => {
+    debugger
+    return ({
+        type: RECEIVE_ROUTE_CRUD_ERRORS,
+        errors: errorsArray
+    })
+}
 
 /// Thunk Actions
 
