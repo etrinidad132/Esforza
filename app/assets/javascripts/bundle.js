@@ -1226,15 +1226,20 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       });
       google.maps.event.addListener(this.map, "click", function (event) {
         // debugger
-        _this2.placeMarker(event, latlng); // make this function next
+        var latLng = {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng()
+        };
+
+        _this2.placeMarker(latLng); // make this function next
 
       });
       this.directionsRenderer.addListener("directions_changed", function () {
         // debugger
         var route = _this2.markersArray.map(function (marker) {
           return {
-            lat: marker.gePosition().lat(),
-            lng: marker.gePosition().lat()
+            lat: marker.getPosition().lat(),
+            lng: marker.getPosition().lat()
           };
         });
 
@@ -1244,7 +1249,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
           // debugger
           _this2.elevationService.getElevationAlongPath({
             // asynch request that returns a response, and give it to the callback
-            path: path,
+            path: route,
             samples: 5
           }, _this2.plotElevation); // tha call back // make this fourth
 
@@ -1260,8 +1265,9 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "placeMarker",
     value: function placeMarker(location) {
+      // const l = location;
       // debugger
-      var marker = new google.map.Marker({
+      var marker = new google.maps.Marker({
         position: location
       });
       marker.setMap(this.map);
@@ -1284,9 +1290,10 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
       this.markersArray[0].position, this.markersArray[this.markersArray.length - 1].position, this.markersArray.slice(1, this.markersArray.length - 1), this.directionsService, this.directionsRenderer);
       this.setState({
         coodinatesArray: this.markersArray.map(function (marker, index) {
+          // debugger
           return {
-            lat: marker.gePosition().lat(),
-            lng: marker.gePosition().lng(),
+            lat: marker.getPosition().lat(),
+            lng: marker.getPosition().lng(),
             sequence: index
           };
         })
@@ -1339,15 +1346,15 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "createUrl",
     value: function createUrl(directions) {
-      // debugger
-      var route = directions.route[0];
+      debugger;
+      var route = directions.routes[0];
       var overviewPath = route.overview_path;
       var thumbnailUrl = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C".concat(overviewPath[0].lat(), ",").concat(overviewPath[0].lng(), "&markers=label:E%7C").concat(overviewPath[overviewPath.length - 1].lat(), ",").concat(overviewPath[overviewPath.length - 1].lng());
       var pathColorUrl = "&path=color:0x000025cf[weight:2]"; // 0x000025cf // double check this color // not sure if correct format
 
       var overviewPolyline = "enc:".concat(route.overview_polyline);
       var secret = "&key=".concat(window.secret);
-      thumbnailUrl += (_readOnlyError("thumbnailUrl"), pathColorUrl + overviewPolyline + secret);
+      thumbnailUrl += pathColorUrl + overviewPolyline + secret;
       this.setState({
         thumbnail: thumbnailUrl
       });
@@ -1365,7 +1372,7 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
 
       distance /= 1000;
       distance /= 1.60934;
-      distanceString = distance.toFixed(2); // to limit and stringify float
+      var distanceString = distance.toFixed(2); // to limit and stringify float
 
       var time = (60 * distanceString / 4.43).toFixed(2);
       this.setState({

@@ -47,15 +47,16 @@ class RouteNew extends React.Component {
 
         google.maps.event.addListener(this.map, "click", (event) => {
             // debugger
-            this.placeMarker(event, latlng);// make this function next
+            const latLng = { lat: event.latLng.lat(), lng: event.latLng.lng()};
+            this.placeMarker(latLng);// make this function next
         })
 
         this.directionsRenderer.addListener("directions_changed", () => {
             // debugger
             const route = this.markersArray.map(marker => {
                 return ({
-                    lat: marker.gePosition().lat(),
-                    lng: marker.gePosition().lat()
+                    lat: marker.getPosition().lat(),
+                    lng: marker.getPosition().lat()
                 })
             })
 
@@ -64,7 +65,7 @@ class RouteNew extends React.Component {
             if (directions !== null) {
                 // debugger
                 this.elevationService.getElevationAlongPath({// asynch request that returns a response, and give it to the callback
-                    path: path,
+                    path: route,
                     samples: 5
                 }, this.plotElevation)// tha call back // make this fourth
 
@@ -75,8 +76,9 @@ class RouteNew extends React.Component {
     }
 
     placeMarker(location) {
+        // const l = location;
         // debugger
-        const marker = new google.map.Marker({ position: location });
+        const marker = new google.maps.Marker({ position: location });
 
         marker.setMap(this.map);
 
@@ -99,9 +101,10 @@ class RouteNew extends React.Component {
 
         this.setState({
             coodinatesArray: this.markersArray.map((marker, index) => {
+                // debugger
                 return ({
-                    lat: marker.gePosition().lat(),
-                    lng: marker.gePosition().lng(),
+                    lat: marker.getPosition().lat(),
+                    lng: marker.getPosition().lng(),
                     sequence: index
                 })
             })
@@ -153,10 +156,10 @@ class RouteNew extends React.Component {
     }
 
     createUrl(directions) {
-        // debugger
-        const route = directions.route[0];
+        debugger
+        const route = directions.routes[0];
         const overviewPath = route.overview_path;
-        const thumbnailUrl = `https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C${overviewPath[0].lat()},${overviewPath[0].lng()}&markers=label:E%7C${overviewPath[overviewPath.length - 1].lat()},${overviewPath[overviewPath.length - 1].lng()}`;
+        let thumbnailUrl = `https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C${overviewPath[0].lat()},${overviewPath[0].lng()}&markers=label:E%7C${overviewPath[overviewPath.length - 1].lat()},${overviewPath[overviewPath.length - 1].lng()}`;
         const pathColorUrl = `&path=color:0x000025cf[weight:2]`
         // 0x000025cf // double check this color // not sure if correct format
         const overviewPolyline = `enc:${route.overview_polyline}`;
@@ -180,7 +183,7 @@ class RouteNew extends React.Component {
 
         distance /= 1000;
         distance /= 1.60934;
-        distanceString = distance.toFixed(2); // to limit and stringify float
+        const distanceString = distance.toFixed(2); // to limit and stringify float
 
         const time = (60 * distanceString / 4.43).toFixed(2);
         this.setState({
