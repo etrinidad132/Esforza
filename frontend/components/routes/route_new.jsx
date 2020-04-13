@@ -1,10 +1,12 @@
 import React from "react";
+import Modal from "../modal/modal"
+import { Link } from "react-router-dom";
 
 class RouteNew extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            coodinatesArray =[],
+            coodinatesArray: [],
             create: false
         }
 
@@ -270,6 +272,12 @@ class RouteNew extends React.Component {
             }
         }
     }
+    //refactor this/////////////////////
+    save(e) {
+        e.preventDefault();
+        this.props.openModal("saveRoute"); // make this thirteenth
+        ///////////////////////////////
+    }
 
     clearStatistics() {
         // debugger
@@ -289,6 +297,7 @@ class RouteNew extends React.Component {
         return (
             <div>
                 {/* create new route modal here */}
+                <Modal routeInfomation={this.state}/>
                 {/* <h1 style="font-size=100px">Hi From Map</h1> */}
                 <div>
                     <div className="route-navbar">
@@ -329,19 +338,35 @@ class RouteNew extends React.Component {
                                 <div className='toolbar-btn-label'>Clear</div>
                             </div>
                         </div>
+
+                        <div>
+                            <button
+                                className={"btn" + (!this.state.clear ? " " + "disabled" : " ")}
+                                disabled={!this.state.clear}
+                                onClick={this.save}>Save{/* make this twelve */}
+                            </button>
+                        </div>
+
                         {/* you stopped here right before the save button ternary */}
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
                 <div id="map" ref='map'></div>{/* this is too create an object for the map to hook on to */}
+                <div id="stat-panel">
+                    <ul className="statistics">
+                        <label>Estimated Moving Time
+                        <li id="time"></li>
+                        </label>
+
+                        <label>Distance
+                        <li id="distance"></li>
+                        </label>
+
+                        <label>Elevation Gain
+                        <li id="elevation"></li>
+                        </label>
+                    </ul>
+                </div>
             </div>
         )
     }
