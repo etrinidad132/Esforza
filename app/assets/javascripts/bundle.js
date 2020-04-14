@@ -469,6 +469,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes_route_new_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./routes/route_new_container */ "./frontend/components/routes/route_new_container.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+
 
 
 
@@ -497,7 +499,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["AuthRoute"], {
     path: "/signup",
     component: _session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_sign_up_modal_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App); // import React from "react";
@@ -690,6 +692,12 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
   _createClass(NavBar, [{
     key: "render",
     value: function render() {
+      var newRoute = "/routes/new"; // debugger
+
+      if (this.props.location.pathname.includes(newRoute)) {
+        return null;
+      }
+
       var element;
 
       if (this.props.currentUser instanceof Array) {
@@ -730,7 +738,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
   return NavBar;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (NavBar); // import React from "react";
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(NavBar)); // import React from "react";
 // import { Link } from "react-router-dom";
 // // import { receiveErrors } from "../../actions/session_actions";
 // const NavBar = (props) => { // currentUser, logout, receiveErrors()
@@ -943,7 +951,7 @@ var RouteIndex = /*#__PURE__*/function (_React$Component) {
         className: "route-header"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My Routes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "button-main",
-        to: "routes/new"
+        to: "/routes/new"
       }, "Create New Route")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "route-index"
       }, indexItems)));
@@ -1562,7 +1570,9 @@ var RouteNew = /*#__PURE__*/function (_React$Component) {
         id: "distance"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Elevation Gain", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "elevation"
-      })))));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "extender"
+      }))));
     }
   }]);
 
@@ -2124,6 +2134,9 @@ var SignupModal = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       // debugger
       if (!this.props.modal) {
+        debugger;
+        return null;
+      } else if (this.props.modal !== "sign up") {
         return null;
       }
 

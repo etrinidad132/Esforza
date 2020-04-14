@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 // import { receiveErrors } from "../../actions/session_actions";
 
 class NavBar extends React.Component { // currentUser, logout, receiveErrors()
@@ -8,6 +8,13 @@ class NavBar extends React.Component { // currentUser, logout, receiveErrors()
     }
 
     render() {
+        const newRoute = "/routes/new"
+        // debugger
+        if (this.props.location.pathname.includes(newRoute)) {
+            return null;
+        } 
+
+
         let element;
         if (this.props.currentUser instanceof Array) {
             // debugger
@@ -53,7 +60,7 @@ class NavBar extends React.Component { // currentUser, logout, receiveErrors()
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
 
 
 // import React from "react";

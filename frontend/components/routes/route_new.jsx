@@ -378,6 +378,7 @@ class RouteNew extends React.Component {
                         <label>Elevation Gain
                         <li id="elevation"></li>
                         </label>
+                        <li id="extender"></li>
                     </ul>
                 </div>
             </div>

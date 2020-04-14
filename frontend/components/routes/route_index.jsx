@@ -59,7 +59,7 @@ class RouteIndex extends React.Component {
                 <div className="route-container">
                     <header className="route-header">
                         <h1>My Routes</h1>
-                        <Link className="button-main" to="routes/new">Create New Route</Link>
+                        <Link className="button-main" to="/routes/new">Create New Route</Link>
                     </header>
                     <div className="route-index">
                         {indexItems}

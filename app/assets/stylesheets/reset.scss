@@ -51,3 +51,21 @@ table {
   color: white;
   text-shadow: none;
 }
+
+.btn {
+    background-color: orangered;
+    color: white;
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 9.5px 10px;
+    font-weight: 700;
+    text-decoration: none;
+    -webkit-appearance: none;
+    border-style: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transition: background-color 300ms;
+    background-color: rgb(218, 65, 9);
+}

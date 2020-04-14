@@ -8,6 +8,7 @@ import RouteIndexContainer from "./routes/route_index_container"
 import RouteNewContainer from "./routes/route_new_container"
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Splash from "./splash/splash"
+import Modal from "./modal/modal"
 
 const App = () => {
     return (
@@ -22,7 +23,8 @@ const App = () => {
                 <AuthRoute path="/signup" component={SignupFormContainer} />
                 {/* <Route exact path="/signup" component={SignupFormContainer} /> */}
             </Switch>
-                {/* <SignupModalContainer /> */}
+                <SignupModalContainer />
+                {/* <Modal /> */}
 
         </>
     );
