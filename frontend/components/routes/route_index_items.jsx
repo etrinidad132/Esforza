@@ -27,14 +27,14 @@ class RouteIndexItem extends React.Component {
     }
 
     destroyRoute() {
-        debugger
+        // debugger
         this.props.destroyRoute(this.props.route.id)
-        alert("delete button is working")
+        // alert("delete button is working")
     }
 
     updateRoute() {
-        debugger
-        alert("update button is working")
+        // debugger
+        // alert("update button is working")
         //link to update route page
         // this.props.updateRoute()
     }

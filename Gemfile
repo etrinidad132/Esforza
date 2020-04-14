@@ -35,6 +35,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 
+# Allows for the seeding of data
+gem "faker"
+
+# Encyption of API Keys
+gem "figaro"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -51,8 +57,6 @@ group :development do
   gem "annotate"
   gem "better_errors"
   gem "binding_of_caller"
-  gem "faker"
-  gem "figaro"
   gem 'font-awesome-sass'
 end
 

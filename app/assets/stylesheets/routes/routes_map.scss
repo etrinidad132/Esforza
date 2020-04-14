@@ -1,0 +1,148 @@
+$strava-orange: #f24c03;
+
+#stat-panel select,
+#stat-panel input {
+    font-size: 15px;
+}
+
+#stat-panel select {
+    width: 100%;
+}
+
+#stat-panel i {
+    font-size: 12px;
+}
+
+#map {
+    height: 92vh;
+    width: 100%;
+    top: 0px;
+}
+
+#stat-panel {
+    display: flex;
+    // justify-content: center;
+    justify-content: end;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    position: fixed;
+    bottom: 11px;
+    left: 20px;
+    width: 95%;
+    // width: 450px;
+    height: 75px;
+    background-color: rgb(255, 255, 255);
+}
+
+.panel {
+    height: 100%;
+    overflow: auto;
+}
+
+.statistics {
+    display: flex;
+
+    label {
+        padding: 10px;
+    }
+}
+
+.route-navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.2px;
+    text-decoration: none;
+    z-index: 6;
+
+    nav {
+        display: flex;
+
+        h1 {
+            padding-left: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 24px;
+        }
+    }
+}
+
+.exit {
+    color: #999;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 22px;
+    letter-spacing: 0px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.route-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    font-size: 13px;
+    padding: 0px 10px 0 10px;
+    height: 38px;
+}
+
+.route-toolbar-left {
+    display: flex;
+}
+
+.toolbar-btn {
+    line-height: 38px;
+    display: flex;
+    padding: 0 20px;
+
+    .toolbar-btn-label {
+        padding-left: 5px;
+    }
+
+    &:hover {
+        background-color: #ddd;
+        cursor: pointer;
+    }
+}
+
+.disabled {
+    background-color: rgb(218, 65, 9);
+    &:hover {
+        cursor: default;
+    }
+}
+
+.warnbox-content {
+    display: none;
+    background-color: none;
+}
+
+.warnbox-c1 {
+    display: none;
+    background-color: none;
+}
+
+.warnbox-c2 {
+    display: none;
+    background-color: none;
+}
+
+.gm-style-mtc {
+    display: none;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: $strava-orange;
+    padding-left: 30px;
+    text-decoration: none;
+}

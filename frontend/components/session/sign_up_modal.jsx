@@ -46,7 +46,10 @@ class SignupModal extends React.Component {
     render() {
         // debugger
         if (!this.props.modal) {
+            debugger
             return null
+        } else if (this.props.modal !== "sign up") {
+            return null;
         }
 
         return (
@@ -103,7 +106,7 @@ class SignupModal extends React.Component {
                         <button className="modal-button">Continue</button>
 
                     </form>
-                </div>
+                 </div>
             </div>
         )
     }

@@ -18,7 +18,7 @@
 class Route < ApplicationRecord
     validates :user_id, :name, :distance, :time, :elevation, presence: true
     validates :activity_type, inclusion: { in: ["ride", "run"]}, allow_nil: true
-    validates :route_type, inclusion: { in: ["road", "MTB", "cyclocross", "road", "trail"]}, allow_nil: true
+    validates :route_type, inclusion: { in: ["road", "MTB", "cyclocross", "trail"]}, allow_nil: true
 
 
     ## Associations

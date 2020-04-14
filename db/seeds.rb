@@ -91,7 +91,7 @@ p "Users Done"
 users_array = [ user1, user2, user3, user4, user5, user6 ]
 activity_type = ["ride", "run"]
 route_type = ["road", "MTB", "cyclocross", "road", "trail"]
-thumbnail_sample = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
+thumbnail_sample = "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C40.76135,-73.98195000000001&markers=label:E%7C40.751990000000006,-73.89285000000001&path=color:0x000033ff|weight:2|enc:mexwFdrpbMdBuF~@wCiAs@sAy@yE_Dl@qBhAoDvEaOjCiIzHqVdEsMpEqNyFwDiGcEiD{BaAq@OKBR@Je@pAMV]`AS|@BDFETg@dBmF~@sC^aAfAgDr@sBhBsFdE_MpCyIrK}[`Pcf@|DuL@MGIFWTo@RU`AgDtAgE`@mAOKwEiEmCgC_BsAqBeByCqCmB{AiBuAqFeEy[gViOgLuKiItC}HlA_DFQ?Mt@qBrAqDjH}RvC_IfJeW|EyMDKPObAqCxA_EVs@Hk@CmAGuA[oGUaEm@{LI_Bv@IlCYzBYfBQhLoApFi@Cc@MwCc@oIQyCCUASH]U}Dy@oPv@C`Ee@h@GGgAECqBR&key=AIzaSyBRXhwNmYap2xKSxbvvczBY9INFdiAXtEE"
     
 def user_id_generator(array)
     array.sample
@@ -117,7 +117,7 @@ routeSeed1 = Route.create!(
     elevation: rand(0..300),
     activity_type: "run",
     route_type: "road",
-    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
+    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C40.76135,-73.98195000000001&markers=label:E%7C40.751990000000006,-73.89285000000001&path=color:0x000033ff|weight:2|enc:mexwFdrpbMdBuF~@wCiAs@sAy@yE_Dl@qBhAoDvEaOjCiIzHqVdEsMpEqNyFwDiGcEiD{BaAq@OKBR@Je@pAMV]`AS|@BDFETg@dBmF~@sC^aAfAgDr@sBhBsFdE_MpCyIrK}[`Pcf@|DuL@MGIFWTo@RU`AgDtAgE`@mAOKwEiEmCgC_BsAqBeByCqCmB{AiBuAqFeEy[gViOgLuKiItC}HlA_DFQ?Mt@qBrAqDjH}RvC_IfJeW|EyMDKPObAqCxA_EVs@Hk@CmAGuA[oGUaEm@{LI_Bv@IlCYzBYfBQhLoApFi@Cc@MwCc@oIQyCCUASH]U}Dy@oPv@C`Ee@h@GGgAECqBR&key=AIzaSyBRXhwNmYap2xKSxbvvczBY9INFdiAXtEE"
 )
 
 routeSeed2 = Route.create!(
@@ -129,7 +129,7 @@ routeSeed2 = Route.create!(
     elevation: rand(0..300),
     activity_type: "run",
     route_type: "road",
-    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
+    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C40.76135,-73.98195000000001&markers=label:E%7C40.751990000000006,-73.89285000000001&path=color:0x000033ff|weight:2|enc:mexwFdrpbMdBuF~@wCiAs@sAy@yE_Dl@qBhAoDvEaOjCiIzHqVdEsMpEqNyFwDiGcEiD{BaAq@OKBR@Je@pAMV]`AS|@BDFETg@dBmF~@sC^aAfAgDr@sBhBsFdE_MpCyIrK}[`Pcf@|DuL@MGIFWTo@RU`AgDtAgE`@mAOKwEiEmCgC_BsAqBeByCqCmB{AiBuAqFeEy[gViOgLuKiItC}HlA_DFQ?Mt@qBrAqDjH}RvC_IfJeW|EyMDKPObAqCxA_EVs@Hk@CmAGuA[oGUaEm@{LI_Bv@IlCYzBYfBQhLoApFi@Cc@MwCc@oIQyCCUASH]U}Dy@oPv@C`Ee@h@GGgAECqBR&key=AIzaSyBRXhwNmYap2xKSxbvvczBY9INFdiAXtEE"
 )
 
 routeSeed3 = Route.create!(
@@ -141,7 +141,7 @@ routeSeed3 = Route.create!(
     elevation: rand(0..300),
     activity_type: "ride",
     route_type: "cyclocross",
-    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C37.80462,-122.41656&markers=label:E%7C37.79795,-122.42374000000001&path=color:0x0000ff80|weight:2|enc:{uveFnndjV}@zAi@x@Dh@HdATpDb@fHj@vHh@dIf@xHrJkAjDa@XG`D]~ASpDe@fFm@&key=AIzaSyCpCGBt5GjRXJ8H48OKvz2TeuoNWAqlZko"
+    thumbnail: "https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C40.76135,-73.98195000000001&markers=label:E%7C40.751990000000006,-73.89285000000001&path=color:0x000033ff|weight:2|enc:mexwFdrpbMdBuF~@wCiAs@sAy@yE_Dl@qBhAoDvEaOjCiIzHqVdEsMpEqNyFwDiGcEiD{BaAq@OKBR@Je@pAMV]`AS|@BDFETg@dBmF~@sC^aAfAgDr@sBhBsFdE_MpCyIrK}[`Pcf@|DuL@MGIFWTo@RU`AgDtAgE`@mAOKwEiEmCgC_BsAqBeByCqCmB{AiBuAqFeEy[gViOgLuKiItC}HlA_DFQ?Mt@qBrAqDjH}RvC_IfJeW|EyMDKPObAqCxA_EVs@Hk@CmAGuA[oGUaEm@{LI_Bv@IlCYzBYfBQhLoApFi@Cc@MwCc@oIQyCCUASH]U}Dy@oPv@C`Ee@h@GGgAECqBR&key=AIzaSyBRXhwNmYap2xKSxbvvczBY9INFdiAXtEE"
 )
 
 route1 = Route.create!(
@@ -255,13 +255,13 @@ locationSeed1 = Location.create!(
 )
 locationSeed2 = Location.create!(
     route_id: routeSeed1.id, 
-    sequence: 1, 
+    sequence: 2, 
     lat: lat_generator(lat_array), 
     lng: lng_generator(lng_array)
 )
 locationSeed3 = Location.create!(
     route_id: routeSeed1.id, 
-    sequence: 1, 
+    sequence: 3, 
     lat: lat_generator(lat_array), 
     lng: lng_generator(lng_array)
 )

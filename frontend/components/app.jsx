@@ -5,8 +5,10 @@ import LoginFormContainer from "./session/login_form_container"
 import SignupFormContainer from "./session/signup_form_container"
 import SignupModalContainer from "./session/sign_up_modal_container"
 import RouteIndexContainer from "./routes/route_index_container"
+import RouteNewContainer from "./routes/route_new_container"
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Splash from "./splash/splash"
+import Modal from "./modal/modal"
 
 const App = () => {
     return (
@@ -14,6 +16,7 @@ const App = () => {
             <NavBarContainer />
             <Switch>
                 <AuthRoute exact path="/" component={Splash} />
+                <ProtectedRoute path="/routes/new" component={RouteNewContainer} />
                 <ProtectedRoute path="/routes" component={RouteIndexContainer} />
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 {/* <Route exact path="/login" component={LoginFormContainer} /> */}
@@ -21,6 +24,7 @@ const App = () => {
                 {/* <Route exact path="/signup" component={SignupFormContainer} /> */}
             </Switch>
                 <SignupModalContainer />
+                {/* <Modal /> */}
 
         </>
     );

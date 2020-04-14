@@ -22,6 +22,9 @@
 
  @import "./form/session_form.scss";
  @import "./form/sign_up_modal.scss";
+ 
+ @import "./modal/modal.scss";
 
  @import "./routes/route_icon.scss";
  @import "./routes/route_index.scss";
+ @import "./routes/routes_map.scss";

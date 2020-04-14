@@ -1,0 +1,145 @@
+.route-save-modal {
+  background-color: rgba(255,255,255,0.95);
+  width: 650px;
+}
+
+.save-header {
+  background-color: #F7F7F7;
+  border-bottom: 1px solid #ccccd1;
+  padding: 15px 20px;
+  color: #333;
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+  }
+}
+
+.inline-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px -16px;
+  align-items: center;
+  width: 100%
+}
+
+.route-save-label-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.route-save-label-parent-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.save-main {
+  color: #333;
+  min-height: 300px;
+  max-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,0.95);
+  padding: 20px;
+  form {
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+    p {
+      text-align: left;
+      width: 100%;
+      line-height: 1.4em;
+    }
+    label {
+      align-self: flex-start;
+      color: rgb(96, 96, 101);
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    input {
+      color: black;
+      border: 1px solid #ccccd1;
+      background-color: #fff;
+
+      &:focus {
+        border-color: #007FB6;
+      }
+    }
+    
+    textarea {
+      border: 1px solid #ccccd1;
+      min-height: 3.6em;
+      font-size: 14px;
+
+      &:focus {
+        border-color: #007FB6;
+      }
+    }
+    .modal-save-btn {
+      margin-top: 20px;
+      background-color: rgb(45, 45, 50);
+      color: rgb(255, 255, 255);
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 16px;
+      min-height: 34px;
+      border: 1px solid #ccccd1;
+      border-radius: 4px;
+
+      &:hover {
+        transition: 0.3s;
+        background-color: #45454d;
+      }
+    }
+  }
+}
+
+.route-save-name {
+  width: 430px;
+  height: 44px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 7px;
+}
+
+.errors-input {
+  border: 1px red solid;
+}
+
+.selectbox {
+  border: 1px solid #ccccd1;
+  background-color: #fff;
+  height: 44px;
+  width: 110px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.save-errors {
+  font-size: 11px;
+    background-color: transparent;
+    color: #fe0c0b;
+    white-space: normal;
+    margin: 0;
+    display: block;
+    line-height: 1.2em;
+    padding-top: 5px;
+    position: relative;
+    margin-bottom: -18px;
+    &:empty {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        align-self: flex-start;
+      }
+    }
+}
+
