@@ -11,8 +11,20 @@ class RouteIndex extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchRoutes()
     }
+    
+    // componentDidUpdate() {
+    //     debugger
+    //     this.props.fetchRoutes()
+    // }
+
+    // componentWillUpdate() {
+    //     debugger
+    //     this.props.fetchRoutes()
+    // }
+
 
     timeConverter() {
         let secText = seconds % 60;

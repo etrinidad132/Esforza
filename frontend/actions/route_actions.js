@@ -34,6 +34,7 @@ const receiveRoute = (route) => {
 }
 
 const deleteRoute = (routeId) => {
+    debugger
     return ({
         type: DELETE_ROUTE,
         routeId: routeId
@@ -48,7 +49,7 @@ const receiveErrors = (error) => {
     })
 }
 const receiveCrudErrors = (errorsArray) => {
-    debugger
+    // debugger
     return ({
         type: RECEIVE_ROUTE_CRUD_ERRORS,
         errors: errorsArray
@@ -72,6 +73,15 @@ export const updateRoute = (route) => (dispatch) => APIUtil.updateRoute(route)
 export const destroyRoute = (routeId) => (dispatch) => APIUtil.destroyRoute(routeId)
     .then(route => dispatch(deleteRoute(route.id)), err => dispatch(receiveErrors(err.statusText)));
 
+// destroyRoute debugging
+
+// export const destroyRoute = (routeId) => (dispatch) => {
+//     debugger
+//     return (APIUtil.destroyRoute(routeId)).then(route =>{
+//         debugger
+//         return(dispatch.deleteRoute(route.id))
+//     })
+// }
 
 // Error debugging
 
