@@ -308,10 +308,7 @@ class RouteNew extends React.Component {
         // debugger
         return (
             <div>
-                {/* create new route modal here */}
-                {/* <Modal routeInfomation={this.state}/> */}
                 <Modal routeInfo={this.state}/>
-                {/* <h1 style="font-size=100px">Hi From Map</h1> */}
                 <div>
                     <div className="route-navbar">
                         <nav className="route-navbar-left">

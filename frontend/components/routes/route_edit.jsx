@@ -323,12 +323,7 @@ class RouteEdit extends React.Component {
         // debugger
         return (
             <div>
-                {/* create new route modal here */}
-                {/* <Modal routeInfomation={this.state}/> */}
-                {/* <Modal routeInfo={this.state} /> */}
-                {/* <Modal routeInfo={this.state} prevRoute={this.props.currentRoute} prevLocations={this.props.prevLocations} /> */}
                 <Modal routeInfo={this.state} prevRoute={this.props.currentRoute} previousMarkers={this.props.previousMarkers} />
-                {/* <h1 style="font-size=100px">Hi From Map</h1> */}
                 <div>
                     <div className="route-navbar">
                         <nav className="route-navbar-left">
