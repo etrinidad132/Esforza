@@ -40,7 +40,7 @@ $strava-orange: #f24c03;
     text-decoration: none;
 }
 
-.btn {
+.session-btn {
     background-color: white;
     display: inline-block;
     box-sizing: border-box;
@@ -76,7 +76,7 @@ $strava-orange: #f24c03;
 //     border-style: none;
 // }
 
-.btn:hover {
+.session-btn:hover {
     cursor: pointer;
     transition: background-color 300ms;
     background-color: $hover-color;

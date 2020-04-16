@@ -50,10 +50,10 @@ class NavBar extends React.Component {
         ) : (
                 <div className="navbar-right-side">
                     <span>
-                        <Link className="btn" to="/signup">Sign Up</Link>
+                        <Link className="session-btn" to="/signup">Sign Up</Link>
                     </span>
                     <span>
-                        <Link className="btn" to="/login">Log In</Link>
+                        <Link className="session-btn" to="/login">Log In</Link>
                     </span>
                 </div>
             );
