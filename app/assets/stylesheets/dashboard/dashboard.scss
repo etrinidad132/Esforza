@@ -27,7 +27,7 @@ $strava-orange: #f24c03;
 .user-statistics {
     background-color: #fff;
     width: 17%;
-    height: 291px;
+    // height: 291px;
     border-radius: 4px;
     position: fixed;
     left: 15%;
@@ -71,12 +71,16 @@ $strava-orange: #f24c03;
     box-sizing: border-box;
 }
 
+.activity-feed::-webkit-scrollbar {
+  display: none;
+}
+
 .banner {
     background-color: #f5f5fa;
     background-position-y: -91px;
     background-repeat: no-repeat;
     background-size: cover; 
-    background-image: image-url('hero_banner.jpg');
+    background-image: image-url('hero_banner.png');
     height: 188px;
     width: 100%;
     border-radius: 4px;
@@ -206,3 +210,272 @@ $strava-orange: #f24c03;
 .chevron-container {
     width: 20px;
 }
+
+
+
+
+
+
+
+
+// $strava-orange: #f24c03;
+
+
+// .profile-link {
+//     cursor: pointer;
+//     font-size: inherit;
+//     color: #2d2d32;
+
+//     &:hover {
+//         color: #005b83;
+
+//         h1, h2, h3, h4 {
+//             color: #005b83;
+//         }
+//     }
+// }
+
+// .dashboard-home {
+//     display: flex;
+//     justify-content: space-evenly;
+//     background-color: #f5f5fa;
+//     background-size: cover;
+//     padding-top: 120px;
+//     min-height: 849px;
+// }
+
+// .personal-stats {
+//     background-color: #fff;
+//     width: 17%;
+//     height: 291px;
+//     border-radius: 4px;
+//     position: fixed;
+//     left: 15%;
+//     box-shadow: 0px 8px 24px rgba(13,13,18,0.04);
+// }
+
+// .advertise {
+//     position: fixed;
+//     right: 15%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     // width: 240px;
+//     width: 17%;
+//     height: 300px;
+    
+//     p {
+//         margin: 10px 0 10px 0;
+//         font-size: 12px;
+//         line-height: 16px;
+//         color: rgb(45, 45, 50);
+//     }
+
+//     section {
+//         display: flex;
+//         justify-content: center;
+//         border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+//         padding-bottom: 10px;
+//     }
+// }
+
+// .activity-feed {
+//     background-color: #f5f5fa;
+//     width: 34%;
+//     // width: 593px;
+//     border-radius: 4px;
+//     float: left;
+//     height: 100%;
+//     overflow: auto;
+//     box-sizing: border-box;
+// }
+
+// .banner {
+//     background-color: #f5f5fa;
+//     background-position-y: -91px;
+//     background-repeat: no-repeat;
+//     background-size: cover; 
+//     background-image: image-url('running_banner.jpg');
+//     height: 188px;
+//     width: 100%;
+//     border-radius: 4px;
+//     margin-bottom: 27px;
+//     // box-shadow: 0px 8px 24px rgba(13,13,18,0.04);
+// }
+
+// .profile-card {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .profile-main-text {
+//     margin-top: -16px;
+//     text-align: center;
+//     margin-bottom: 20px;
+//     h1 {
+//         font-size: 22px;
+//         font-weight: 700;
+//         color: #2d2d32;
+//     }
+// }
+
+// .avatar-image {
+//     position: relative;
+//     top: -36px;
+//     width: 70px;
+//     height: 70px;
+//     border-radius: 50%;
+//     z-index: 1;
+// }
+
+// .blank {
+//     background-color: rgb(0, 87, 155);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center; 
+
+//     .blank-pic {
+//         display: flex;
+//         align-items: center;
+//         height: 100%;
+//         position: relative;
+//         font-size: 300%;
+//         color: white;
+//     }
+// }
+
+// .personal-adver {
+//     text-decoration: none;
+//     color: #fc4c02;
+
+//     &:hover {
+//         color: #bd3902;
+//     }
+// }
+
+// .total-stats {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     align-items: center;
+//     label {
+//         font-size: 12px;
+//         font-weight: 400;
+//         color: #606065;
+//         line-height: 1.2;
+//     }
+
+//     .total-stats-stat {
+//         text-align: center;
+
+//         h2 {
+//             padding-top: 5px;
+//             font-size: 18px;
+//             font-weight: 400;
+//             line-height: 1;
+//         }
+//     }
+
+//     div {
+//         // margin-top: 20px;
+//         display: flex;
+//         justify-content: space-around;
+//         width: 90%;
+//         border-bottom: 1px solid #E6E6EB;
+//         padding-bottom: 20px;
+//         margin-bottom: 20px;
+//     }
+// }
+
+// .github {
+//     height: 55px;
+//     width: 55px;
+//     padding-right: 12px;
+// }
+
+// .linkedin {
+//     height: 60px;
+//     width: 60px;
+//     padding-right: 12px;
+// }
+
+// .dashboard-link {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 80%;
+//     color: #242428;
+//     font-size: 13px;
+
+//     &:hover {
+//         color: #007FB6;
+//         .fa-chevron-right {
+//             transition: .3s;
+//             margin-left: 5px;
+//         }
+//     }
+// }
+
+// .fa-chevron-right {
+//     transition: .3s;
+// }
+
+// .chevron-container {
+//     width: 20px;
+// }
+
+// @media only screen and (max-width: 1600px) {
+//     .dashboard-home {
+//         min-height: 569px;
+//     }
+    
+//     .activity-feed {
+//         width: 45%;
+//     }
+//     .personal-stats {
+//         left: 4%;
+//         width: 22%;
+//     }
+
+//     .advertise {
+//         right: 4%;
+//         width: 22%;
+//     }
+// }
+
+// @media (max-width: 1015px) {
+//     .dashboard-home {
+//         flex-direction: column;
+//         align-items: center;
+//     }
+
+//     .activity-feed {
+//         width: 60%;
+//     }
+
+//     .personal-stats {
+//         position: static;
+//         width: 60%;
+//         margin-bottom: 23px;
+//     }
+
+//     .chevron-container {
+//         padding-left: 8%;
+//     }
+
+//     .advertise {
+//         display: none;
+//     }
+
+//     .banner {
+//         display: none;
+//     }
+// }
+
+// @media (max-width: 645px) {
+//     .chevron-container {
+//         padding-left: 34%;
+//     }
+// }

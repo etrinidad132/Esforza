@@ -15,7 +15,7 @@ const receiveRoutes = (routes) => {
 }
 
 const receiveRoute = (route) => {
-    debugger
+    // debugger
     if (route instanceof Array) {
         return ({
             type: RECEIVE_ROUTE_CRUD_ERRORS,

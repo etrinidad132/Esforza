@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import Dashboard from "./dashboard"
 import { fetchRoutes } from "../../actions/route_actions";
 import { fetchUser } from "../../actions/user_actions";
+import { fetchLocations } from "../../actions/location_actions";
 
 const mapStateToProps = (state) => {
     return({
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return({
         fetchUser: (userId) => dispatch(fetchUser(userId)),
-        fetchRoutes: () => dispatch(fetchRoutes())
+        fetchRoutes: () => dispatch(fetchRoutes()),
+        fetchLocations: () => dispatch(fetchLocations())
     })
 }
 

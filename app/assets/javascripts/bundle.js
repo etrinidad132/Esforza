@@ -286,8 +286,7 @@ var receiveRoutes = function receiveRoutes(routes) {
 };
 
 var receiveRoute = function receiveRoute(route) {
-  debugger;
-
+  // debugger
   if (route instanceof Array) {
     return {
       type: RECEIVE_ROUTE_CRUD_ERRORS,
@@ -728,8 +727,10 @@ var ActivityDisplayItem = /*#__PURE__*/function (_React$Component) {
     key: "userFlair",
     value: function userFlair() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "avatar-image blank"
-      });
+        className: "avatar-image-mini"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "blank-pic"
+      }, this.props.user.username[0].toUpperCase()));
     }
   }, {
     key: "render",
@@ -737,7 +738,7 @@ var ActivityDisplayItem = /*#__PURE__*/function (_React$Component) {
       // const { distance, elevation, time, description, name, id, created_at } = this.props.route;
       // const { user } = this.props;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "activity-feed-item`"
+        className: "activity-feed-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-info"
       }, this.userFlair(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -747,7 +748,7 @@ var ActivityDisplayItem = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "route-link",
         to: "/routes/".concat(this.props.route.id)
-      }, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.route.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-feed-item-desc"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.route.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-feed-item-stats"
@@ -758,7 +759,93 @@ var ActivityDisplayItem = /*#__PURE__*/function (_React$Component) {
   return ActivityDisplayItem;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (ActivityDisplayItem);
+/* harmony default export */ __webpack_exports__["default"] = (ActivityDisplayItem); // import React from "react";
+// import { Link } from "react-router-dom";
+// class ActivityDisplayItem extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.timeConverter = this.timeConverter.bind(this);
+//         this.dateConverter = this.dateConverter.bind(this);
+//         this.userFlair = this.userFlair.bind(this);
+//     }
+//     timeConverter(seconds) {
+//         let secText = seconds % 60;
+//         let minText = Math.floor(seconds % 3600 / 60);
+//         const hourText = Math.floor(seconds / 3600);
+//         if (secText < 10) {
+//             secText = `0${secText}`;
+//         }
+//         if (hourText >= 1 && minText < 10) {
+//             minText = `0${minText}`;
+//         }
+//         return ((hourText >= 1) ? `${hourText}:${minText}:${secText}` : `${minText}:${secText}`);
+//     }
+//     dateConverter(date) {
+//         const months = {
+//             '01': 'January',
+//             '02': 'Febuary',
+//             '03': 'March',
+//             '04': 'April',
+//             '05': 'May',
+//             '06': 'June',
+//             '07': 'July',
+//             '08': 'August',
+//             '09': 'September',
+//             '10': 'October',
+//             '11': 'November',
+//             '12': 'December',
+//         };
+//         return (`${months[date.slice(5, 7)]} ${date.slice(8, 10)}, ${date.slice(0, 4)}`);
+//     }
+//     userFlair() {
+//         return (
+//             <section className="avatar-image blank">
+//                 {/* <h1 className="blank-pic">{this.props.user.username[0].toUpperCase()}</h1> */}
+//             </section>
+//         )
+//     }
+//     render() {
+//         // const { distance, elevation, time, description, name, id, created_at } = this.props.route;
+//         // const { user } = this.props;
+//         return (
+//             <div className="activity-feed-item`">
+//                 <div className="activity-info">
+//                     {this.userFlair()}
+//                     <section>
+//                         <header className="feed-item-header">
+//                             <h2>
+//                                 {/* username will link to user show/profile page in the future */}
+//                                 {this.props.user.username}
+//                             </h2>
+//                             <label>{this.dateConverter(this.props.route.created_at)}</label>
+//                         </header>
+//                         <div className="feed-item-name">
+//                             <Link className="training-link" to={`/routes/${this.props.route.id}`}>{name}</Link>
+//                         </div>
+//                         <div className="feed-item-desc">
+//                             <p>{this.props.route.description}</p>
+//                         </div>
+//                         <div className="feed-item-stats">
+//                             <section>
+//                                 <label>Distance</label>
+//                                 <h3>{this.props.route.distance} mi</h3>
+//                             </section>
+//                             <section>
+//                                 <label>Elevation</label>
+//                                 <h3>{this.props.route.elevation} ft</h3>
+//                             </section>
+//                             <section>
+//                                 <label>Time</label>
+//                                 <h3>{this.timeConverter(this.props.route.time)}</h3>
+//                             </section>
+//                         </div>
+//                     </section>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+// export default ActivityDisplayItem;
 
 /***/ }),
 
@@ -822,6 +909,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchUser(this.props.currentUser.id);
       this.props.fetchRoutes();
+      this.props.fetchLocations();
     }
   }, {
     key: "timeConverter",
@@ -845,7 +933,9 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
     value: function userFlair() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "avatar-image blank"
-      });
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "blank-pic"
+      }, this.props.currentUser.username[0].toUpperCase()));
     }
   }, {
     key: "render",
@@ -862,7 +952,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         }
       });
       activityFeed.sort(function (x, y) {
-        return Math.sign(x - y);
+        return Math.sign(y.id - x.id);
       });
       var activityDisplay = activityFeed.map(function (route, index) {
         route.username = _this2.props.users[route.user_id].username;
@@ -904,7 +994,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
         className: "activity-feed"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "banner"
-      }, activityDisplay)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), activityDisplay), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "personal-ads"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "github",
@@ -919,7 +1009,125 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
   return Dashboard;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
+/* harmony default export */ __webpack_exports__["default"] = (Dashboard); // import React from "react";
+// import { Link } from "react-router-dom";
+// import ActivityDisplayItem from "./activity_display_item"
+// class Dashboard extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.timeConverter = this.timeConverter.bind(this)
+//         this.userFlair = this.userFlair.bind(this)
+//     }
+//     componentDidMount() {
+//         this.props.fetchUser(this.props.currentUser.id)
+//         this.props.fetchRoutes()
+//     }
+//     timeConverter(seconds) {
+//         let secText = seconds % 60;
+//         let minText = Math.floor(seconds % 3600 / 60);
+//         const hourText = Math.floor(seconds / 3600);
+//         if (secText < 10) {
+//             secText = `0${secText}`;
+//         }
+//         if (hourText >= 1 && minText < 10) {
+//             minText = `0${minText}`;
+//         }
+//         return ((hourText >= 1) ? `${hourText}:${minText}:${secText}` : `${minText}:${secText}`);
+//     }
+//     userFlair() {
+//         return (
+//             <section className="avatar-image blank">
+//                 {/* <h1 className="blank-pic">{this.props.user.username[0].toUpperCase()}</h1> */}
+//             </section>
+//         )
+//     }
+//     render() {
+//         // const { currentUser, users, routes } = this.props;
+//         const routesArray = [];
+//         const activityFeed = []
+//         this.props.routes.forEach(route => {
+//             if (route.user_id === this.props.currentUser.id) {
+//                 routesArray.push(route);
+//                 activityFeed.push(route);
+//             }
+//         });
+//         activityFeed.sort((x, y) => Math.sign(x - y))
+//         const activityDisplay = activityFeed.map((route, index) => {
+//             route.username = this.props.users[route.user_id].username;
+//             return (
+//                 <ActivityDisplayItem
+//                     key={index}
+//                     user={this.props.users[route.user_id]}
+//                     route={route}
+//                     currentUser={this.props.currentUser}
+//                 />
+//             )
+//         })
+//         const totalDistance = routesArray.reduce((acc, ele) => {
+//             return acc + ele.distance
+//         }, 0)
+//         const totalElevation = routesArray.reduce((acc, ele) => {
+//             return acc + ele.elevation
+//         }, 0)
+//         const totalTime = routesArray.reduce((acc, ele) => {
+//             return acc + ele.time
+//         }, 0)
+//         return (
+//             <div className="dashboard-home">
+//                 <div className="personal-stats">
+//                     <section className="profile-card">
+//                         {this.userFlair()}
+//                         <section className="profile-main-text">
+//                             {/* Link to user show page when I have time to make this */}
+//                             <h1>{this.props.currentUser.username}</h1>
+//                         </section>
+//                         <div className="total-stats">
+//                             <div>
+//                                 <section className="total-stats-stat">
+//                                     <label>Activities</label>
+//                                     <h2>{routesArray.length}</h2>
+//                                 </section>
+//                             </div>
+//                             <div>
+//                                 <section className="total-stats-stat">
+//                                     <label>Distance</label>
+//                                     <h2>{totalDistance.toFixed(2)}</h2>
+//                                 </section>
+//                                 <section className="total-stats-stat">
+//                                     <label>Elevation</label>
+//                                     <h2>{totalElevation.toFixed(2)}</h2>
+//                                 </section>
+//                                 <section className="total-stats-stat">
+//                                     <label>Time</label>
+//                                     <h2>{this.timeConverter(totalTime)}</h2>
+//                                 </section>
+//                             </div>
+//                         </div>
+//                     </section>
+//                 </div>
+//                 <div className="advertise">
+//                     <section className="banner">
+//                         {activityDisplay}
+//                     </section>
+//                 </div>
+//                 <div className="personal-adver">
+//                     <section>
+//                         <div>
+//                             <img className="github" src={window.githubIcon} />
+//                         </div>
+//                         <div>
+//                             <label>GitHub</label>
+//                             <p>
+//                                 <a className="personal" tartget="_blank" href="https://github.com/etrinidad132/">View Profile</a>
+//                             </p>
+//                         </div>
+//                     </section>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+// export default Dashboard;
 
 /***/ }),
 
@@ -936,6 +1144,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard */ "./frontend/components/dashboard/dashboard.jsx");
 /* harmony import */ var _actions_route_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/route_actions */ "./frontend/actions/route_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/location_actions */ "./frontend/actions/location_actions.js");
+
 
 
 
@@ -956,6 +1166,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchRoutes: function fetchRoutes() {
       return dispatch(Object(_actions_route_actions__WEBPACK_IMPORTED_MODULE_2__["fetchRoutes"])());
+    },
+    fetchLocations: function fetchLocations() {
+      return dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_4__["fetchLocations"])());
     }
   };
 };
