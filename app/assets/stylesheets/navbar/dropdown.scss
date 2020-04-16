@@ -1,0 +1,123 @@
+$button-text-color: #242428;
+$border-color: #dfdfe8;
+$hover-color: #f0f0f5;
+$strava-orange: #f24c03;
+
+.drop-right {
+  display: inline-block;
+  color: $button-text-color;
+  font-weight: 700;
+  font-size: 10px;
+  a {
+    display: block;
+    box-sizing: border-box;
+    height: 62px;
+    padding: 0px 16px;
+    cursor: pointer;
+  }
+}
+
+.drop {
+  display: inline-block;
+  color: $button-text-color;
+  font-weight: 700;
+  font-size: 10px;
+  a {
+    display: block;
+    height: 62px;
+    padding: 0px 16px;
+    cursor: pointer;
+  }
+}
+
+.drop-menu {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background-color: transparent;
+  line-height: 69px;
+  display: inline-block;
+  position: relative;
+  
+
+  &:hover {
+    color: $strava-orange;
+    border-bottom: 2px solid white;
+    // border-right: 1px solid black;
+    // border-left: 1px solid black;
+    margin-left: -1px;
+    margin-right: -1px;
+    .drop-submenu-dash, .drop-submenu-profile {
+    display: block;
+    z-index: 20;
+    }
+    .tab-header {
+      box-sizing: border-box;
+      position: relative;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+      border-bottom: 2px solid white;
+      // top: 1px;
+      z-index: 30;
+      height: 63px;
+    }
+  }
+}
+
+.orange {
+  border-bottom: 2px solid $strava-orange;
+}
+   
+.drop-submenu-dash {
+  // left: -1px;
+  margin-top: 1px;
+  color: #2d2d32;
+  font-weight: 300;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: solid 1px $button-text-color;
+  z-index: 20;
+  top: 61px;
+}
+
+.dash {
+  width: 200px;
+}
+
+.friends {
+  width: 150px;
+}
+
+.drop-submenu-profile {
+  // left: -105%;
+  right: 0;
+  // left: -104px;
+  margin-top: 1px;
+  color: $button-text-color;
+  font-weight: 300;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  border: solid 1px #2d2d32;
+  top: 61px;
+}
+    
+.drop-submenu-item {
+  &:hover {
+    background: rgba(#000, 0.1);
+  }
+}
+
+.drop-submenu-item {
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 350;
+    color: $button-text-color
+  }
+}

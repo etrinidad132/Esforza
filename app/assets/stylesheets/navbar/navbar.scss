@@ -4,89 +4,169 @@ $border-color: #dfdfe8;
 $hover-color: #f0f0f5;
 $strava-orange: #f24c03;
 
-.header-content {
-    height: 43px;
-    width: 100vw;
-    background-color: white;
+.navbar-right-side {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 5px;
-    // padding-top: 5px;
-    z-index: 5;
-    position: fixed;
-    border-bottom: 0.5px solid $border-color;
-    // box-shadow: 0px 2px 18px rgba(13, 13, 18, 0.16);
-
-    .logo {
-        font-size: 25px;
-        font-weight: 700;
-        color: $strava-orange;
-        padding-left: 30px;
-        text-decoration: none;
-    }
-
-    nav {
-        // justify-content: left;
-        padding-right: 30px;
-
-        a, button {
-            // background-color: $test-color;
-            display: inline-block;
-            box-sizing: border-box;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            color: $button-text-color;
-            text-decoration: none;
-            padding: 6px 16px;
-            margin: 0 5px;
-            border: 0.5px solid $border-color;
-            border-radius: 4px;
-        }
-
-        h3 {
-            display: inline-block;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        a:hover, button:hover {
-            background-color: $hover-color;
-        }
-    }
+    align-content: center;
+    width: 300px;
+    margin-right: 61px;
+    justify-content: flex-end;
 }
 
+.navbar-right-side > span {
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
 
+.navbar-left-side {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 300px;
+    margin-right: 75px;
+}
 
-// .header-content{
-//     // background-color: $test-color;
-//     min-height: 55px;
+.navbar-left-side > span {
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.logo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    color: orangered;
+    letter-spacing: -1.2px;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: white;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    color: $button-text-color;
+    text-decoration: none;
+    padding: 6px 16px;
+    margin: 0 5px;
+    border: 0.5px solid $border-color;
+    border-radius: 4px;
+
+    // padding: 9.5px 10px;
+    // background-color: orangered;
+    // color: white;
+    // border-radius: 3px;
+    // font-size: 11px;
+    // font-weight: 700;
+    text-decoration: none;
+    -webkit-appearance: none;
+    // border-style: none;
+}
+// .btn {
+//     background-color: orangered;
+//     color: white;
+//     border-radius: 3px;
+//     font-size: 11px;
+//     padding: 9.5px 10px;
+//     font-weight: 700;
+//     text-decoration: none;
+//     -webkit-appearance: none;
+//     border-style: none;
+// }
+
+.btn:hover {
+    cursor: pointer;
+    transition: background-color 300ms;
+    background-color: $hover-color;
+}
+
+.welcome {
+    display: flex;
+    align-content: center;
+}
+
+.navbar-main {
+    font-size: 16px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0 32px;
+    align-items: center;
+    height: 53px;
+    position: fixed;
+    width: 100%;
+    border-bottom: 0.5px solid lightgray;
+    z-index: 30;
+}
+
+.navbar-side {
+    display: flex;
+    margin-left: 20px;
+    min-width: 900px;
+    width: 70%;
+    justify-content: space-between;
+}
+
+// $test-color: salmon;
+// $button-text-color: #242428;
+// $border-color: #dfdfe8;
+// $hover-color: #f0f0f5;
+// $strava-orange: #f24c03;
+
+// .header-content {
+//     height: 43px;
+//     width: 100vw;
+//     background-color: white;
 //     display: flex;
 //     flex-direction: row;
-//     text-align: right;
+//     justify-content: space-between;
 //     align-items: center;
-//     border-bottom: .5px solid $border-color;
+//     padding-bottom: 5px;
+//     // padding-top: 5px;
+//     z-index: 5;
+//     position: fixed;
+//     border-bottom: 0.5px solid $border-color;
+//     // box-shadow: 0px 2px 18px rgba(13, 13, 18, 0.16);
+
+//     .logo {
+//         font-size: 25px;
+//         font-weight: 700;
+//         color: $strava-orange;
+//         padding-left: 30px;
+//         text-decoration: none;
+//     }
+
 //     nav {
 //         // justify-content: left;
+//         padding-right: 30px;
 
-//         a {
+//         a,
+//         button {
 //             // background-color: $test-color;
-//             display: inline-block;
-//             box-sizing: border-box;
-//             cursor: pointer;
-//             color: $button-text-color;
-//             text-decoration: none;
-//             padding: 6px 16px;
-//             font-weight: 700;
-//             border: .5px solid $border-color;
-//             border-radius: 4px;
+// display: inline-block;
+// box-sizing: border-box;
+// font-weight: 700;
+// font-size: 14px;
+// cursor: pointer;
+// color: $button-text-color;
+// text-decoration: none;
+// padding: 6px 16px;
+// margin: 0 5px;
+// border: 0.5px solid $border-color;
+// border-radius: 4px;
 //         }
 
-//         a:hover {
+//         h3 {
+//             display: inline-block;
+//             font-size: 14px;
+//             font-weight: 700;
+//         }
+
+//         a:hover,
+//         button:hover {
 //             background-color: $hover-color;
 //         }
 //     }
-
 // }

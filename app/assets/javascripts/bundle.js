@@ -1009,125 +1009,7 @@ var Dashboard = /*#__PURE__*/function (_React$Component) {
   return Dashboard;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Dashboard); // import React from "react";
-// import { Link } from "react-router-dom";
-// import ActivityDisplayItem from "./activity_display_item"
-// class Dashboard extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.timeConverter = this.timeConverter.bind(this)
-//         this.userFlair = this.userFlair.bind(this)
-//     }
-//     componentDidMount() {
-//         this.props.fetchUser(this.props.currentUser.id)
-//         this.props.fetchRoutes()
-//     }
-//     timeConverter(seconds) {
-//         let secText = seconds % 60;
-//         let minText = Math.floor(seconds % 3600 / 60);
-//         const hourText = Math.floor(seconds / 3600);
-//         if (secText < 10) {
-//             secText = `0${secText}`;
-//         }
-//         if (hourText >= 1 && minText < 10) {
-//             minText = `0${minText}`;
-//         }
-//         return ((hourText >= 1) ? `${hourText}:${minText}:${secText}` : `${minText}:${secText}`);
-//     }
-//     userFlair() {
-//         return (
-//             <section className="avatar-image blank">
-//                 {/* <h1 className="blank-pic">{this.props.user.username[0].toUpperCase()}</h1> */}
-//             </section>
-//         )
-//     }
-//     render() {
-//         // const { currentUser, users, routes } = this.props;
-//         const routesArray = [];
-//         const activityFeed = []
-//         this.props.routes.forEach(route => {
-//             if (route.user_id === this.props.currentUser.id) {
-//                 routesArray.push(route);
-//                 activityFeed.push(route);
-//             }
-//         });
-//         activityFeed.sort((x, y) => Math.sign(x - y))
-//         const activityDisplay = activityFeed.map((route, index) => {
-//             route.username = this.props.users[route.user_id].username;
-//             return (
-//                 <ActivityDisplayItem
-//                     key={index}
-//                     user={this.props.users[route.user_id]}
-//                     route={route}
-//                     currentUser={this.props.currentUser}
-//                 />
-//             )
-//         })
-//         const totalDistance = routesArray.reduce((acc, ele) => {
-//             return acc + ele.distance
-//         }, 0)
-//         const totalElevation = routesArray.reduce((acc, ele) => {
-//             return acc + ele.elevation
-//         }, 0)
-//         const totalTime = routesArray.reduce((acc, ele) => {
-//             return acc + ele.time
-//         }, 0)
-//         return (
-//             <div className="dashboard-home">
-//                 <div className="personal-stats">
-//                     <section className="profile-card">
-//                         {this.userFlair()}
-//                         <section className="profile-main-text">
-//                             {/* Link to user show page when I have time to make this */}
-//                             <h1>{this.props.currentUser.username}</h1>
-//                         </section>
-//                         <div className="total-stats">
-//                             <div>
-//                                 <section className="total-stats-stat">
-//                                     <label>Activities</label>
-//                                     <h2>{routesArray.length}</h2>
-//                                 </section>
-//                             </div>
-//                             <div>
-//                                 <section className="total-stats-stat">
-//                                     <label>Distance</label>
-//                                     <h2>{totalDistance.toFixed(2)}</h2>
-//                                 </section>
-//                                 <section className="total-stats-stat">
-//                                     <label>Elevation</label>
-//                                     <h2>{totalElevation.toFixed(2)}</h2>
-//                                 </section>
-//                                 <section className="total-stats-stat">
-//                                     <label>Time</label>
-//                                     <h2>{this.timeConverter(totalTime)}</h2>
-//                                 </section>
-//                             </div>
-//                         </div>
-//                     </section>
-//                 </div>
-//                 <div className="advertise">
-//                     <section className="banner">
-//                         {activityDisplay}
-//                     </section>
-//                 </div>
-//                 <div className="personal-adver">
-//                     <section>
-//                         <div>
-//                             <img className="github" src={window.githubIcon} />
-//                         </div>
-//                         <div>
-//                             <label>GitHub</label>
-//                             <p>
-//                                 <a className="personal" tartget="_blank" href="https://github.com/etrinidad132/">View Profile</a>
-//                             </p>
-//                         </div>
-//                     </section>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-// export default Dashboard;
+/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 
 /***/ }),
 
@@ -1330,21 +1212,30 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // import { receiveErrors } from "../../actions/session_actions";
+
 
 var NavBar = /*#__PURE__*/function (_React$Component) {
   _inherits(NavBar, _React$Component);
 
   var _super = _createSuper(NavBar);
 
-  // currentUser, logout, receiveErrors()
   function NavBar(props) {
+    var _this;
+
     _classCallCheck(this, NavBar);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.logout = _this.logout.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(NavBar, [{
+    key: "logout",
+    value: function logout(e) {
+      e.preventDefault;
+      this.props.logout();
+    }
+  }, {
     key: "render",
     value: function render() {
       var newRoute = "/routes/new";
@@ -1354,40 +1245,71 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      var element;
-
-      if (this.props.currentUser instanceof Array) {
-        // debugger
-        this.props.receiveErrors(this.props.currentUser);
-        element = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/login"
-        }, " Log In "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signup"
-        }, " Sign Up "));
-      } else if (_typeof(this.props.currentUser) === "object") {
-        // debugger
-        element = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Hello! ", this.props.currentUser.fname), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "logout-button",
-          onClick: this.props.logout
-        }, "Log Out"));
-      } else {
-        element = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/login"
-        }, " Log In "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signup"
-        }, " Sign Up "));
-      }
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-        className: "header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container header-content"
+      var dropdownRight = this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "drop-submenu-profile"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "drop-submenu-item "
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "personal",
+        href: "https://github.com/etrinidad132/"
+      }, "My GitHub Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "drop-submenu-item "
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "drop-submenu-item",
+        to: "/routes/new"
+      }, "Create a Route")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "drop-submenu-item "
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        onClick: this.logout
+      }, "Logout"))) : null;
+      var navRight = this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-right-side"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "drop-right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "drop-menu"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "tab-header"
+      }, "Account \u2228"), dropdownRight)))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-right-side"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "btn",
+        to: "/signup"
+      }, "Sign Up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "btn",
+        to: "/login"
+      }, "Log In")));
+      var dropdownLeft = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "drop-submenu-dash dash"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "drop-submenu-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "drop-submenu-item",
+        to: "/dashboard"
+      }, "Activity Feed")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "drop-submenu-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "drop-submenu-item",
+        to: "/routes"
+      }, "My Routes")));
+      var navLeft = this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-left-side"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "drop"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "drop-menu orange"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "tab-header"
+      }, "Dashboard \u2228"), dropdownLeft)))) : null;
+      var navbar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "logo",
-        to: "/routes"
-      }, "ESFORZA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "main-nav"
-      }, element)), "\xCE");
+        to: "/dashboard"
+      }, "ESFORZA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "navbar-side"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, navLeft), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, navRight)));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, navbar);
     }
   }]);
 
@@ -1395,36 +1317,61 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(NavBar)); // import React from "react";
-// import { Link } from "react-router-dom";
+// import { Link, withRouter } from "react-router-dom";
 // // import { receiveErrors } from "../../actions/session_actions";
-// const NavBar = (props) => { // currentUser, logout, receiveErrors()
-//     if (props.currentUser instanceof Array) {
+// class NavBar extends React.Component { // currentUser, logout, receiveErrors()
+//     constructor(props) {
+//         super(props)
+//     }
+//     render() {
+//         const newRoute = "/routes/new"
+//         const editRoute = "/routes/edit/"
 //         // debugger
-//         props.receiveErrors(props.currentUser);
+//         if (this.props.location.pathname.includes(newRoute) ||
+//             this.props.location.pathname.includes(editRoute)) {
+//             return null;
+//         }
+//         let element;
+//         if (this.props.currentUser instanceof Array) {
+//             // debugger
+//             this.props.receiveErrors(this.props.currentUser);
+//             element = (
+//                 <>
+//                     <Link to="/login"> Log In </Link>
+//                     <Link to="/signup"> Sign Up </Link>
+//                 </>
+//             )
+//         } else if (typeof this.props.currentUser === "object") {
+//             // debugger
+//             element = (
+//                 <>
+//                     <h3>Hello! {this.props.currentUser.fname}</h3> {/* user image will go here */}
+//                     <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+//                 </>
+//             )
+//         } else {
+//             element = (
+//                 <>
+//                     <Link to="/login"> Log In </Link>
+//                     <Link to="/signup"> Sign Up </Link>
+//                 </>
+//             )
+//         }
 //         return (
-//             <>
-//                 <Link to="/login"> Log In </Link>
-//                 <Link to="/signup"> Sign Up </Link>
-//             </>
-//         )
-//     } else if (typeof props.currentUser === "object") {
-//         // debugger
-//         return (
-//             <>
-//                 <h3>Hello! {props.currentUser.username}</h3>
-//                 <button className="logout-button" onClick={props.logout}>Log Out</button>
-//             </>
-//         )
-//     } else {
-//         return (
-//             <>
-//                 <Link to="/login"> Log In </Link>
-//                 <Link to="/signup"> Sign Up </Link>
-//             </>
+//             <header className="header" >
+//                 <div className="container header-content">
+//                     {/* <h1 className="logo">ESFORZA</h1> */}
+//                     <Link className="logo" to="/dashboard">ESFORZA</Link>
+//                     {/* <Link className="logo" to="/dashboard">ESFORZA</Link> */}
+//                     <nav className="main-nav">
+//                         {element}
+//                     </nav>
+//                 </div>Î
+//             </header>
 //         )
 //     }
 // }
-// export default NavBar;
+// export default withRouter(NavBar);
 
 /***/ }),
 
@@ -4913,7 +4860,7 @@ var Auth = function Auth(_ref) {
     exact: exact,
     render: function render(props) {
       return !loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-        to: "/routes"
+        to: "/dashboard"
       });
     }
   });
