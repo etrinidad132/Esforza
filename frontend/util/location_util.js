@@ -34,3 +34,11 @@ export const deleteLocation = (locationId) => {
         url: `api/locations/${locationId}`
     }))
 }
+
+export const deleteLocations = (locationIdsArray) => {
+    return ($.ajax({
+        method: "DELETE",
+        url: `/api/locations/delete_multiple`,
+        data: { location_ids: locationIdsArray }
+    }))
+}

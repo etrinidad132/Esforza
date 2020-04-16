@@ -15,7 +15,7 @@ const receiveRoutes = (routes) => {
 }
 
 const receiveRoute = (route) => {
-
+    debugger
     if (route instanceof Array) {
         return ({
             type: RECEIVE_ROUTE_CRUD_ERRORS,
@@ -34,7 +34,7 @@ const receiveRoute = (route) => {
 }
 
 const deleteRoute = (routeId) => {
-    debugger
+    // debugger
     return ({
         type: DELETE_ROUTE,
         routeId: routeId

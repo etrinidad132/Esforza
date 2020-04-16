@@ -10,9 +10,9 @@ const routeReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.route.id]: action.route });
         case DELETE_ROUTE:
             newState = Object.assign({}, state)
-            debugger
+            // debugger
             delete newState[action.routeId]
-            debugger
+            // debugger
             return newState;
         default:
             return state;

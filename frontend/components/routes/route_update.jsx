@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class RouteUpdate extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         this.state = {
             id: props.prevRoute.id,
             user_id: props.currentUser.id,
@@ -24,19 +24,25 @@ class RouteUpdate extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
+        const that = this;
+        debugger
+        const previousMarkerIds = this.props.previousMarkers.map(marker =>{
+            return(marker.id)
+        })
+
+        // this.props.deleteLocations(previousMarkerIds)
         this.props.previousMarkers.forEach(location => {
-            this.props.deleteLocation(location.id)
+            debugger
+            that.props.deleteLocation(location.id)
         })
 
 
 
-        const that = this;
         this.props.updateRoute(this.state)
             .then(res => {
-                // debugger
+                debugger
                 that.props.routeInfo.coordinatesArray.forEach(coordinate => {
-                    // debugger
+                    debugger
                     that.props.createLocation({
                         route_id: res.route.id,
                         sequence: coordinate.sequence,

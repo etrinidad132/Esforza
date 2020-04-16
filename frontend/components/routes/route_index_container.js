@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import RouteIndex from "./route_index";
 import { fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute } from "./../../actions/route_actions"
+import { fetchLocations } from "../../actions/location_actions";
 
 const mapStateToProps = (state) => {
     return ({
@@ -15,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchRoute: (routeId) => dispatch(fetchRoute(routeId)),
         createRoute: (route) => dispatch(createRoute(route)),
         updateRoute: (route) => dispatch(updateRoute(route)),
-        destroyRoute: (routeId) => dispatch(destroyRoute(routeId))
+        destroyRoute: (routeId) => dispatch(destroyRoute(routeId)),
+        fetchLocations: () => dispatch(fetchLocations())
     })
 }
 

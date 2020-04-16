@@ -13,6 +13,7 @@ class RouteIndex extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchRoutes()
+        this.props.fetchLocations()
     }
     
     // componentDidUpdate() {

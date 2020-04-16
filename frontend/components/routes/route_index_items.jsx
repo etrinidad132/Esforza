@@ -49,7 +49,7 @@ class RouteIndexItem extends React.Component {
                     {/* <i className="fas fa-wrench" ><Link to={`/routes/edit/${this.props.route.id}`}></Link></i> */}
                     <i className="fas fa-wrench" onClick={this.updateRoute}></i>
                     <i className="fas fa-times" onClick={this.destroyRoute}></i>
-                    <Link to={`routes/${this.props.route.id}`}>
+                    <Link to={`/routes/${this.props.route.id}`}>
                         <img className="map-thumbnail" src={this.props.route.thumbnail} />
                     </Link>
                     {/* MAP WILL GO HERE*/}

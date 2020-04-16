@@ -1,0 +1,152 @@
+.route-show-content {
+    padding-top: 90px;
+    margin-left: 33px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h3 {
+        font-size: 12px;
+        font-weight: 400;
+        color: #606065;
+        line-height: 1.2;
+        padding-right: 10px;
+    }
+
+    hr {
+        margin-top: -17px;
+        margin-bottom: 17px;
+        border: 0;
+        border-top: 1px solid #f5f5fa;
+    }
+
+    p {
+        margin-bottom: 20px;
+        color: #2d2d32;
+        fill: currentColor;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+}
+
+.route-show-header {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    header {
+        color: rgb(45, 45, 50);
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 41px;
+        margin-top: 10px;
+        margin-bottom: 21px;
+    }
+}
+
+.edit-btn {
+    border: 1px solid transparent;
+    background-color: #fff;
+    border-color: #ccccd1;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #2d2d32;
+    font-weight: 700;
+    line-height: 1.3em;
+    text-align: center;
+    padding: 6px 12px;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+
+    &:hover {
+        background-color: #e6e6eb;
+    }
+}
+
+.minimap {
+    padding-right: 100px;
+    height: 100px;
+    width: 600px;
+}
+
+.route-show-main {
+    display: flex;
+}
+
+.route-show-stats {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.name {
+    display: flex;
+    margin-top: 36px;
+}
+
+.username {
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: -14px;
+    padding-left: 15px;
+}
+
+.statistics-one {
+    display: flex;
+    margin-bottom: 40px;
+    section {
+        margin-right: 10px;
+    }
+}
+
+.statistics-two {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.show-route-description {
+    min-height: 100px;
+}
+
+#minimap {
+    height: 60vh;
+    width: 100%;
+
+    .gm-svpc {
+        display: none;
+    }
+}
+
+.route-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    position: relative;
+    top: -36px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.blank {
+    background-color: rgb(0, 87, 155);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .blank-picture {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        font-size: 300%;
+        color: white;
+    }
+}

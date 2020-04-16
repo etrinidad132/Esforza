@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import RouteUpdate from "./route_update"
 import { updateRoute } from "../../actions/route_actions";
-import { createLocation, deleteLocation } from "../../actions/location_actions"
+import { createLocation, deleteLocation, deleteLocations } from "../../actions/location_actions"
 import { closeModal } from "../../actions/modal_actions";
 // closeModal
 
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch) => {
         updateRoute: (route) => dispatch(updateRoute(route)),
         createLocation: (location) => dispatch(createLocation(location)),
         deleteLocation: (locationId) => dispatch(deleteLocation(locationId)),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        deleteLocations: (locationIdsArray) => dispatch(deleteLocations(locationIdsArray))
     })
 }
 

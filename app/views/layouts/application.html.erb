@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag  "https://kit.fontawesome.com/11ce0e586d.js"%>
-    
+
+    <script type="text/javascript"> window.githubIcon = "<%= image_url('github_logo.png') %>" </script>
     <script type="text/javascript">
       window.secret = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
     </script>

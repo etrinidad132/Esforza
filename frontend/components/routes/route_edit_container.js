@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     // debugger
     const id = ownProps.match.params.routeId;
     const markers = Object.values(state.entities.locations);
-    const previousMarkers = markers.filter(marker => marker.route_id)
+    const previousMarkers = markers.filter(marker => marker.route_id === parseInt(id))
     return {
         currentRoute: state.entities.routes[id],
         previousMarkers: previousMarkers,
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     fetchRoute: (routeId) => dispatch(fetchRoute(routeId)),
     fetchLocations: () => dispatch(fetchLocations()),
     openModal: (modalType) => dispatch(openModal(modalType))
+    // deleteLocation: (locationId)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RouteEdit);
