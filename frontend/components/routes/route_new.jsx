@@ -315,7 +315,7 @@ class RouteNew extends React.Component {
                 <div>
                     <div className="route-navbar">
                         <nav className="route-navbar-left">
-                            <Link className="logo" to="/routes">ESFORZA</Link>
+                            <Link className="logo" to="/dashboard">ESFORZA</Link>
                             <h1>ROUTE BUILDER</h1>
                         </nav>
 
