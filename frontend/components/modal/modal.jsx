@@ -1,23 +1,32 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import RouteSaveContainer from '../routes/route_save_container';
+import RouteSaveContainer from "../routes/route_save_container";
+import RouteUpdateContainer from "../routes/route_update_container";
 
 
 class Modal extends React.Component {
     constructor(props) {
-        super(props); //closeModal, routeInfo(coming from route new), currentUser
+        super(props); //closeModal, routeInfo(coming from route new / edit), currentUser, previousMarkers
     }
 
     render() {
-        // const { closeModal, routeInfo, currentUser } = this.props;
+        // const { closeModal, routeInfo, currentUser, previousMarkers } = this.props;
         if (!this.props.modal) {
             return null;
         }
 
         switch (this.props.modal) {
             case 'saveRoute':
+                // debugger
                 this.component = <RouteSaveContainer routeInfo={this.props.routeInfo} />;
+                break;
+            case 'updateRoute':
+                // debugger
+                this.component = <RouteUpdateContainer
+                    routeInfo={this.props.routeInfo}
+                    prevRoute={this.props.prevRoute}
+                    previousMarkers={this.props.previousMarkers} />;
                 break;
             default:
                 return null;

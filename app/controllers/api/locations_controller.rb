@@ -36,12 +36,24 @@ class Api::LocationsController < ApplicationController
     end
 
     def destroy
+        # debugger
         @location = Location.find(params[:id])
         if @location.destroy
-            render json: {}
+            render json: "api/locations/show"
         else
             render json: ["Location does not exist!"], status: 404
         end
+    end
+
+    def delete_multiple
+        location_ids = params[:location_ids] # array 
+
+        location_ids.each do |id|
+            @location = Location.find(id)
+            @location.destroy
+        end
+
+        render json: location_ids
     end
 
     private

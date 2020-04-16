@@ -43,7 +43,8 @@ class Api::RoutesController < ApplicationController
     def destroy
         @route = Route.find(params[:id])
         if @route.destroy
-            render json: {}
+            # render json: {}
+            render "api/routes/show"
         else
             render json: ["Route does not exist!"], status: 404
         end

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 
 class RouteIndexItem extends React.Component {
     constructor(props) {
@@ -35,6 +35,7 @@ class RouteIndexItem extends React.Component {
     updateRoute() {
         // debugger
         // alert("update button is working")
+        this.props.history.push(`/routes/edit/${this.props.route.id}`);
         //link to update route page
         // this.props.updateRoute()
     }
@@ -45,9 +46,10 @@ class RouteIndexItem extends React.Component {
             <>
                 <div className="route-index-item-container">
                     {/* <h1>Hello from Route Index Items</h1> */}
+                    {/* <i className="fas fa-wrench" ><Link to={`/routes/edit/${this.props.route.id}`}></Link></i> */}
                     <i className="fas fa-wrench" onClick={this.updateRoute}></i>
                     <i className="fas fa-times" onClick={this.destroyRoute}></i>
-                    <Link to={`routes/${this.props.route.id}`}>
+                    <Link to={`/routes/${this.props.route.id}`}>
                         <img className="map-thumbnail" src={this.props.route.thumbnail} />
                     </Link>
                     {/* MAP WILL GO HERE*/}
@@ -84,4 +86,4 @@ class RouteIndexItem extends React.Component {
 }
 
 
-export default RouteIndexItem;
+export default withRouter(RouteIndexItem);

@@ -9,10 +9,12 @@ class NavBar extends React.Component { // currentUser, logout, receiveErrors()
 
     render() {
         const newRoute = "/routes/new"
+        const editRoute = "/routes/edit/"
         // debugger
-        if (this.props.location.pathname.includes(newRoute)) {
+        if (this.props.location.pathname.includes(newRoute) ||
+            this.props.location.pathname.includes(editRoute)) {
             return null;
-        } 
+        }
 
 
         let element;
@@ -30,7 +32,7 @@ class NavBar extends React.Component { // currentUser, logout, receiveErrors()
             // debugger
             element = (
                 <>
-                    
+
                     <h3>Hello! {this.props.currentUser.fname}</h3> {/* user image will go here */}
                     <button className="logout-button" onClick={this.props.logout}>Log Out</button>
                 </>

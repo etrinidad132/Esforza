@@ -28,3 +28,8 @@
  @import "./routes/route_icon.scss";
  @import "./routes/route_index.scss";
  @import "./routes/routes_map.scss";
+ @import "./routes/route_save_modal.scss";
+ @import "./routes/route_show.scss";
+ 
+ @import "./dashboard/dashboard.scss";
+ @import "./dashboard/activity_display.scss";

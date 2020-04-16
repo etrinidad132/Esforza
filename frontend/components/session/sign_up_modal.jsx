@@ -46,7 +46,7 @@ class SignupModal extends React.Component {
     render() {
         // debugger
         if (!this.props.modal) {
-            debugger
+            // debugger
             return null
         } else if (this.props.modal !== "sign up") {
             return null;

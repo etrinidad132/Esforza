@@ -137,7 +137,7 @@ class RouteNew extends React.Component {
             })
     }
 
-    plotElevation(elevationsArray, status) {
+    plotElevation(elevationsArray) {
         // debugger
         let total = 0;
 
