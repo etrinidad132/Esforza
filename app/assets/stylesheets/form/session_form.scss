@@ -45,7 +45,7 @@ $strava-orange: #f24c03;
             height: 40px;
             width: 300px;
             font-weight: 400;
-            font-size: 13px;
+            font-size: 15px;
             color: lightgray;
             background-color: rgba(0,0,0,0.75);
             margin: 0;
@@ -132,4 +132,16 @@ form h3 {
     -o-transition: all .25s ease;
     -ms-transition: all .25s ease;
     transition: all .25s ease;
+}
+
+.session-errors {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    // background-color: rgba(black, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
+    // padding: 5px;
+    // border: 2px solid rgba(black, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
 }

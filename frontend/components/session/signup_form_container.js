@@ -3,6 +3,8 @@ import SessionForm from "./session_form"
 import { signup } from "../../actions/session_actions"
 import { openModal, closeModal } from "../../actions/modal_actions"
 import { login } from "../../actions/session_actions"
+import { clearErrors } from '../../actions/error_actions';
+
 
 
 //////    MAP UPDATEUSER TO PROPS THEN MAKE CREATE USERS REDIRECT TO DIFFERNT PAGE TO UPDATE USER PROFILE
@@ -22,7 +24,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         processForm: (user) => dispatch(signup(user)),
         openModal: (modalType) => dispatch(openModal(modalType)),
         loginDemo: () => dispatch(login({ username: "demo", password: "password" })),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        clearErrors: () => dispatch(clearErrors())
     })
 }
 

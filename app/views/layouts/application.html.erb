@@ -8,11 +8,14 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.dig(:google_maps_key)}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link rel="icon" href="<%= image_url('favicon.ico')%>" type="image/x-icon">
 
     <%= javascript_include_tag  "https://kit.fontawesome.com/11ce0e586d.js"%>
 
+    <link rel="icon" href="<%= image_url('favicon.ico')%>" type="image/x-icon">
     <script type="text/javascript"> window.githubIcon = "<%= image_url('github_logo.png') %>" </script>
+    <script type="text/javascript"> window.splash2 = "<%= image_url('splash_image.jpg') %>" </script>
+    <script type="text/javascript"> window.splash = "<%= image_url('devices.png') %>" </script>
+
     <script type="text/javascript">
       window.secret = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
     </script>

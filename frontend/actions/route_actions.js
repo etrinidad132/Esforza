@@ -26,11 +26,7 @@ const receiveRoute = (route) => {
             type: RECEIVE_ROUTE,
             route: route
         })
-
     }
-
-
-
 }
 
 const deleteRoute = (routeId) => {

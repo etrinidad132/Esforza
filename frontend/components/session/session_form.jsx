@@ -14,6 +14,10 @@ class SessionForm extends React.Component {
         this.googleLogin = this.googleLogin.bind(this)
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
     update(type) {
         return e => this.setState({
             [type]: e.currentTarget.value
@@ -81,12 +85,12 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password" />
+                        <ul className="session-errors">{errorLi}</ul>
                         {/* </label> */}
                         <br />
                         <button onClick={this.handleSubmit}>{formText}</button>
                     </form>
 
-                    <ul>{errorLi}</ul>
 
                     {/* <Link to={optionalLink}>{optionalText}</Link> */}
                 </div>

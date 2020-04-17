@@ -165,7 +165,9 @@ class RouteNew extends React.Component {
         // debugger
         const route = directions.routes[0];
         const overviewPath = route.overview_path;
+        
         let thumbnailUrl = `https://maps.googleapis.com/maps/api/staticmap?size=300x180&markers=label:S%7C${overviewPath[0].lat()},${overviewPath[0].lng()}&markers=label:E%7C${overviewPath[overviewPath.length - 1].lat()},${overviewPath[overviewPath.length - 1].lng()}`;
+        
         const pathColorUrl = `&path=color:0x000033ff|weight:2|`//this works black
         // const pathColorUrl = `&path=color:0x0000ff80|weight:2|`// this works blue
         const overviewPolyline = `enc:${route.overview_polyline}`;

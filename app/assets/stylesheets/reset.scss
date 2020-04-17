@@ -69,3 +69,10 @@ table {
     transition: background-color 300ms;
     background-color: rgb(218, 65, 9);
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  // color: red;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 1; /* Firefox */
+}

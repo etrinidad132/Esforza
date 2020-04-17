@@ -4,13 +4,6 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
-export const receiveCurrentUser = (user) => {
-    return ({
-        type: RECEIVE_CURRENT_USER,
-        user: user
-    })
-}
-
 export const logoutCurrentUser = () => {
     return ({
         type: LOGOUT_CURRENT_USER
@@ -18,10 +11,23 @@ export const logoutCurrentUser = () => {
 }
 
 export const receiveErrors = (errorsArray) => {
+    // debugger
     return ({
         type: RECEIVE_SESSION_ERRORS,
         errors: errorsArray
     })
+}
+
+const receiveCurrentUser = (user) => {
+    // debugger
+    if (user instanceof Array) {
+        return receiveErrors(user)
+    } else {
+        return ({
+            type: RECEIVE_CURRENT_USER,
+            user: user
+        })
+    }
 }
 
 /// Thunk Actions
