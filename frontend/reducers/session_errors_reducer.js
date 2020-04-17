@@ -3,7 +3,7 @@ import { CLEAR_ERRORS } from '../actions/error_actions';
 
 const sessionErrorsReducer = (state = [], action) => {
     Object.freeze(state);
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
             return action.errors;

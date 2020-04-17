@@ -25,14 +25,14 @@ class RouteUpdate extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const that = this;
-        debugger
+        // debugger
         const previousMarkerIds = this.props.previousMarkers.map(marker =>{
             return(marker.id)
         })
 
         // this.props.deleteLocations(previousMarkerIds)
         this.props.previousMarkers.forEach(location => {
-            debugger
+            // debugger
             that.props.deleteLocation(location.id)
         })
 
@@ -40,9 +40,9 @@ class RouteUpdate extends React.Component {
 
         this.props.updateRoute(this.state)
             .then(res => {
-                debugger
+                // debugger
                 that.props.routeInfo.coordinatesArray.forEach(coordinate => {
-                    debugger
+                    // debugger
                     that.props.createLocation({
                         route_id: res.route.id,
                         sequence: coordinate.sequence,
@@ -56,7 +56,7 @@ class RouteUpdate extends React.Component {
     }
     // handleSubmit(e) {
     //     e.preventDefault();
-    //     // debugger
+        // debugger
     //     const that = this;
     //     this.props.createRoute(this.state)
     //         .then(res => {

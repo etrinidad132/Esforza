@@ -3446,20 +3446,20 @@ var RouteUpdate = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      var that = this;
-      debugger;
+      var that = this; // debugger
+
       var previousMarkerIds = this.props.previousMarkers.map(function (marker) {
         return marker.id;
       }); // this.props.deleteLocations(previousMarkerIds)
 
       this.props.previousMarkers.forEach(function (location) {
-        debugger;
+        // debugger
         that.props.deleteLocation(location.id);
       });
       this.props.updateRoute(this.state).then(function (res) {
-        debugger;
+        // debugger
         that.props.routeInfo.coordinatesArray.forEach(function (coordinate) {
-          debugger;
+          // debugger
           that.props.createLocation({
             route_id: res.route.id,
             sequence: coordinate.sequence,
@@ -3476,7 +3476,7 @@ var RouteUpdate = /*#__PURE__*/function (_React$Component) {
       });
     } // handleSubmit(e) {
     //     e.preventDefault();
-    //     // debugger
+    // debugger
     //     const that = this;
     //     this.props.createRoute(this.state)
     //         .then(res => {
@@ -4726,8 +4726,7 @@ __webpack_require__.r(__webpack_exports__);
 var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-  debugger;
+  Object.freeze(state); // debugger
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
