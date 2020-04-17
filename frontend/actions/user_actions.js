@@ -33,4 +33,4 @@ export const fetchUser = (userId) => (dispatch) => APIUtil.fetchUser(userId)
     .then((user) => dispatch(receiveUser(user)), (err) => dispatch(receiveErrors(err.responseJSON)))
 
 export const updateUser = (user) => (dispatch) => APIUtil.updateUser(user)
-    .then((user) => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err.responseJSON)))
+    .then((user) => dispatch(receiveUser(user)), err => dispatch(receiveErrors(err.responseJSON)))

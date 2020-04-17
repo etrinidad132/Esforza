@@ -555,7 +555,7 @@ var fetchUser = function fetchUser(userId) {
 var updateUser = function updateUser(user) {
   return function (dispatch) {
     return _util_user_util__WEBPACK_IMPORTED_MODULE_0__["updateUser"](user).then(function (user) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveCurrentUser"])(user));
+      return dispatch(receiveUser(user));
     }, function (err) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(err.responseJSON));
     });
@@ -3981,7 +3981,115 @@ var SignupModal = /*#__PURE__*/function (_React$Component) {
   return SignupModal;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (SignupModal);
+/* harmony default export */ __webpack_exports__["default"] = (SignupModal); // // need more brain power
+// import React from "react";
+// class SignupModal extends React.Component {
+//     constructor(props) {
+//         super(props) // updateUser, user
+//         this.emptyFormState = {
+//             fname: "",
+//             lname: "",
+//             birthday: "",
+//             gender: ""
+//         };
+//         this.state = this.emptyFormState;
+//         this.update = this.update.bind(this);
+//         this.handleSubmit = this.handleSubmit.bind(this);
+//         this.clearForm = this.clearForm.bind(this);
+//     }
+//     update(type) {
+//         return e => this.setState({
+//             [type]: e.currentTarget.value
+//         });
+//     }
+//     handleSubmit(e) {
+//         // debugger
+//         e.preventDefault();
+//         const user = Object.assign({}, this.props.user, this.state);
+//         this.props.updateUser(user)// will be called
+//         this.props.closeModal()
+//         this.clearForm()
+//         // this.props.processForm(user);
+//     }
+//     clearForm() {
+//         this.setState({
+//             fname: "",
+//             lname: "",
+//             birthday: "",
+//             gender: ""
+//         })
+//     }
+//     render() {
+//         // debugger
+//         if (!this.props.modal) {
+//             // debugger
+//             return null
+//         } else if (this.props.modal !== "sign up") {
+//             return null;
+//         }
+//         return (
+//             // <div className="modal-background" onClick={this.props.closeModal}>
+//             <div className="modal-background" >
+//                 <div className="modal-container">
+//                     <div className="route-save-modal">
+//                         <section className='save-header'>
+//                             <h1>Create your profile</h1>
+//                         </section>
+//                         <section className='save-main'>
+//                             <form onSubmit={this.handleSubmit}>
+//                                 <p>This will give you a place to store workouts and help your friends find you.</p>
+//                                 <div className='inline-row'>
+//                                     <section className='route-save-label-parent'>
+//                                         <label>First Name</label>
+//                                         <input
+//                                             className="modal-input"
+//                                             type="text"
+//                                             value={this.state.fname}
+//                                             onChange={this.update("fname")}
+//                                         />
+//                                     </section>
+//                                     <section className='route-save-label-parent'>
+//                                         <label>Last Name</label>
+//                                         <input
+//                                             className="modal-input"
+//                                             type="text"
+//                                             value={this.state.fname}
+//                                             onChange={this.update("lname")}
+//                                         />
+//                                     </section>
+//                                 </div>
+//                                 <label className="modal-label">Birthday<br />
+//                                     {/* <input className="modal-input" type="text" />   */}
+//                                     <input
+//                                         className="modal-input"
+//                                         type="date"
+//                                         value={this.state.birthday}
+//                                         onChange={this.update("birthday")}
+//                                     />
+//                                 </label>
+//                                 <label className="modal-label">Gender<br />
+//                                     {/* <input className="modal-input" type="text" /> */}
+//                                     <select
+//                                         value={this.state.gender}
+//                                         onChange={this.update("gender")}
+//                                         className='selectbox'
+//                                     >
+//                                         <option value=""> </option>
+//                                         <option value="M">Male</option>
+//                                         <option value="F">Female</option>
+//                                         <option value="Other">Other</option>
+//                                     </select>
+//                                 </label><br />
+//                                 <button className="modal-button">Continue</button>
+//                             </form>
+//                         </section>
+//                     </div>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+// export default SignupModal;
 
 /***/ }),
 
