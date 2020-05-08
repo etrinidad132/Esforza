@@ -12,10 +12,20 @@
     <%= javascript_include_tag  "https://kit.fontawesome.com/11ce0e586d.js"%>
 
     <link rel="icon" href="<%= image_url('favicon.ico')%>" type="image/x-icon">
-    <meta property="og:image" content="<%= image_url('routes.png') %>" />
+   
+
+
+    <meta property="og:title" content="Esforza" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://esforza.herokuapp.com/#/" />
+    <meta property="og:image" content='<%= image_url('routes.png') %>'/>
+    <meta property="og:description" content="The #1 app for runners and cyclists" />
+
+
     <script type="text/javascript"> window.githubIcon = "<%= image_url('github_logo.png') %>" </script>
     <script type="text/javascript"> window.splash2 = "<%= image_url('splash_image.jpg') %>" </script>
     <script type="text/javascript"> window.splash = "<%= image_url('devices.png') %>" </script>
+    <script type="text/javascript"> window.routes = "<%= image_url('routes.png') %>" </script>
 
     <script type="text/javascript">
       window.secret = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
