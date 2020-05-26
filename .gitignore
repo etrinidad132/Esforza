@@ -21,3 +21,7 @@
 # Ignore application configuration
 /config/application.yml
 log/development.log
+app/assets/javascripts/bundle.js.map
+app/assets/javascripts/bundle.js
+app/assets/images/.DS_Store
+app/assets/.DS_Store
