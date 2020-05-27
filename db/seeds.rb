@@ -335,7 +335,7 @@ workoutSeed1 = Workout.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(workout_activity_type),
-    date_created: nil,
+    date_created: random_yankees_date,
 )
 
 workoutSeed2 = Workout.create!(
@@ -346,7 +346,7 @@ workoutSeed2 = Workout.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(workout_activity_type),
-    date_created: nil,
+    date_created: random_yankees_date,
 )
 
 workoutSeed3 = Workout.create!(
@@ -357,7 +357,7 @@ workoutSeed3 = Workout.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(workout_activity_type),
-    date_created: nil,
+    date_created: random_yankees_date,
 )
 
 workoutSeed4 = Workout.create!(
@@ -368,7 +368,7 @@ workoutSeed4 = Workout.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(workout_activity_type),
-    date_created: nil,
+    date_created: random_yankees_date,
 )
 
 workoutSeed5 = Workout.create!(
@@ -379,7 +379,7 @@ workoutSeed5 = Workout.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(workout_activity_type),
-    date_created: nil,
+    date_created: random_yankees_date,
 )
 
 workoutSeed6 = Workout.create!(
@@ -390,7 +390,7 @@ workoutSeed6 = Workout.create!(
     time: rand(0..9999),
     elevation: rand(0..300),
     activity_type: activity_type_generator(workout_activity_type),
-    date_created: nil,
+    date_created: random_yankees_date,
 )
 
 p "Workouts Done"

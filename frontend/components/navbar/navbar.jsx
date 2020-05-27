@@ -25,7 +25,7 @@ class NavBar extends React.Component {
             <ul className="drop-submenu-profile">
                 <li className="drop-submenu-item ">
                     {/* Will Link to user show page once this is built */}
-                    <a className="personal" href="https://github.com/etrinidad132/">My GitHub Profile</a>
+                    <a className="personal" target="_blank" href="https://github.com/etrinidad132/">My GitHub Profile</a>
                 </li>
                 <li className="drop-submenu-item ">
                     <Link className="drop-submenu-item" to="/routes/new">Create a Route</Link>
