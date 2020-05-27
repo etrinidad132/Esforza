@@ -15,4 +15,9 @@
 #  updated_at    :datetime         not null
 #
 class Workout < ApplicationRecord
+    validates :user_id, :name, :distance, :time, :elevation, presence: true
+    validates :activity_type, inclusion: {in: ["run", "ride", "hike", "walk"]}, allow_nil: true
+
+    ## Associations
+    belongs_to :user
 end
