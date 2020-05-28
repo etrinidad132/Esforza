@@ -54,7 +54,7 @@ export default class WorkoutNew extends Component {
         // reformat after
         (res) => {
           console.log(res.workout.id); // comment this out after show page is built
-          //   this.props.history.push(`/training/${res.workout.id}`);
+          this.props.history.push(`/training/${res.workout.id}`);
         }
       );
     }
