@@ -1,61 +1,54 @@
 import React, { Component } from "react";
+// import ActivitiesFooter from "../footer/recent_activities_footer";
 
-export default class WorkoutNew extends Component {
+export default class WorkoutEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id: this.props.currentUser,
-      distance: 0,
-      elevation: 0,
-      name: "",
-      //   hours: "0",
-      hours: 0,
-      //   minutes: "0",
-      minutes: 0,
-      //   seconds: "0",
-      seconds: 0,
-      activity_type: "run",
-      date_created: this.formatDate(Date.now()),
+      user_id: this.props.preworkout.user_id,
+      distance: this.props.preworkout.distance,
+      time: this.props.preworkout.time,
+      elevation: this.props.preworkout.elevation,
+      name: this.props.preworkout.name,
+      workout_type: this.props.preworkout.workoutType,
+      description: this.props.preworkout.description,
+      create_date: this.props.preworkout.createDate,
     };
-
-    this.formatDate = this.formatDate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.updateDuration = this.updateDuration.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
+    //   debugger
+    this.props.fetchWorkout(this.props.match.params.workoutId).then(() =>
+      this.setState({
+        id: this.props.preworkout.id,
+        user_id: this.props.preworkout.user_id,
+        distance: this.props.preworkout.distance,
+        time: this.props.preworkout.time,
+        elevation: this.props.preworkout.elevation,
+        name: this.props.preworkout.name,
+        date_created: this.props.preworkout.date_created,
+        workout_type: this.props.preworkout.workoutType,
+        description: this.props.preworkout.description,
+        hours: Math.floor(this.props.preworkout.time / 3600),
+        minutes: Math.floor((this.props.preworkout.time % 3600) / 60),
+        seconds: Math.floor(this.props.preworkout.time % 60),
+      })
+    );
     this.props.fetchWorkouts();
-  }
-
-  formatDate(date) {
-    let d = new Date(date);
-    let month = "" + (d.getMonth() + 1);
-    let day = "" + d.getDate();
-    let year = d.getFullYear();
-
-    if (month.length < 2) {
-      month = "0" + month;
-    }
-
-    if (day.length < 2) {
-      day = "0" + day;
-    }
-
-    return [year, month, day].join("-");
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.name === "") {
-      document.getElementById("name-err").innerHTML = "Name cannot be blank";
+      document.getElementById("name-err").innerHTML = "Name cant be blank";
     } else {
-      this.props.createWorkout(this.state).then(
-        // reformat after
-        (res) => {
-          // console.log(res.workout.id); // comment this out after show page is built
-          this.props.history.push(`/training/${res.workout.id}`);
-        }
+      this.props.updateWorkout(this.state).then((res) =>
+        //   this.props.history.push(`/training/${res.payload.workouts.id}`)
+        this.props.history.push(`/training/${res.workout.id}`)
       );
     }
   }
@@ -65,12 +58,16 @@ export default class WorkoutNew extends Component {
       e.preventDefault();
       this.setState({ [field]: e.target.value }, () => {
         let result =
-          parseInt(this.state.hours * 3600 || 0) + // Parse hours if they exist otherwise parse 0
+          parseInt(this.state.hours * 3600 || 0) +
           parseInt(this.state.minutes * 60 || 0) +
           parseInt(this.state.seconds || 0);
         this.setState({ time: result });
       });
     };
+  }
+
+  updateDuration(hr, min, sec) {
+    return hr + min + sec;
   }
 
   renderErrors() {
@@ -86,6 +83,7 @@ export default class WorkoutNew extends Component {
   }
 
   render() {
+    // debugger;
     return (
       <div>
         <div className="new-workout">
@@ -104,7 +102,7 @@ export default class WorkoutNew extends Component {
                 />
               </div>
               <div>
-                <label>Time</label>
+                <label>Duration</label>
                 <section className="duration">
                   <input
                     type="number"
@@ -139,7 +137,7 @@ export default class WorkoutNew extends Component {
                 <label>Sport</label>
                 <select
                   className="sport-workout-form"
-                  defaultValue={"Run"}
+                  value={`${this.state.workout_type}`}
                   onChange={this.update("workout_type")}
                 >
                   <option value="Run">Run</option>
@@ -151,10 +149,14 @@ export default class WorkoutNew extends Component {
                 <input
                   type="date"
                   className="date-workout-form"
-                  value={this.state.date_created}
-                  onChange={this.update("date_created")}
+                  value={this.state.create_date}
+                  onChange={this.update("create_date")}
                 />
               </div>
+              {/* <div>
+                <label>Date & Time</label>
+                <input className='date-workout-form' type="text" />
+              </div> */}
             </section>
             <section className="form-sec">
               <div>
@@ -182,12 +184,12 @@ export default class WorkoutNew extends Component {
             <hr />
             <section className="form-sec">
               <div>
-                <button className="workout-btn-save">Create</button>
+                <button className="workout-btn-save">Save</button>
               </div>
             </section>
           </form>
         </div>
-        {/* <ActivitiesFooter workouts={this.props.recentWorkouts}/> */}
+        {/* <ActivitiesFooter workouts={this.props.recentWorkouts} /> */}
       </div>
     );
   }

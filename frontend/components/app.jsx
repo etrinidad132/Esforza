@@ -12,6 +12,7 @@ import RouteEditContainer from "./routes/route_edit_container";
 import RouteShowContainer from "./routes/route_show_container"
 import WorkoutNewContainer from "./workout/workout_new_container";
 import WorkoutShowContainer from "./workout/workout_show_container";
+import WorkoutEditContainer from "./workout/workout_edit_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 // import Modal from "./modal/modal";
 
@@ -27,6 +28,7 @@ const App = () => {
                 <ProtectedRoute path="/routes/:routeId" component={RouteShowContainer} />
                 <ProtectedRoute path="/routes" component={RouteIndexContainer} />
                 <ProtectedRoute path="/routes" component={RouteIndexContainer} />
+                <ProtectedRoute path="/training/edit/:workoutId" component={WorkoutEditContainer} />
                 <ProtectedRoute path="/training/new" component={WorkoutNewContainer} />
                 <ProtectedRoute path="/training/:workoutId" component={WorkoutShowContainer} />
 
