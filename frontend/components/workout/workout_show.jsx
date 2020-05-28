@@ -96,21 +96,21 @@ export default class WorkoutShow extends Component {
     );
   }
 
-//   profilePic() {
-//     const { user } = this.props;
+  profilePic() {
+    const { user } = this.props;
 
-//     return user.photoUrl ? (
-//       <img className="avatar-image-workout" src={user.photoUrl} />
-//     ) : (
-//       <section className="avatar-image-workout blank">
-//         <h1 className="blank-pic">{user.username[0].toUpperCase()}</h1>
-//       </section>
-//     );
-//   }
+    return user.photoUrl ? (
+      <img className="avatar-image-workout" src={user.photoUrl} />
+    ) : (
+      <section className="avatar-image-workout blank">
+        <h1 className="blank-pic">{user.username[0].toUpperCase()}</h1>
+      </section>
+    );
+  }
 
   render() {
     const { workout, user, recentWorkouts, id, likes, loading } = this.props;
-    debugger
+    // debugger
     // const likeObj = this.likeCounter();
 
     if (loading)
@@ -138,7 +138,7 @@ export default class WorkoutShow extends Component {
     //   </div>
     // );
     const icons =
-      id === workout.userId ? (
+      id === workout.user_id ? (
         <div className="icons">
           <span onClick={this.handleEdit} className="show-workout-btn-edit">
             <i className="far fa-edit"></i>
@@ -164,7 +164,7 @@ export default class WorkoutShow extends Component {
             </header>
             <div className="show-workout-info">
               <section className="show-workout-left">
-                {/* {this.profilePic()} */}
+                {this.profilePic()}
                 <section className="show-text">
                   <label className="show-workout-date">
                     {this.displayDate(workout.date_created)}
