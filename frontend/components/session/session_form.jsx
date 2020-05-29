@@ -28,7 +28,8 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user)
+    // this.props.processForm(user).then(this.props.openModal("sign up"));
 
     setTimeout(() => {
       if (!this.props.errors.length > 0) {
@@ -36,7 +37,7 @@ class SessionForm extends React.Component {
           this.props.openModal("sign up");
         }
       }
-    }, 500);
+    }, 1000);
   }
 
   googleLogin() {
