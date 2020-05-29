@@ -10,12 +10,12 @@ const mapStateToProps = (state) => {
     workouts: Object.values(workouts)
       .reverse()
       .filter((workout) => state.session.id === workout.user_id)
-      //   .sort((a, b) => (b.create_date > a.create_date ? 1 : -1)),
-      .sort((a, b) => Math.sign(a.create_date - b.create_date)),
+      //   .sort((a, b) => (b.date_created > a.date_created ? 1 : -1)),
+      .sort((a, b) => Math.sign(a.date_created - b.date_created)),
     // recentWorkouts: Object.values(workouts)
     //   .reverse()
     //   .filter((workout) => id === workout.userId)
-    //   .sort((a, b) => (b.create_date > a.create_date ? 1 : -1)),
+    //   .sort((a, b) => (b.date_created > a.date_created ? 1 : -1)),
   };
 };
 

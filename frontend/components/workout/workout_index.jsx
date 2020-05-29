@@ -7,13 +7,13 @@ export default class WorkoutIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      workouts: this.props.workouts,
+      //   workouts: this.props.workouts,
       activity_type: true,
-      name: true,
+      name: false,
       distance: true,
-      elevation: true,
+      elevation: false,
       time: true,
-      create_date: true,
+      date_created: true,
     };
 
     this.sortNum = this.sortNum.bind(this);
@@ -21,48 +21,40 @@ export default class WorkoutIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchWorkouts().then(() =>
-      this.setState({
-        workouts: this.props.workouts,
-      })
-    );
+    this.props.fetchWorkouts();
   }
+
 
   sortAlpha(sortKey) {
-    const workouts = this.state.workouts;
-    if (this.state[sortKey]) {
-      workouts.sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : -1));
-    } else {
-      workouts.sort((a, b) => (b[sortKey] > a[sortKey] ? 1 : -1));
-    }
+    const { workouts } = this.props;
+    this.state[sortKey]
+      ? workouts.sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : -1))
+      : workouts.sort((a, b) => (b[sortKey] > a[sortKey] ? 1 : -1));
     this.setState({ [sortKey]: !this.state[sortKey] });
   }
-
   sortNum(sortKey) {
-    const workouts = this.state.workouts;
-    if (this.state[sortKey]) {
-      workouts.sort((a, b) => a[sortKey] - b[sortKey]);
-    } else {
-      workouts.sort((a, b) => b[sortKey] - a[sortKey]);
-    }
+    const { workouts } = this.props;
+    this.state[sortKey]
+      ? workouts.sort((a, b) => a[sortKey] - b[sortKey])
+      : workouts.sort((a, b) => b[sortKey] - a[sortKey]);
     this.setState({ [sortKey]: !this.state[sortKey] });
   }
 
   render() {
-    const { workouts, deleteWorkout, loading } = this.props;
+    // const { workouts, deleteWorkout, loading } = this.props;
+    const { workouts, deleteWorkout } = this.props;
 
-    const workoutList = workouts.map((workout, i) => (
-      <IndexWorkoutItem
+    const workoutList = workouts.map((workout, idx) => (
+      <WorkoutIndexItem
+        key={workout.id}
         workout={workout}
         deleteWorkout={deleteWorkout}
-        key={i}
-        i={i}
+        i={idx}
       />
     ));
 
-    const tableDisplay = loading ? (
-      <LoadingIcon />
-    ) : (
+    // const tableDisplay = loading ? (
+    const tableDisplay = false ? null : ( //   <LoadingIcon />
       <div>
         <section className="activity-count">
           {workouts.length} Activities
@@ -78,7 +70,7 @@ export default class WorkoutIndex extends Component {
               </th>
               <th
                 className="sport-date"
-                onClick={(e) => this.sortAlpha("create_date")}
+                onClick={(e) => this.sortAlpha("date_created")}
               >
                 Date
               </th>
@@ -109,7 +101,7 @@ export default class WorkoutIndex extends Component {
             {tableDisplay}
           </div>
         </div>
-        <ActivitiesFooter workouts={this.props.recentWorkouts} />
+        {/* <ActivitiesFooter workouts={this.props.recentWorkouts} /> */}
       </div>
     );
   }
