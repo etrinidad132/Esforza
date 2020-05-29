@@ -89,6 +89,11 @@ class NavBar extends React.Component {
             My Routes
           </Link>
         </li>
+        <li className="drop-submenu-item">
+          <Link className="drop-submenu-item" to="/training">
+            My Activities
+          </Link>
+        </li>
       </ul>
     );
 
