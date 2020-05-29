@@ -16,6 +16,7 @@
 User.destroy_all
 Route.destroy_all
 Location.destroy_all
+Workout.destroy_all
 
 # User Helper Methods
 
@@ -304,6 +305,96 @@ location6 = Location.create!(
 )
 
 p "Locations Done"
+
+# Workouts
+
+#  id            :bigint           not null, primary key
+#  user_id       :integer          not null
+#  name          :string           not null
+#  description   :text
+#  distance      :float            not null
+#  time          :integer          not null
+#  elevation     :integer          not null
+#  activity_type :string           not null
+#  date_created  :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+
+## Workout Helper Methods
+workout_activity_type = ["run", "ride", "hike", "walk"]
+
+# def activity_type_generator(array)
+#     array.sample
+# end
+
+workoutSeed1 = Workout.create!(
+    user_id: user1.id,
+    name: Faker::Games::Pokemon.location + " Tour",
+    description: Faker::Movies::HarryPotter.quote,
+    distance: ((rand(0.1..300.0) * 100).round / 100.0),
+    time: rand(0..9999),
+    elevation: rand(0..300),
+    activity_type: activity_type_generator(workout_activity_type),
+    date_created: random_yankees_date,
+)
+
+workoutSeed2 = Workout.create!(
+    user_id: user1.id,
+    name: Faker::Games::Pokemon.location + " Tour",
+    description: Faker::Movies::HarryPotter.quote,
+    distance: ((rand(0.1..300.0) * 100).round / 100.0),
+    time: rand(0..9999),
+    elevation: rand(0..300),
+    activity_type: activity_type_generator(workout_activity_type),
+    date_created: random_yankees_date,
+)
+
+workoutSeed3 = Workout.create!(
+    user_id: user1.id,
+    name: Faker::Games::Pokemon.location + " Tour",
+    description: Faker::Movies::HarryPotter.quote,
+    distance: ((rand(0.1..300.0) * 100).round / 100.0),
+    time: rand(0..9999),
+    elevation: rand(0..300),
+    activity_type: activity_type_generator(workout_activity_type),
+    date_created: random_yankees_date,
+)
+
+workoutSeed4 = Workout.create!(
+    user_id: user_id_generator(users_array).id,
+    name: Faker::Games::Pokemon.location + " Tour",
+    description: Faker::Movies::HarryPotter.quote,
+    distance: ((rand(0.1..300.0) * 100).round / 100.0),
+    time: rand(0..9999),
+    elevation: rand(0..300),
+    activity_type: activity_type_generator(workout_activity_type),
+    date_created: random_yankees_date,
+)
+
+workoutSeed5 = Workout.create!(
+    user_id: user_id_generator(users_array).id,
+    name: Faker::Games::Pokemon.location + " Tour",
+    description: Faker::Movies::HarryPotter.quote,
+    distance: ((rand(0.1..300.0) * 100).round / 100.0),
+    time: rand(0..9999),
+    elevation: rand(0..300),
+    activity_type: activity_type_generator(workout_activity_type),
+    date_created: random_yankees_date,
+)
+
+workoutSeed6 = Workout.create!(
+    user_id: user_id_generator(users_array).id,
+    name: Faker::Games::Pokemon.location + " Tour",
+    description: Faker::Movies::HarryPotter.quote,
+    distance: ((rand(0.1..300.0) * 100).round / 100.0),
+    time: rand(0..9999),
+    elevation: rand(0..300),
+    activity_type: activity_type_generator(workout_activity_type),
+    date_created: random_yankees_date,
+)
+
+p "Workouts Done"
+
 # location = Location.create!(
 #     route_id: route_id_generator(routes_array).id, 
 #     sequence: nil, 

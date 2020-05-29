@@ -1,0 +1,233 @@
+.new-workout {
+  margin: 0 20px 120px 20px;
+  padding-top: 110px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+
+  .workout-btn-save {
+    color: #fff;
+    padding: 6px 10px;
+    min-height: 34px;
+    background-color: #fc4c02;
+    border-color: #fc4c02;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  div {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px; 
+    align-items: flex-start;
+  }
+
+  h1 {
+    color: rgb(45, 45, 50);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  label {
+    color: #2d2d32;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.new-workout-form {
+  width: 700px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 110px;
+
+  input {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.form-sec {
+  display: flex;
+}
+
+.duration {
+  display: flex;
+
+  input {
+    width: 50px;
+    height: 34px;
+    text-align: right;
+    padding-right: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 34px;
+    background-color: #fff;
+    border: 1px solid #ccccd1;
+    color: #666;
+    border-radius: 0px;
+    margin-right: -1px;
+  }
+
+}
+
+hr {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border: 0;
+    border-top: 1px solid #ccccd1;
+}
+
+.distance-workout-form {
+  text-align: center;
+  width: 126px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+
+  &:focus {
+    border-color: #007FB6;
+  }
+}
+
+.elevation-workout-form {
+  text-align: center;
+  width: 126px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+
+  &:focus {
+    border-color: #007FB6;
+  }
+}
+
+.sport-workout-form {
+  width: 126px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+  margin-bottom: 30px;
+
+  &:focus {
+    border-color: #007FB6;
+  }
+}
+
+.date-workout-form {
+  width: 12em;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+  margin-bottom: 30px;
+
+  &:focus {
+    border-color: #007FB6;
+  }
+}
+
+.title-workout-form {
+  width: 455px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+
+  &:focus {
+    border-color: #007FB6;
+  }
+}
+
+.description-workout-form {
+    width: 455px;
+    height: 125px;
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: 200;
+    border: 1px solid #ccccd1;
+    color: #666;
+
+    &:focus {
+    border-color: #007FB6;
+  }
+}
+
+.workout-errors {
+  display: flex;
+  flex-direction: row;
+  font-size: 11px;
+  background-color: transparent;
+  color: #fe0c0b;
+  white-space: normal;
+  margin: 0;
+  line-height: 1.2em;
+  padding-top: 5px;
+  position: relative;
+  margin-bottom: -18px;
+  top: 54px;
+
+  li{
+    padding: 15px;
+  }
+  &:empty {
+    display: none;
+  }
+}
+
+#name-err {
+  color: #fe0c0b;
+  font-size: 11px;
+  position: absolute;
+  margin-top: 57px;
+  &:empty {
+    display: none;
+  }
+}
+
+// input[type=number]::-webkit-inner-spin-button, 
+// input[type=number]::-webkit-outer-spin-button { 
+//   -webkit-appearance: none; 
+//   margin: 0; 
+// }
+
+// @media (min-width: 600px) {
+//   .new-workout {
+//     min-height: 74vh;
+//   }
+// }

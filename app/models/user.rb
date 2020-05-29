@@ -27,6 +27,7 @@ class User < ApplicationRecord
     ## Associations
 
     has_many :routes, dependent: :destroy
+    has_many :workouts, dependent: :destroy
 
     ## Class Methods
 

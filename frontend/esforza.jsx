@@ -9,6 +9,7 @@ import * as UserUtil from "./util/user_util"
 import * as RouteUtil from "./util/route_api_util"
 import { openModal, closeModal } from "./actions/modal_actions"
 import { fetchRoutes, fetchRoute, createRoute, updateRoute, destroyRoute } from "./actions/route_actions";
+import { fetchWorkouts, fetchWorkout, createWorkout, updateWorkout, destroyWorkout } from "./actions/workout_actions";
 import { fetchLocations, fetchLocation, createLocation, updateLocation, deleteLocation } from "./actions/location_actions";
 ///////////////////////////////////////////////////////////////////
 
@@ -42,6 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createRoute = (route) => store.dispatch(createRoute(route));
     window.updateRoute = (route) => store.dispatch(updateRoute(route));
     window.destroyRoute = (routeId) => store.dispatch(destroyRoute(routeId));
+
+    window.fetchWorkouts = () => store.dispatch(fetchWorkouts());
+    window.fetchWorkout = (workoutId) => store.dispatch(fetchWorkout(workoutId));
+    window.createWorkout = (workout) => store.dispatch(createWorkout(workout));
+    window.updateWorkout = (workout) => store.dispatch(updateWorkout(workout));
+    window.destroyWorkout = (workoutId) => store.dispatch(destroyWorkout(workoutId));
 
     window.fetchLocations = () => store.dispatch(fetchLocations());
     window.fetchLocation = (locationId) => store.dispatch(fetchLocation(locationId));

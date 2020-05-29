@@ -19,6 +19,8 @@
 
 
     <script type="text/javascript"> window.githubIcon = "<%= image_url('github_logo.png') %>" </script>
+    <script type="text/javascript"> window.linkedInIcon = "<%= image_url('linkedin_logo.png') %>" </script>
+    <script type="text/javascript"> window.angelListIcon = "<%= image_url('angellist_logo.png') %>" </script>
     <script type="text/javascript"> window.splash2 = "<%= image_url('splash_image.jpg') %>" </script>
     <script type="text/javascript"> window.splash = "<%= image_url('devices.png') %>" </script>
 
@@ -27,7 +29,7 @@
       window.secret = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
     </script>
 
-    <meta property="og:image" content="<%=image_url('ss_routes.png')%>" />
+    <meta name="image" property="og:image" content="<%=image_url('ss_routes.png')%>" />
     
   </head>
 

@@ -1,0 +1,114 @@
+.training-main {
+  min-height: 70vh;
+  padding-top: 85px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .training-head {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    color: #2d2d32;
+    display: flex;
+    width: 1216px;
+
+    h1 {
+      font-size: 34px;
+    }
+  }
+
+  tr {
+    display: flex;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+  th {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12.75em;
+    height: 33px;
+    background-color: rgb(230, 230, 235);
+
+    &:hover {
+      background-color: rgb(245, 245, 245);
+    }
+  }
+
+  .title-header {
+    width: 11.5em;
+  }
+
+  td {
+    display: flex;
+    flex-direction: column;
+    width: 12.75em;
+    justify-content: center;
+
+    a {
+      color: #007fb6;
+      margin-right: 10px;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .table-type {
+    align-items: center;
+  }
+
+  .table-date {
+    align-items: center;
+  }
+
+  .table-string {
+    width: 11.5em;
+  }
+
+  .table-number {
+    align-items: center;
+  }
+
+  .table-button {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .index-workout-item {
+    min-height: 3em;
+  }
+
+  .white {
+    background-color: #f5f5fa;
+  }
+}
+
+.activity-count {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  padding: 10px 0;
+  align-self: flex-start;
+}
+
+// @media only screen and (max-width: 1600px) {
+//   .training-main {
+//     th {
+//       width: 10.75em;
+//     }
+
+//     td {
+//       width: 10.75em;
+//     }
+//   }
+// }
+
+// @media (min-width: 600px) {
+//   .training-main {
+//     min-height: 94vh;
+//   }
+// }

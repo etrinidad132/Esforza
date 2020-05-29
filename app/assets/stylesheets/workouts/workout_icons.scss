@@ -1,0 +1,22 @@
+.fa-wrench {
+  margin-left: -20px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  color: lightgrey;
+  padding: 2px;
+
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
+}
+
+.fa-edit {
+  color: black;
+}
+
+.fa-trash-alt {
+  color: black;
+}

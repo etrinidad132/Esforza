@@ -1,0 +1,2321 @@
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.modal-comment {
+  border-bottom: 1px solid #e6e6eb;
+}
+
+/* line 5, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.give-kudos-btn {
+  background-color: orangered;
+  color: white;
+  width: 90px;
+  border-radius: 3px;
+  font-size: 11px;
+  margin: 16px;
+  padding: 9.5px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-appearance: none;
+  border-style: none;
+  cursor: pointer;
+}
+
+/* line 20, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal {
+  position: absolute;
+  top: -32vh;
+  margin-left: -420px;
+}
+/* line 25, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .modal-header-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+/* line 36, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .modal-header-title section {
+  display: flex;
+  align-items: center;
+}
+/* line 41, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .modal-header-title .fa-times {
+  cursor: pointer;
+}
+/* line 45, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .modal-header-title .comment-profile-pic {
+  width: 27px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+/* line 51, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .modal-header-title .comment-profile-pic h1 {
+  font-size: 15px;
+}
+/* line 56, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .modal-header-title .big {
+  width: 32px;
+  height: 32px;
+}
+/* line 62, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .dashboard-modal-headers-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5fa;
+  border-bottom: 1px solid #ccccd1;
+}
+/* line 69, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .dashboard-modal-headers-container .fa-times {
+  margin-right: 12px;
+  cursor: pointer;
+}
+/* line 74, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .dashboard-modal-headers-container .dashboard-modal-headers {
+  display: flex;
+  background-color: #f5f5fa;
+  border-radius: 6px 6px 0 0;
+  padding-left: 21px;
+}
+/* line 81, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .dashboard-modal-headers-container .dashboard-modal-headers li {
+  padding: 10px 20px 9px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* line 86, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .dashboard-modal-headers-container .dashboard-modal-headers li:hover {
+  background-color: #fff;
+}
+/* line 91, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.dashboard-modal .dashboard-modal-headers-container .dashboard-modal-headers .active {
+  padding-top: 8px;
+  border-top: 2px solid #fc4c02;
+  border-bottom: none;
+  background-color: #fff;
+  margin-bottom: -1px;
+  border-left: 1px solid #ccccd1;
+  border-right: 1px solid #ccccd1;
+}
+
+/* line 105, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+  color: #2d2d32;
+  font-size: 12px;
+  line-height: 1.45em;
+  font-family: "MaisonNeue", "Segoe UI", "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+/* line 114, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item section {
+  width: 100%;
+}
+/* line 118, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item .comment-profile-pic {
+  width: 27px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+/* line 124, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item .comment-profile-pic h1 {
+  font-size: 15px;
+}
+/* line 129, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item .big {
+  width: 32px;
+  height: 32px;
+}
+/* line 134, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item .comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 139, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item .comment-header .comments-commenter {
+  font-weight: 700;
+}
+/* line 143, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item .comment-header .comment-delete {
+  color: #242428;
+  height: 10px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+}
+/* line 154, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comments-item:hover .comment-delete {
+  opacity: 0.5;
+}
+
+/* line 160, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-item {
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* line 166, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 171, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create .feedback-button {
+  background-color: #e6e6eb;
+  border: 1px solid #e6e6eb;
+  display: block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* line 179, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create .feedback-button:hover {
+  background-color: #fff;
+}
+/* line 184, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create .like-button {
+  align-items: center;
+  display: flex;
+  background: #f5f5fa;
+  height: 100%;
+  padding: 10px 16px;
+  margin: 16px;
+  transition: border-color 0.1s linear, background 0.1s linear, color 0.1s linear;
+}
+/* line 193, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create .like-button:hover {
+  background-color: #fff;
+}
+/* line 197, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create .like-button .fa-thumbs-up {
+  color: #47474B;
+}
+/* line 201, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.like-create .like-button .fas.fa-thumbs-up {
+  color: #fc4c02;
+}
+
+/* line 209, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form {
+  margin-top: 16px;
+  border-top: 1px solid #e6e6eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* line 216, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form .comment-input {
+  background-color: white;
+  padding: 6px 4px 5px 4px;
+  margin: 16px 5px 0 0;
+  border-radius: 4px;
+  border-width: 0;
+  width: 83%;
+  transition: height 0.1s ease;
+  line-height: 1.5em;
+  color: #242428;
+  font-size: 12px;
+}
+/* line 228, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form .comment-input:focus {
+  background-color: #f5f5fa;
+}
+/* line 233, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form .post-button {
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fc4c02;
+  height: 30px;
+  border: none;
+  box-shadow: none;
+}
+/* line 245, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form .post-button:hover {
+  background-color: #f5f5fa;
+}
+/* line 250, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form .need-body {
+  cursor: default;
+  background-color: #fff;
+  opacity: 0.65;
+}
+/* line 255, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.comment-create .comment-form .need-body:hover {
+  background-color: #fff;
+}
+
+/* line 263, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 23px;
+  background-color: #fff;
+  min-height: 188px;
+  padding: 0 20px;
+  border-radius: 4px;
+  box-shadow: 0px 8px 24px rgba(13, 13, 18, 0.04);
+}
+/* line 273, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .activity-info {
+  display: flex;
+  margin-bottom: 16px;
+}
+/* line 278, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback {
+  width: 100%;
+  margin-top: 8px;
+  padding: 0 0 16px;
+}
+/* line 283, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0 0;
+  border-top: 1px solid #e6e6eb;
+}
+/* line 291, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+}
+/* line 296, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count .kudos-profile-pic {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  float: left;
+}
+/* line 303, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count .kudos-profile-pic h1 {
+  font-size: 15px;
+}
+/* line 308, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count .kudos-profile-pic:nth-child(1) {
+  z-index: 3;
+}
+/* line 312, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count .kudos-profile-pic:nth-child(2) {
+  z-index: 2;
+  margin-left: -10px;
+}
+/* line 317, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count .kudos-profile-pic:nth-child(3) {
+  z-index: 1;
+  margin-left: -10px;
+}
+/* line 322, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .kudos-count .kudos-profile-pic:last-child {
+  margin-right: 5px;
+}
+/* line 327, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .user-feedback-buttons {
+  display: flex;
+  align-items: center;
+}
+/* line 332, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .feedback-button {
+  background-color: #e6e6eb;
+  border: 1px solid #e6e6eb;
+  display: block;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+/* line 339, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .feedback-button:hover {
+  background-color: #fff;
+}
+/* line 344, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .like-button {
+  margin-right: 5px;
+}
+/* line 348, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .kudos-section .fas.fa-thumbs-up {
+  color: #fc4c02;
+}
+/* line 356, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .comment-section .comments-item:first-child {
+  margin-top: 12px;
+}
+/* line 360, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .user-feedback .comment-section .comments-item:last-child {
+  padding-bottom: 0px;
+}
+/* line 367, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .comment-modal-btn {
+  padding: 0 7px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #242428;
+  font-weight: 400;
+}
+/* line 374, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .comment-modal-btn:hover {
+  color: #007FB6;
+}
+/* line 379, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .comment-modal {
+  background-color: #fff;
+  top: 60px;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto 24px;
+  padding: 15px 20px 0 20px;
+  overflow: auto;
+  border-radius: 0  0 6px 6px;
+}
+/* line 389, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .comment-modal .comment-form {
+  margin: 16px 0;
+  border-top: 0;
+}
+/* line 395, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .avatar-image-mini {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 25px 0 0;
+  width: 45px;
+  height: 45px;
+  background-color: #969ea5;
+  border-radius: 50%;
+  color: white;
+  z-index: 1;
+}
+/* line 408, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .avatar-image-mini h1 {
+  font-size: 25px;
+  font-weight: 400;
+}
+/* line 414, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .route-link {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #2d2d32;
+}
+/* line 421, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item .route-link:hover {
+  color: #005b83;
+}
+/* line 426, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item h2 {
+  font-size: 13px;
+  line-height: 1.45;
+}
+/* line 431, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item h3 {
+  font-size: 20px;
+}
+/* line 435, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #606065;
+  line-height: 1.2;
+}
+/* line 442, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item p {
+  font-size: 13px;
+  line-height: 1.45;
+}
+/* line 447, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item header {
+  margin: 20px 0 10px;
+}
+
+/* line 454, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item-header h2 {
+  font-weight: 700;
+}
+
+/* line 459, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item-name {
+  margin-bottom: 10px;
+}
+
+/* line 463, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item-desc {
+  margin-bottom: 10px;
+}
+/* line 465, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item-desc p {
+  color: #242428;
+}
+
+/* line 470, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item-stats {
+  display: flex;
+}
+/* line 473, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/activity_display.scss */
+.activity-feed-item-stats section {
+  margin-right: 33px;
+}
+/* line 3, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.profile-link {
+  cursor: pointer;
+  font-size: inherit;
+  color: #2d2d32;
+}
+/* line 8, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.profile-link:hover {
+  color: #005b83;
+}
+/* line 11, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.profile-link:hover h1,
+.profile-link:hover h2,
+.profile-link:hover h3,
+.profile-link:hover h4 {
+  color: #005b83;
+}
+
+/* line 20, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.dashboard-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f5f5fa;
+  background-size: cover;
+  padding-top: 120px;
+  min-height: 849px;
+}
+
+/* line 29, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.user-statistics {
+  background-color: #fff;
+  width: 17%;
+  border-radius: 4px;
+  position: fixed;
+  left: 15%;
+  box-shadow: 0px 8px 24px rgba(13, 13, 18, 0.04);
+}
+
+/* line 39, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.personal-ads {
+  position: fixed;
+  right: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 17%;
+  height: 300px;
+}
+/* line 49, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.personal-ads p {
+  margin: 10px 0 10px 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2d2d32;
+}
+/* line 56, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.personal-ads section {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+  padding-bottom: 10px;
+}
+
+/* line 64, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.activity-feed {
+  background-color: #f5f5fa;
+  width: 34%;
+  border-radius: 4px;
+  float: left;
+  height: 1000px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* line 76, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.activity-feed::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 80, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.banner {
+  background-color: #f5f5fa;
+  background-position-y: -91px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/assets/hero_banner-898080e002e8b40ae72100bf847696aa3becfd7c3bb729056250e5eb036ba7ca.png);
+  height: 188px;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 27px;
+}
+
+/* line 93, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.user-profile-snippet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 100, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.user-profile-header {
+  margin-top: -16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 104, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.user-profile-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d2d32;
+}
+
+/* line 111, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.avatar-image {
+  position: relative;
+  top: -36px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 1;
+  -webkit-box-shadow: 0px 8px 24px rgba(13, 13, 18, 0.16);
+  box-shadow: 0px 8px 24px rgba(13, 13, 18, 0.16);
+}
+
+/* line 122, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.blank {
+  background-color: #969ea5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 129, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.blank .blank-pic {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  font-size: 300%;
+  color: white;
+}
+
+/* line 139, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.personal {
+  text-decoration: none;
+  color: #f24c03;
+}
+/* line 143, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.personal:hover {
+  color: #bd3902;
+}
+
+/* line 148, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.total-statistics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 154, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.total-statistics label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #606065;
+  line-height: 1.2;
+}
+/* line 161, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.total-statistics .statistic {
+  text-align: center;
+}
+/* line 164, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.total-statistics .statistic h2 {
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+/* line 172, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.total-statistics div {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  border-bottom: 1px solid #e6e6eb;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 183, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.github {
+  height: 55px;
+  width: 55px;
+  padding-right: 12px;
+}
+
+/* line 189, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.linkedin {
+  height: 60px;
+  width: 60px;
+  padding-right: 12px;
+}
+
+/* line 195, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.dashboard-link {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  color: #242428;
+  font-size: 13px;
+}
+/* line 202, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.dashboard-link:hover {
+  color: #007fb6;
+}
+/* line 204, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.dashboard-link:hover .fa-chevron-right {
+  transition: 0.3s;
+  margin-left: 5px;
+}
+
+/* line 211, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.fa-chevron-right {
+  transition: 0.3s;
+}
+
+/* line 215, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/dashboard/dashboard.scss */
+.chevron-container {
+  width: 20px;
+}
+/* line 21, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding-top: 116px;
+  background-size: cover;
+  background-image: url(/assets/cycling_peloton-f1d4ebcbcce4d18a379a0bf52fa9a2e2575ec49130664b3461af91163496ba70.jpg);
+}
+/* line 32, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-container form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 461px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* line 44, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-container form input {
+  height: 40px;
+  width: 300px;
+  font-weight: 400;
+  font-size: 15px;
+  color: lightgray;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: 0;
+  -webkit-appearance: none;
+  border-style: none;
+  border-radius: 3px;
+  padding-left: 10px;
+  border: solid .5px lightgray;
+}
+/* line 60, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-container form input:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.8);
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  color: #333;
+}
+/* line 67, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-container form button {
+  background-color: orangered;
+  color: white;
+  -webkit-appearance: none;
+  border-style: none;
+  height: 40px;
+  width: 312px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 3px;
+}
+/* line 79, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-container form button:hover {
+  cursor: pointer;
+  transition: background-color 300ms;
+  background-color: #da4109;
+}
+
+/* line 86, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.form-type {
+  color: white;
+  display: flex;
+  text-align: center;
+  font-size: 34px;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 400px;
+  height: 82px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* line 101, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+form h3 {
+  color: white;
+  font-weight: 700;
+}
+
+/* line 106, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.google {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #242428;
+  background-color: white;
+  width: 255px;
+  border-radius: 3px;
+  line-height: 24px;
+  padding: 6px 16px;
+  padding-left: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  background-image: url(/assets/google_logo-5495f1c9998b6f980363335c7f0baeb9893aaec2038682a2a7908343a3ca54bc.svg);
+  background-position: 11px;
+  background-size: 23px;
+  background-repeat: no-repeat;
+}
+
+/* line 126, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.google:hover {
+  cursor: pointer;
+  background-image: url(/assets/google_logo-5495f1c9998b6f980363335c7f0baeb9893aaec2038682a2a7908343a3ca54bc.svg);
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+/* line 137, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/session_form.scss */
+.session-errors {
+  color: red;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+/* line 23, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+/* line 42, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding-top: 116px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 58, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-container form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 461px;
+  width: 400px;
+  background-color: white;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  width: 635px;
+  border: 0.5px solid;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: initial;
+}
+/* line 76, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-container form input,
+.modal-container form select {
+  height: 40px;
+  width: 300px;
+  font-weight: 400;
+  font-size: 13px;
+  color: black;
+  background-color: white;
+  margin: 0;
+  -webkit-appearance: none;
+  border-style: none;
+  border-radius: 3px;
+  padding-left: 10px;
+  border: solid 0.5px lightgray;
+  margin-top: 10px;
+}
+/* line 94, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-container form input:focus,
+.modal-container select:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.8);
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  color: #333;
+}
+/* line 102, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-container form button {
+  background-color: orangered;
+  color: white;
+  -webkit-appearance: none;
+  border-style: none;
+  height: 40px;
+  width: 312px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 3px;
+}
+/* line 114, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-container form button:hover {
+  cursor: pointer;
+  transition: background-color 300ms;
+  background-color: #da4109;
+}
+
+/* line 121, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.form-type {
+  color: white;
+  display: flex;
+  text-align: center;
+  font-size: 34px;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 400px;
+  height: 82px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* line 135, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-form h2 {
+  color: #242428;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* line 141, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/form/sign_up_modal.scss */
+.modal-form h3 {
+  color: #242428;
+  font-size: 17px;
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer {
+  background-color: #2d2d32;
+  color: white;
+  font-weight: 700;
+  font-size: 10px;
+  height: 40vh;
+}
+/* line 8, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer h3 {
+  color: #99999e;
+  margin-bottom: 40px;
+}
+/* line 13, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .footer-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+}
+/* line 22, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .follow-column {
+  padding-top: 7px;
+}
+/* line 26, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .start-column {
+  padding-top: 7px;
+}
+/* line 30, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .footer-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+}
+/* line 35, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .footer-content section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 243px;
+  padding-right: 20px;
+}
+/* line 42, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .footer-content section div {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+/* line 47, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .footer-content section a {
+  color: white;
+}
+/* line 50, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.footer .footer-content section a:hover {
+  text-decoration: underline;
+}
+
+/* line 58, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.recentActivities-footer {
+  background-color: #f5f5fa;
+  height: 40%;
+}
+/* line 62, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.recentActivities-footer h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+/* line 69, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.recentActivities-footer section {
+  padding: 40px 13%;
+  display: flex;
+  flex-direction: column;
+}
+/* line 75, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.recentActivities-footer a {
+  color: #606065;
+  font-size: 13px;
+  line-height: 1.45;
+}
+/* line 80, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.recentActivities-footer a:hover {
+  color: #007FB6;
+}
+/* line 85, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+.recentActivities-footer span {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1600px) {
+  /* line 93, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+  .footer .footer-content {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 64px;
+    padding-left: 32px;
+  }
+
+  /* line 100, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+  .recentActivities-footer {
+    height: 44%;
+    min-height: 255px;
+  }
+  /* line 104, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/footer.scss */
+  .recentActivities-footer section {
+    padding: 40px 40px;
+  }
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/main_content.scss */
+.splash {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding-top: 70px;
+  background-size: cover;
+}
+/* line 8, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/main_content.scss */
+.splash .main-container {
+  height: 80vh;
+}
+/* line 11, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/main/main_content.scss */
+.splash .main-container h2 {
+  padding-top: 143px;
+  font-size: 48px;
+  font-weight: 600;
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/modal/modal.scss */
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+/* line 11, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/modal/modal.scss */
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 6, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-right {
+  display: inline-block;
+  color: #242428;
+  font-weight: 700;
+  font-size: 10px;
+}
+/* line 11, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-right a {
+  display: block;
+  box-sizing: border-box;
+  height: 62px;
+  padding: 0px 16px;
+  cursor: pointer;
+}
+
+/* line 20, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop {
+  display: inline-block;
+  color: #242428;
+  font-weight: 700;
+  font-size: 10px;
+}
+/* line 25, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop a {
+  display: block;
+  height: 62px;
+  padding: 0px 16px;
+  cursor: pointer;
+}
+
+/* line 33, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-menu {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background-color: transparent;
+  line-height: 69px;
+  display: inline-block;
+  position: relative;
+}
+/* line 43, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-menu:hover {
+  color: #f24c03;
+  border-bottom: 2px solid white;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+/* line 50, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-menu:hover .drop-submenu-dash, .drop-menu:hover .drop-submenu-profile {
+  display: block;
+  z-index: 20;
+}
+/* line 54, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-menu:hover .tab-header {
+  box-sizing: border-box;
+  position: relative;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 2px solid white;
+  z-index: 30;
+  height: 63px;
+}
+
+/* line 67, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.orange {
+  border-bottom: 2px solid #f24c03;
+}
+
+/* line 71, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-submenu-dash {
+  margin-top: 1px;
+  color: #2d2d32;
+  font-weight: 300;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: solid 1px #242428;
+  z-index: 20;
+  top: 61px;
+}
+
+/* line 85, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.dash {
+  width: 200px;
+}
+
+/* line 89, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.friends {
+  width: 150px;
+}
+
+/* line 93, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-submenu-profile {
+  right: 0;
+  margin-top: 1px;
+  color: #242428;
+  font-weight: 300;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  border: solid 1px #2d2d32;
+  top: 61px;
+}
+
+/* line 110, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-submenu-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 116, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/dropdown.scss */
+.drop-submenu-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 350;
+  color: #242428;
+}
+/* line 7, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.navbar-right-side {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 300px;
+  margin-right: 61px;
+  justify-content: flex-end;
+}
+
+/* line 16, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.navbar-right-side > span {
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+/* line 21, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.navbar-left-side {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 300px;
+  margin-right: 75px;
+}
+
+/* line 29, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.navbar-left-side > span {
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+/* line 34, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  color: #f24c03;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+}
+
+/* line 43, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.session-btn {
+  background-color: white;
+  display: inline-block;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  color: #242428;
+  text-decoration: none;
+  padding: 6px 16px;
+  margin: 0 5px;
+  border: 0.5px solid #dfdfe8;
+  border-radius: 4px;
+  text-decoration: none;
+  -webkit-appearance: none;
+}
+
+/* line 79, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.session-btn:hover {
+  cursor: pointer;
+  transition: background-color 300ms;
+  background-color: #f0f0f5;
+}
+
+/* line 85, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.welcome {
+  display: flex;
+  align-content: center;
+}
+
+/* line 90, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.navbar-main {
+  font-size: 16px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 0 32px;
+  align-items: center;
+  height: 53px;
+  position: fixed;
+  width: 100%;
+  border-bottom: 0.5px solid lightgray;
+  z-index: 30;
+}
+
+/* line 104, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/navbar/navbar.scss */
+.navbar-side {
+  display: flex;
+  margin-left: 20px;
+  min-width: 900px;
+  width: 70%;
+  justify-content: space-between;
+}
+/* line 4, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 25, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 29, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+body {
+  line-height: 1;
+  font-family: "MaisonNeue", "Segoe UI", "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* line 33, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 36, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 39, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 44, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 49, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+::selection {
+  background: #fc5200;
+  color: white;
+  text-shadow: none;
+}
+
+/* line 55, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+.btn {
+  background-color: orangered;
+  color: white;
+  border-radius: 3px;
+  font-size: 11px;
+  padding: 9.5px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-appearance: none;
+  border-style: none;
+}
+
+/* line 67, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+.btn:hover {
+  cursor: pointer;
+  transition: background-color 300ms;
+  background-color: #da4109;
+}
+
+/* line 73, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/reset.scss */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 1;
+  /* Firefox */
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_icon.scss */
+.fa-wrench {
+  margin-left: -20px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  color: lightgrey;
+  padding: 2px;
+}
+/* line 10, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_icon.scss */
+.fa-wrench:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+/* line 16, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_icon.scss */
+.fa-edit {
+  color: black;
+}
+
+/* line 20, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_icon.scss */
+.fa-trash-alt {
+  color: black;
+}
+/* line 7, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-container {
+  padding: 88px 13%;
+  background-color: #FFF;
+  height: 100%;
+  min-height: 60vh;
+}
+/* line 13, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-container a {
+  text-decoration: none;
+}
+
+/* line 18, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-header {
+  margin-bottom: 40px;
+}
+/* line 20, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-header h1 {
+  color: #2d2d32;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 34px;
+}
+
+/* line 28, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.button-main {
+  background-color: #f24c03;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px 16px;
+  font-weight: 700;
+  min-height: 34px;
+  line-height: 1.45;
+}
+/* line 38, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.button-main:hover {
+  cursor: pointer;
+  transition: background-color 300ms;
+  background-color: #da4109;
+}
+
+/* line 45, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index {
+  width: 100%;
+  border-top: 1px solid #ccccd1;
+  padding-top: 75px;
+  margin: 30px 0 50px 0;
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 55, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index-item-container {
+  float: left;
+  margin: 0 1.9% 40px 0;
+  width: 23.1%;
+}
+/* line 60, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index-item-container .fa-times {
+  margin-left: -20px;
+  margin-top: 30px;
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  color: lightgrey;
+  padding: 5px;
+}
+/* line 70, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index-item-container .fa-times:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+/* line 77, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index-item-stats {
+  background-color: #f7f7f7;
+  color: #2d2d32;
+}
+/* line 81, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index-item-stats .route-index-ul {
+  padding: 15px 20px;
+}
+/* line 83, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-index-item-stats .route-index-ul li {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.2em;
+}
+
+/* line 91, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.stat-list {
+  display: flex;
+  margin-bottom: 30px;
+}
+/* line 94, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.stat-list section {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+}
+
+/* line 101, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-name {
+  height: 55px;
+  overflow: hidden;
+}
+/* line 104, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-name a {
+  color: #007FB6;
+  font-size: 20px;
+  line-height: 25px;
+}
+/* line 108, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.route-name a:hover {
+  text-decoration: underline;
+}
+
+/* line 114, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_index.scss */
+.map-thumbnail {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 175px;
+  margin: 0 0 -2px 0;
+  margin-bottom: -2px;
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.route-save-modal {
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 650px;
+}
+
+/* line 6, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-header {
+  background-color: #F7F7F7;
+  border-bottom: 1px solid #ccccd1;
+  padding: 15px 20px;
+  color: #333;
+}
+/* line 11, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+/* line 18, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.inline-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px -16px;
+  align-items: center;
+  width: 100%;
+}
+
+/* line 26, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.route-save-label-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 31, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.route-save-label-parent-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* line 37, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main {
+  color: #333;
+  min-height: 300px;
+  max-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+}
+/* line 47, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+/* line 50, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form p {
+  text-align: left;
+  width: 100%;
+  line-height: 1.4em;
+}
+/* line 55, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form label {
+  align-self: flex-start;
+  color: #606065;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+/* line 61, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form input {
+  color: black;
+  border: 1px solid #ccccd1;
+  background-color: #fff;
+}
+/* line 66, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form input:focus {
+  border-color: #007FB6;
+}
+/* line 71, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form textarea {
+  border: 1px solid #ccccd1;
+  min-height: 3.6em;
+  font-size: 14px;
+}
+/* line 76, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form textarea:focus {
+  border-color: #007FB6;
+}
+/* line 80, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form .modal-save-btn {
+  margin-top: 20px;
+  background-color: #2d2d32;
+  color: white;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 16px;
+  min-height: 34px;
+  border: 1px solid #ccccd1;
+  border-radius: 4px;
+}
+/* line 93, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-main form .modal-save-btn:hover {
+  transition: 0.3s;
+  background-color: #45454d;
+}
+
+/* line 101, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.route-save-name {
+  width: 430px;
+  height: 44px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 7px;
+}
+
+/* line 109, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.errors-input {
+  border: 1px red solid;
+}
+
+/* line 113, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.selectbox {
+  border: 1px solid #ccccd1;
+  background-color: #fff;
+  height: 44px;
+  width: 110px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* line 122, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-errors {
+  font-size: 11px;
+  background-color: transparent;
+  color: #fe0c0b;
+  white-space: normal;
+  margin: 0;
+  display: block;
+  line-height: 1.2em;
+  padding-top: 5px;
+  position: relative;
+  margin-bottom: -18px;
+}
+/* line 133, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-errors:empty {
+  display: none;
+}
+/* line 137, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-errors ul {
+  display: flex;
+}
+/* line 140, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_save_modal.scss */
+.save-errors ul li {
+  align-self: flex-start;
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-content {
+  padding-top: 90px;
+  margin-left: 33px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 7, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-content h2 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 14, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-content h3 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #606065;
+  line-height: 1.2;
+  padding-right: 10px;
+}
+/* line 22, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-content hr {
+  margin-top: -17px;
+  margin-bottom: 17px;
+  border: 0;
+  border-top: 1px solid #f5f5fa;
+}
+/* line 29, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-content p {
+  margin-bottom: 20px;
+  color: #2d2d32;
+  fill: currentColor;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* line 38, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-header {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+/* line 41, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-header header {
+  color: #2d2d32;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-top: 10px;
+  margin-bottom: 21px;
+}
+
+/* line 51, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.edit-btn {
+  border: 1px solid transparent;
+  background-color: #fff;
+  border-color: #ccccd1;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #2d2d32;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-align: center;
+  padding: 6px 12px;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+/* line 64, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.edit-btn:hover {
+  background-color: #e6e6eb;
+}
+
+/* line 69, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.minimap {
+  padding-right: 100px;
+  height: 100px;
+  width: 600px;
+}
+
+/* line 75, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-main {
+  display: flex;
+}
+
+/* line 79, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show-stats {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* line 84, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.name {
+  display: flex;
+  margin-top: 36px;
+}
+
+/* line 89, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.username {
+  font-size: 22px;
+  line-height: 28px;
+  margin-top: -14px;
+  padding-left: 15px;
+}
+
+/* line 96, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.statistics-one {
+  display: flex;
+  margin-bottom: 40px;
+}
+/* line 99, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.statistics-one section {
+  margin-right: 10px;
+}
+
+/* line 104, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.statistics-two {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* line 110, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.show-route-description {
+  min-height: 100px;
+}
+
+/* line 114, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+#minimap {
+  height: 60vh;
+  width: 100%;
+}
+/* line 118, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+#minimap .gm-svpc {
+  display: none;
+}
+
+/* line 123, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.route-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 129, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.profile-picture {
+  position: relative;
+  top: -36px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* line 138, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.blank {
+  background-color: #969ea5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 145, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/route_show.scss */
+.blank .blank-picture {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  font-size: 300%;
+  color: white;
+}
+/* line 3, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+#stat-panel select,
+#stat-panel input {
+  font-size: 15px;
+}
+
+/* line 8, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+#stat-panel select {
+  width: 100%;
+}
+
+/* line 12, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+#stat-panel i {
+  font-size: 12px;
+}
+
+/* line 16, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+#map {
+  height: 92vh;
+  width: 100%;
+  top: 0px;
+}
+
+/* line 22, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+#stat-panel {
+  display: flex;
+  justify-content: end;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  position: fixed;
+  bottom: 11px;
+  left: 20px;
+  width: 95%;
+  height: 75px;
+  background-color: white;
+}
+
+/* line 37, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.panel {
+  height: 100%;
+  overflow: auto;
+}
+
+/* line 42, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.statistics {
+  display: flex;
+}
+/* line 45, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.statistics label {
+  padding: 10px;
+}
+
+/* line 50, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.route-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+  z-index: 6;
+}
+/* line 61, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.route-navbar nav {
+  display: flex;
+}
+/* line 64, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.route-navbar nav h1 {
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+/* line 74, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.exit {
+  color: #999;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+/* line 82, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.exit:hover {
+  text-decoration: underline;
+}
+
+/* line 87, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.route-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1;
+  font-size: 13px;
+  padding: 0px 10px 0 10px;
+  height: 38px;
+}
+
+/* line 97, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.route-toolbar-left {
+  display: flex;
+}
+
+/* line 101, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.toolbar-btn {
+  line-height: 38px;
+  display: flex;
+  padding: 0 20px;
+}
+/* line 106, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.toolbar-btn .toolbar-btn-label {
+  padding-left: 5px;
+}
+/* line 110, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.toolbar-btn:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* line 116, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.disabled {
+  background-color: #da4109;
+}
+/* line 118, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.disabled:hover {
+  cursor: default;
+}
+
+/* line 123, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.warnbox-content {
+  display: none;
+  background-color: none;
+}
+
+/* line 128, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.warnbox-c1 {
+  display: none;
+  background-color: none;
+}
+
+/* line 133, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.warnbox-c2 {
+  display: none;
+  background-color: none;
+}
+
+/* line 138, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.gm-style-mtc {
+  display: none;
+}
+
+/* line 142, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/routes/routes_map.scss */
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #f24c03;
+  padding-left: 30px;
+  text-decoration: none;
+}
+/* line 1, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout {
+  margin: 0 20px 120px 20px;
+  padding-top: 110px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+/* line 8, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout .workout-btn-save {
+  color: #fff;
+  padding: 6px 10px;
+  min-height: 34px;
+  background-color: #fc4c02;
+  border-color: #fc4c02;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* line 22, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout div {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  align-items: flex-start;
+}
+/* line 29, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout h1 {
+  color: #2d2d32;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/* line 38, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout label {
+  color: #2d2d32;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* line 46, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout-form {
+  width: 700px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 110px;
+}
+/* line 54, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.new-workout-form input {
+  background-color: white;
+}
+
+/* line 59, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.form-sec {
+  display: flex;
+}
+
+/* line 63, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.duration {
+  display: flex;
+}
+/* line 66, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.duration input {
+  width: 50px;
+  height: 34px;
+  text-align: right;
+  padding-right: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+  border-radius: 0px;
+  margin-right: -1px;
+}
+
+/* line 83, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+hr {
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  border: 0;
+  border-top: 1px solid #ccccd1;
+}
+
+/* line 91, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.distance-workout-form {
+  text-align: center;
+  width: 126px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+}
+/* line 103, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.distance-workout-form:focus {
+  border-color: #007FB6;
+}
+
+/* line 108, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.elevation-workout-form {
+  text-align: center;
+  width: 126px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+}
+/* line 120, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.elevation-workout-form:focus {
+  border-color: #007FB6;
+}
+
+/* line 125, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.sport-workout-form {
+  width: 126px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+  margin-bottom: 30px;
+}
+/* line 137, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.sport-workout-form:focus {
+  border-color: #007FB6;
+}
+
+/* line 142, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.date-workout-form {
+  width: 12em;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+  margin-bottom: 30px;
+}
+/* line 154, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.date-workout-form:focus {
+  border-color: #007FB6;
+}
+
+/* line 159, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.title-workout-form {
+  width: 455px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 34px;
+  background-color: #fff;
+  border: 1px solid #ccccd1;
+  color: #666;
+}
+/* line 170, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.title-workout-form:focus {
+  border-color: #007FB6;
+}
+
+/* line 175, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.description-workout-form {
+  width: 455px;
+  height: 125px;
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: 200;
+  border: 1px solid #ccccd1;
+  color: #666;
+}
+/* line 186, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.description-workout-form:focus {
+  border-color: #007FB6;
+}
+
+/* line 191, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.workout-errors {
+  display: flex;
+  flex-direction: row;
+  font-size: 11px;
+  background-color: transparent;
+  color: #fe0c0b;
+  white-space: normal;
+  margin: 0;
+  line-height: 1.2em;
+  padding-top: 5px;
+  position: relative;
+  margin-bottom: -18px;
+  top: 54px;
+}
+/* line 205, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.workout-errors li {
+  padding: 15px;
+}
+/* line 208, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+.workout-errors:empty {
+  display: none;
+}
+
+/* line 213, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+#name-err {
+  color: #fe0c0b;
+  font-size: 11px;
+  position: absolute;
+  margin-top: 57px;
+}
+/* line 218, /Users/edward/Desktop/AA/Esforza Full Stack Project/esforza/app/assets/stylesheets/workouts/workout_new.scss */
+#name-err:empty {
+  display: none;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ @import "reset.scss";
+
+ @import "./navbar/navbar.scss";
+ @import "./navbar/dropdown.scss";
+ 
+ @import "./main/main_content.scss";
+
+ @import "./form/session_form.scss";
+ @import "./form/sign_up_modal.scss";
+ 
+ @import "./modal/modal.scss";
+
+ @import "./routes/route_icon.scss";
+ @import "./routes/route_index.scss";
+ @import "./routes/routes_map.scss";
+ @import "./routes/route_save_modal.scss";
+ @import "./routes/route_show.scss";
+ 
+ @import "./dashboard/dashboard.scss";
+ @import "./dashboard/activity_display.scss";
+
+ @import "./workouts/workout_new.scss";
