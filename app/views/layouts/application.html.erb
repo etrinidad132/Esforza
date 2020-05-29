@@ -4,7 +4,12 @@
     <title>Esforza</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+    <meta name="image" property="og:image" content="<%=image_url('ss_routes.png')%>" />
+
+    <meta name="description" property="og:description" content="Esforza is a single-page, full-stack web application inspired by Strava and built with Ruby on Rails and PostgreSQL on the backend, React for the frontend, and enhanced by the Google Maps API.">
+
+    <meta name="author" content="Edward Trinidad">
+
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.dig(:google_maps_key)}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -29,7 +34,6 @@
       window.secret = "<%= Rails.application.credentials.dig(:google_maps_key) %>"
     </script>
 
-    <meta name="image" property="og:image" content="<%=image_url('ss_routes.png')%>" />
     
   </head>
 
