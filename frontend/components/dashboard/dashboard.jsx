@@ -14,6 +14,7 @@ class Dashboard extends React.Component {
     this.props.fetchUser(this.props.currentUser.id);
     this.props.fetchRoutes();
     this.props.fetchLocations();
+    this.props.fetchWorkouts();
   }
 
   timeConverter(seconds) {
@@ -47,39 +48,46 @@ class Dashboard extends React.Component {
   render() {
     // const { currentUser, users, routes } = this.props;
 
-    const routesArray = [];
     const activityFeed = [];
     this.props.routes.forEach((route) => {
       if (route.user_id === this.props.currentUser.id) {
-        routesArray.push(route);
         activityFeed.push(route);
       }
     });
 
-    activityFeed.sort((x, y) => Math.sign(y.id - x.id));
+    this.props.workouts.forEach((workout) => {
+      if (workout.user_id === this.props.currentUser.id) {
+        activityFeed.push(workout);
+      }
+    });
 
-    const activityDisplay = activityFeed.map((route, index) => {
-      route.username = this.props.users[route.user_id].username;
+    activityFeed.sort((x, y) => (y.updated_at > x.updated_at ? 1 : -1));
+    // activityFeed.sort((x, y) => Math.sign(y.id - x.id));
+
+    const activityDisplay = activityFeed.map((activity, index) => {
+      activity.username = this.props.users[activity.user_id].username;
+      let type = activity.date_created ? "training" : "routes";
 
       return (
         <ActivityDisplayItem
           key={index}
-          user={this.props.users[route.user_id]}
-          route={route}
+          user={this.props.users[activity.user_id]}
+          activity={activity}
           currentUser={this.props.currentUser}
+          type={type}
         />
       );
     });
 
-    const totalDistance = routesArray.reduce((acc, ele) => {
+    const totalDistance = activityFeed.reduce((acc, ele) => {
       return acc + ele.distance;
     }, 0);
 
-    const totalElevation = routesArray.reduce((acc, ele) => {
+    const totalElevation = activityFeed.reduce((acc, ele) => {
       return acc + ele.elevation;
     }, 0);
 
-    const totalTime = routesArray.reduce((acc, ele) => {
+    const totalTime = activityFeed.reduce((acc, ele) => {
       return acc + ele.time;
     }, 0);
 
@@ -95,7 +103,7 @@ class Dashboard extends React.Component {
               <div>
                 <section className="statistic">
                   <label>Activities</label>
-                  <h2>{routesArray.length}</h2>
+                  <h2>{activityFeed.length}</h2>
                 </section>
               </div>
               <div>
