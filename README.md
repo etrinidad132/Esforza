@@ -54,7 +54,7 @@ This project also used the Google Maps JavaScript API. As well as other sub-API 
 - I then noticed that the route property on the directions object had some other properties that could be useful. The one that I used was the legs property which was an array of different points along the path. These points all have a distance value which I then iterated over and added them all up in order to figure out the distance. Then I also used a custom time funtion is order to estimate how long a route would take to navigate.
 
 ```JavaScript
-calcTotalDistance(directions) {
+calcTotalTime(directions) {
         let distance = 0;
         const route = directions.routes[0];
 
