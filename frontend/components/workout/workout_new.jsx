@@ -99,6 +99,7 @@ export default class WorkoutNew extends Component {
                 <input
                   className="distance-workout-form"
                   type="number"
+                  min="0"
                   value={this.state.distance}
                   onChange={this.update("distance")}
                 />
@@ -108,16 +109,22 @@ export default class WorkoutNew extends Component {
                 <section className="duration">
                   <input
                     type="number"
+                    min="0"
+                    max="99"
                     value={this.state.hours}
                     onChange={this.update("hours")}
                   />
                   <input
                     type="number"
+                    min="0"
+                    max="59"
                     value={this.state.minutes}
                     onChange={this.update("minutes")}
                   />
                   <input
                     type="number"
+                    min="0"
+                    max="59"
                     value={this.state.seconds}
                     onChange={this.update("seconds")}
                   />
@@ -128,6 +135,7 @@ export default class WorkoutNew extends Component {
                 <input
                   className="elevation-workout-form"
                   type="number"
+                  min="0"
                   value={this.state.elevation}
                   onChange={this.update("elevation")}
                 />
