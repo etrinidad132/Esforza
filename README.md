@@ -1,13 +1,13 @@
 # **ESFORZA**
 
 
-[ESFORZA](https://esforza.herokuapp.com/) is an application that is specialized for tracking outdoor activities such as cycling and running. It is based on the app [Strava](https://www.strava.com/). Due to ten day time constraint, it was not viable to clone every feature from [Strava](https://www.strava.com/). I focused on a few cornerstone features. It has the functionality to create routes by placing markers on a map, give the user the best route between the points, and give the user useful information. Information such as estimated time, distance, and elevation. I will come back to this project in order to add even more features.
+[ESFORZA](https://esforza.herokuapp.com/) is an application that is specialized for tracking outdoor activities such as cycling and running. It is based on the app [Strava](https://www.strava.com/). Due to the ten day time constraint, it was not viable to clone every feature from [Strava](https://www.strava.com/). I focused on a few cornerstone features. It has the functionality to create routes by placing markers on a map, give the user the best route between the points, and give the user useful information. Information such as estimated time, distance, and elevation. I will come back to this project in order to add even more features.
 
 ## Technologies
 ------------------------------------------------------------
 [ESFORZA](https://esforza.herokuapp.com/) leverages the awesome Ruby on Rails backend framework using PostgreSQL as the database. Also uses the JavaScript React-Redux in order to interface with the frontend.
 
-This project also used the Google Maps JavaScript API. As well as other sub-API that enchance the funtionality of the Maps API. Thse were the Maps Directions API, Maps Elevation API, Static Maps API, and a couple others.
+This project also used the Google Maps JavaScript API. As well as other sub-API that enhance the functionality of the Maps API. Those were the Maps Directions API, Maps Elevation API, Static Maps API, and a couple others.
 
 ## Features
 ------------------------------------------------------------
@@ -49,9 +49,9 @@ This project also used the Google Maps JavaScript API. As well as other sub-API 
 ## Calculating Total Distance
 ------------------------------------------------------------
 
-- A challenge that I faced for a bit while creating this project was how to calculate the distance that will be traveled during the route. I tried to look through the docs to see if there was a way do just extract this information from one of the google map objects to no avail. 
+- A challenge that I faced for a bit, while creating this project was how to calculate the distance that will be traveled during the route. I tried to look through the docs to see if there was a way to just extract this information from one of the google map objects to no avail. 
 
-- I then noticed that the route property on the directions object had some other properties that could be useful. The one that I used was the legs property which was an array of different points along the path. These points all have a distance value which I then iterated over and added them all up in order to figure out the distance. Then I also used a custom time funtion is order to estimate how long a route would take to navigate.
+- I then noticed that the route property on the directions object had some other properties that could be useful. The one that I used was the legs property which was an array of different points along the path. These points all have a distance value which I then iterated over and added them all up in order to figure out the distance. Then I also used a custom time function in order to estimate how long a route would take to navigate.
 
 ```JavaScript
 calcTotalDistance(directions) {
